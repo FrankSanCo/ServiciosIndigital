@@ -1,0 +1,50 @@
+{
+	"id": "21b95627-8f07-42c5-bb0b-fb9d47796739",
+	"name": "dataLogin",
+	"values": [
+		{
+			"key": "identifier",
+			"value": "931094690",
+			"enabled": true
+		},
+		{
+			"key": "pass",
+			"value": "999999",
+			"enabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJhY3RpdmVTZXNzaW9uIjpmYWxzZSwiaWQiOiIwNjY5ZWQyYi1jNjQyLTQwN2UtOGJhYS03M2MzMWU1NGI4OGEiLCJ0eXBlIjoiQUNDRVNTIiwiZXhwIjoxNTcwODA3NDAzLCJleHBpcmF0aW9uRGF0ZSI6MTU3MDgwNzQwMzIzN30.ekz5JrZn8U-SNOaXgktP_mZk8jP4ZbcZUoVstPzpKqD1Qkfz5uCeQftNWSVwwFZt5PC-Ns254kdMJAQfsAL0qw",
+			"enabled": true
+		},
+		{
+			"key": "Device-Id",
+			"value": "12345678901234567890",
+			"enabled": true
+		},
+		{
+			"key": "Password",
+			"value": "[5,5,5,5,5,5]",
+			"enabled": true
+		},
+		{
+			"key": "keyboard",
+			"value": [
+				2,
+				5,
+				1,
+				8,
+				4,
+				9,
+				7,
+				6,
+				3,
+				0
+			],
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-10-10T15:25:29.841Z",
+	"_postman_exported_using": "Postman/7.8.0"
+}

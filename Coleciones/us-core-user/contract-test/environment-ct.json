@@ -1,0 +1,14 @@
+{
+	"id": "a70cd72c-07a3-4e66-87d5-17722a1e77ca",
+	"name": "US-CORE-USER-CT",
+	"values": [
+		{
+			"key": "Id_Usuario",
+			"value": null,
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-08-12T18:57:54.404Z",
+	"_postman_exported_using": "Postman/7.3.6"
+}

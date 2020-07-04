@@ -1,0 +1,17 @@
+,Descripción,entity,scope,key,value,timeExpiration,codigo
+1,Actualizar en cache para cliente existente con Entity existente - resultado 200 ,US_ComponetA,RegisterR,key2,HolaA,60,200
+2,Actualizar en cache para cliente existente con Entity ingresar letras - resultado 201 ,SDSDSD,RegisterR,key2,HolaA,60,201
+3,Actualizar en cache para cliente existente con Entity en blanco - resultado 404,,RegisterR,key2,HolaA,60,404
+4,Actualizar en cache para cliente existente con Scope existente - resultado 200,US_ComponetB,RegisterR,key2,HolaA,60,200
+5,Actualizar en cache para cliente existente con Scope ingresar númerico - resultado 201,US_ComponetB,355677,key2,HolaA,60,201
+6,Actualizar en cache para cliente existente con Scope en blanco - resultado 404,US_ComponetB,,key2,HolaA,60,404
+7,Actualizar en cache para cliente existente con Key existente - resultado 200,US_ComponetC,RegisterR,key2,HolaA,60,200
+8,Actualizar en cache para cliente existente con Key ingresar caracteres extraños - resultado 404,US_ComponetC,RegisterR,#%&#RT,HolaA,60,404
+9,Actualizar en cache para cliente existente con Key en blanco - resultado 404,US_ComponetC,RegisterR,,HolaA,60,404
+10,Actualizar en cache para cliente existente con Value existente - resultado 200,US_ComponetD,RegisterR,key2,HolaA,60,200
+11,Actualizar en cache para cliente existente con Value letras - resultado 200,US_ComponetD,RegisterR,key2,ETGJKK,60,200
+12,Actualizar en cache para cliente existente con Value en blanco - resultado 400,US_ComponetD,RegisterR,key2,,60,400
+13,Actualizar en cache para cliente existente con timeExpiration existente - resultado 200,US_ComponetE,RegisterR,key2,HolaA,60,200
+14,Actualizar en cache para cliente existente con timeExpiration menor al tiempo ingresado - resultado 200,US_ComponetE,RegisterR,key2,HolaA,60,200
+15,Actualizar en cache para cliente existente con timeExpiration en blanco - resultado 400,US_ComponetE,RegisterR,key2,HolaA,,400
+16,Actualizar en cache para cliente no existe - resultado 201,US_actualiza,actualiza,key3,hello,4,201

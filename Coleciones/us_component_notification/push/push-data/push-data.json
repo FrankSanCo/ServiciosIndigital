@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "36add475-1327-4759-838d-c5d9dea17c2a",
+		"name": "Push-data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Push-data",
+			"item": [
+				{
+					"name": "Servicio de prueba para envío de mensajes de datos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deviceId\": \"ca97ffBBpw8:APA91bFZjjk5f41QA4XBinIJNWzTPCLNhCxBsAUCL-zSontQW0vg2xCBk8Fc66W4lh0CTFZHzC5Wd1E2Z5f5dhc78B-agws5t5aYAKEgaTVUIDBQW8WItV9soGlA1dojnD5zz3zWvd9p\",\r\n  \"data\": {\r\n    \"additionalProp1\": \"string\",\r\n    \"additionalProp2\": \"string\",\r\n    \"additionalProp3\": \"string\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/push-data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"push-data"
+							]
+						},
+						"description": "Servicio que envía de ensajes de datos"
+					},
+					"response": [
+						{
+							"name": "Acepted",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deviceId\": \"<string>\",\n    \"data\": \"<object>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/push-data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"push-data"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deviceId\": \"<string>\",\n    \"data\": \"<object>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/push-data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"push-data"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"entity\": \"<string>\",\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deviceId\": \"<string>\",\n    \"data\": \"<object>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/push-data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"push-data"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e4c201fd-62f0-42fd-80cc-ad564f7482ae",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f5d39750-ab0f-43dd-a0d1-3fc33e91ba01",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "161756f0-40cf-4cc6-b6f1-cfc91e198597",
+			"key": "baseUrl",
+			"value": "https://virtserver.swaggerhub.com/InDigitalPe/us_component_notification/1.0.0",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "e92fd994-f65e-4091-b670-cb8342008931",
+		"name": "us-ux-customer-register",
+		"description": "Tunki Core Microservice for Customer Register\n\nContact Support: \n{\n\nName : Tunki User Team\n\nEmail : developers@indigital.pe\n\n}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registrar cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ce78bff5-a833-4286-961c-e4aa5985dc6c",
+						"exec": [
+							"let codRespuesta=responseCode.code;\r",
+							"let codEsperado=data.codigo;\r",
+							"// validar codRespuesta no sea null\r",
+							"if(codRespuesta!==null)\r",
+							"{\r",
+							"   if(codEsperado==codRespuesta)\r",
+							"    {\r",
+							"        pm.test(\"status code es = \" +codRespuesta, function(){return codRespuesta;});\r",
+							"       // mostrar valor\r",
+							"       //let datosresponse=JSON.parse(responseBody);\r",
+							"      //test[\"Valor: \"+datosresponse.value]=\"\";\r",
+							"     }\r",
+							"    else\r",
+							"    {\r",
+							"    //        pm.test(\"status code es = \" +coderesponse, function(){return coderesponse;});\r",
+							"    //\r",
+							"    pm.test(\"Status code is \"+codEsperado, function () {\r",
+							"    pm.response.to.have.status(codEsperado);\r",
+							"    });}\r",
+							"  }\r",
+							"else\r",
+							"{\r",
+							"    console.log(\"No se encontro codigo esperado en el archivo de data\");\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{name}}\",\n    \"lastName\": \"{{lastName}}\",\n    \"phone\": \"{{phone}}\",\n    \"email\": \"{{email}}\",\n    \"password\": \"{{password}}\",\n    \"confirmPassword\": \"{{confirmPassword}}\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/customer-register/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"customer-register",
+						"register"
+					]
+				},
+				"description": "Servicio para crear un cliente"
+			},
+			"response": [
+				{
+					"name": "Conflict (CO_01:Correo registrado, CO_02:Celular registrado, CO_03:Password no coincide)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"confirmPassword\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer-register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer-register"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+				},
+				{
+					"name": "Internal Server Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"confirmPassword\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer-register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer-register"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+				},
+				{
+					"name": "Bad Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"confirmPassword\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer-register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer-register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+				},
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"confirmPassword\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer-register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer-register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"userId\": \"<string>\",\n \"name\": \"<string>\",\n \"lastName\": \"<string>\",\n \"phone\": \"<string>\",\n \"email\": \"<string>\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "acc0e83b-044b-462b-a524-c43ee140f6b4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "55e1a953-b5c9-4b92-b0d3-b7e255b76bc0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "60365934-6767-4d47-bbd8-caf2111667a6",
+			"key": "baseUrl",
+			"value": "http://qa.tunkiapi.com.pe",
+			"type": "string"
+		}
+	]
+}

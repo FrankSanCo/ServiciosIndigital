@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "345cc223-97a8-440f-bef2-8751f2ab262f",
+		"name": "Login_Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LOGIN UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7290a874-073d-43a4-a55a-f240f16ad1e7",
+						"exec": [
+							"//obtener teclado",
+							"var Data = JSON.parse(responseBody);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"tests[\"ResponseCode is \"+Data.responseCode]=Data.responseCode === 0;",
+							"tests[\"responseDescription is \"+Data.responseDescription]=Data.responseDescription === \"Se obtuvo respuesta del microservicio\";",
+							"",
+							"//tests[\"Codigo de Error es \"+Data.error.code]=Data.error.code === 2041;",
+							"//tests[\"Message de Error es \"+Data.error.message]=Data.error.message === \"Teclado expirado.\";",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d55248c6-c8be-4de4-9442-f941a9e7972f",
+						"exec": [
+							"pm.sendRequest( \r",
+							"{\r",
+							"url: 'https://api.us.apiconnect.ibmcloud.com/pagos-digitales-uat/tunki-uat/ibk/v2/users/random-keyboard', method: 'GET',\r",
+							"mode: 'application/json',\r",
+							"header: \r",
+							"{'X-IBM-Client-Id':'b1fa5011-4694-4919-a130-4b577c30ce8a',\r",
+							"'X-Device-Id': 'cOH9Ob1cazU:APA91bE-v_VezSyUUPTSYPP1-w7kp7aKe63ozedIV2mM3nVk4hgDixU1CWE59lUnPK-6I8WIGZHdSId_8X5IPFRugkFIS283XI5uLJVm_PxbgTCqIaqIozHhogwjzNsZZ2zvU9BIDBG9',\r",
+							"},\r",
+							"body: {\r",
+							"mode: 'raw',\r",
+							"}\r",
+							"}, function (err, response)\r",
+							" {\r",
+							"        pm.environment.set(\"keyboard\", response.json().body.keyboard);\r",
+							"\r",
+							"let resultTeclado=response.json().body.keyboard;\r",
+							"let pass=pm.environment.get(\"pass\");\r",
+							"let passFinal=\"[\";\r",
+							"for(let p=0;p<pass.length;p++)\r",
+							"{\r",
+							"   passPos=pass.substring(p,p+1);\r",
+							"   for (let i = 0; i < resultTeclado.length; i++)\r",
+							"   {\r",
+							"       if(resultTeclado[i]==passPos)\r",
+							"       {\r",
+							"        passFinal=passFinal+i;\r",
+							"            if(p==5)\r",
+							"            {\r",
+							"              passFinal=passFinal+\"]\";\r",
+							"            }\r",
+							"            else\r",
+							"            {\r",
+							"                passFinal=passFinal+\",\";\r",
+							"            }\r",
+							"       }\r",
+							"   }\r",
+							"}\r",
+							"pm.environment.set(\"Password\",passFinal);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{cliente}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceToken\":\"cOH9Ob1cazU:APA91bE-v_VezSyUUPTSYPP1-w7kp7aKe63ozedIV2mM3nVk4hgDixU1CWE59lUnPK-6I8WIGZHdSId_8X5IPFRugkFIS283XI5uLJVm_PxbgTCqIaqIozHhogwjzNsZZ2zvU9BIDBG9\",\n\"application\":1,\n\"platform\":2,\n\"userName\":\"correo.testtunki@gmail.com\",\n\"keyboard\":{{Password}},\n\"phoneModel\":\"sansumg\",\n\"appVersion\":\"2.1.9\"\n}\n"
+				},
+				"url": {
+					"raw": "https://api.us.apiconnect.ibmcloud.com/pagos-digitales-uat/tunki-uat/ibk/v2/users/sign-in",
+					"protocol": "https",
+					"host": [
+						"api",
+						"us",
+						"apiconnect",
+						"ibmcloud",
+						"com"
+					],
+					"path": [
+						"pagos-digitales-uat",
+						"tunki-uat",
+						"ibk",
+						"v2",
+						"users",
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

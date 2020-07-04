@@ -1,0 +1,4172 @@
+{
+	"info": {
+		"_postman_id": "15bb9d38-97b2-4653-9b6f-a83469077019",
+		"name": "US-CORE-USER",
+		"description": "Tunki Core Microservice for User\n\nContact Support: \n{\n\nName : Tunki User Team\n\nEmail : developers@indigital.pe\n\n}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Registrar Usuario",
+					"item": [
+						{
+							"name": "Registrar usuario exitoso - resultado 201",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8df20632-c084-48ae-8b4d-f38c1f61431c",
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"User id Creado :\"+datos.userId]=\" \";",
+											"tests[\"Usuario Creado :\"+datos.createdUser]=\" \";",
+											"tests[\"Fecha de registro :\"+datos.createdDate]=\" \";",
+											"",
+											"pm.environment.set(\"Id_Usuario\", datos.userId);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"identifier\": \"984280280, jorgeperez@indigital.pe, jorgeperez\",\r\n  \"password\": \"8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92\",\r\n  \"termCondition\": true,\r\n  \"privacyPolicy\": true,\r\n  \"enabled\": true,\r\n  \"status\": 1,\r\n  \"createdUser\": \"984280280\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								},
+								"description": "Servicio para crear un usuario"
+							},
+							"response": [
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Registrar usuario con identifier en blanco - resultado 400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8df20632-c084-48ae-8b4d-f38c1f61431c",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Customer id Creado :\"+datos.userId]=\" \";",
+											"tests[\"Usuario Creado :\"+datos.createdUser]=\" \";",
+											"tests[\"Fecha de registro :\"+datos.createdDate]=\" \";",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"identifier\": \"\",\r\n  \"password\": \"8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92\",\r\n  \"termCondition\": true,\r\n  \"privacyPolicy\": true,\r\n  \"enabled\": true,\r\n  \"status\": 1,\r\n  \"createdUser\": \"112180fc-b1a7-4177-acfa-c77c35262f20\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								},
+								"description": "Servicio para crear un usuario"
+							},
+							"response": [
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Registrar usuario con password mayor a caracteres permitidos - resultado 400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8df20632-c084-48ae-8b4d-f38c1f61431c",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Customer id Creado :\"+datos.userId]=\" \";",
+											"tests[\"Usuario Creado :\"+datos.createdUser]=\" \";",
+											"tests[\"Fecha de registro :\"+datos.createdDate]=\" \";",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"identifier\": \"984280280\",\r\n  \"password\": \"8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C9238D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C9238D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C9238D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C9238D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C9238D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923\",\r\n  \"termCondition\": true,\r\n  \"privacyPolicy\": true,\r\n  \"enabled\": true,\r\n  \"status\": 1,\r\n  \"createdUser\": \"984280280\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								},
+								"description": "Servicio para crear un usuario"
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Registrar usuario con privacyPolicy solo letras - resultado 400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8df20632-c084-48ae-8b4d-f38c1f61431c",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Customer id Creado :\"+datos.userId]=\" \";",
+											"tests[\"Usuario Creado :\"+datos.createdUser]=\" \";",
+											"tests[\"Fecha de registro :\"+datos.createdDate]=\" \";",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"identifier\": \"984280280\",\r\n  \"password\": \"8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92\",\r\n  \"termCondition\": true,\r\n  \"privacyPolicy\": \"gggg\",\r\n  \"enabled\": true,\r\n  \"status\": 1,\r\n  \"createdUser\": \"984280280\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								},
+								"description": "Servicio para crear un usuario"
+							},
+							"response": [
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ad5b6346-8016-433b-9ceb-82598ff9bfd4",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f9656ed0-6e92-4209-8ca0-33dfd68b705a",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Obtener Usuario",
+					"item": [
+						{
+							"name": "Obtener usuario con userId valido - resultado 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4ef5e126-4e7d-43bd-8c8a-e2fe37e5143d",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"User id Creado :\"+datos.userId]=\" \";",
+											"tests[\"Identificador :\"+datos.identifier]=\" \";",
+											"tests[\"createdDate :\"+datos.createdDate]=\" \";"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "{{Id_Usuario}}",
+											"description": "UUID del usuario que necesita ser obtenido"
+										}
+									]
+								},
+								"description": "Servicio para obtener un usuario"
+							},
+							"response": [
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  \"schema type not provided\",\n  \"schema type not provided\"\n ]\n}"
+								},
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Obtener usuario sin userId - resultado 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f5939a5f-bc12-4dd3-9e1e-d72da0402620",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Customer id Creado :\"+datos.metadata.count]=\" \";",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								},
+								"description": "Servicio para obtener un usuario"
+							},
+							"response": [
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  \"schema type not provided\",\n  \"schema type not provided\"\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Obtener usuario con userId inexistente - resultado 404",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f15be1a4-bc28-4580-848b-9f8e3b5a8230",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {",
+											"    pm.response.to.have.status(404);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Customer id Creado :\"+datos.message]=\" \";"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "yiuyiu77",
+											"description": "UUID del usuario que necesita ser obtenido"
+										}
+									]
+								},
+								"description": "Servicio para obtener un usuario"
+							},
+							"response": [
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  \"schema type not provided\",\n  \"schema type not provided\"\n ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Obtener usuario con userId en blanco - resultado 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c44d2d35-8726-4478-aba5-5ca462b77732",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Customer id Creado :\"+datos.metadata.count]=\" \";",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "",
+											"description": "UUID del usuario que necesita ser obtenido"
+										}
+									]
+								},
+								"description": "Servicio para obtener un usuario"
+							},
+							"response": [
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  \"schema type not provided\",\n  \"schema type not provided\"\n ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Obtener usuario con userId en null - resultado 404",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a04a62c0-7825-4767-bf33-59d52db04019",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {",
+											"    pm.response.to.have.status(404);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Customer id Creado :\"+datos.message]=\" \";",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "null",
+											"description": "UUID del usuario que necesita ser obtenido"
+										}
+									]
+								},
+								"description": "Servicio para obtener un usuario"
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  \"schema type not provided\",\n  \"schema type not provided\"\n ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5a7e2d9b-3fba-4d44-a964-041ffae35482",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "9cbeadec-8207-4910-a518-db97fc9c70b8",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Actualizar Usuario",
+					"item": [
+						{
+							"name": "Actualizar usuario exitoso - resultado 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9a1de58b-401b-4a02-9b3b-458f503b23c6",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"User id Actualizado : \"+datos.userId]=\" \";",
+											"tests[\"lastModifiedUser : \"+datos.lastModifiedUser]=\" \";",
+											"tests[\"lastModifiedUser : \"+datos.lastModifiedDate]=\" \";"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"identifier\": \"984280280, jorgeperez@indigital.pe, jorgeperez\",\r\n  \"password\": \"8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92\",\r\n  \"termCondition\": true,\r\n  \"privacyPolicy\": true,\r\n  \"enabled\": true,\r\n  \"status\": 1,\r\n  \"lastModifiedUser\": \"984280280\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "{{Id_Usuario}}",
+											"description": "UUID del usuario que necesita ser modificado"
+										}
+									]
+								},
+								"description": "Servicio para modificar un usuario"
+							},
+							"response": [
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Actualizar usuario sin userId - resultado 405",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "425548e7-d8fa-4f36-9f14-fd4ce7598cfd",
+										"exec": [
+											"pm.test(\"Status code is 405\", function () {",
+											"    pm.response.to.have.status(405);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"message : \"+datos.message]=\" \";",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"identifier\": \"984280280\",\r\n  \"password\": \"8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92\",\r\n  \"termCondition\": false,\r\n  \"privacyPolicy\": true,\r\n  \"enabled\": true,\r\n  \"status\": 1,\r\n  \"lastModifiedUser\": \"984280281\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								},
+								"description": "Servicio para modificar un usuario"
+							},
+							"response": [
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Actualizar usuario con userId en blanco - resultado 405",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "14ebc347-806f-4c6a-9988-f708d8d05569",
+										"exec": [
+											"pm.test(\"Status code is 405\", function () {",
+											"    pm.response.to.have.status(405);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"message : \"+datos.message]=\" \";",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"identifier\": \"984280280\",\r\n  \"password\": \"8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92\",\r\n  \"termCondition\": false,\r\n  \"privacyPolicy\": true,\r\n  \"enabled\": true,\r\n  \"status\": 1,\r\n  \"lastModifiedUser\": \"984280281\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"description": "UUID del usuario que necesita ser modificado",
+											"key": "userId",
+											"value": ""
+										}
+									]
+								},
+								"description": "Servicio para modificar un usuario"
+							},
+							"response": [
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Actualizar usuario con identifier en blanco - resultado 400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4a207bb1-c824-4fe3-84bb-9148a0d477fc",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"User id Actualizado : \"+datos.userId]=\" \";",
+											"tests[\"lastModifiedUser : \"+datos.lastModifiedUser]=\" \";",
+											"tests[\"lastModifiedUser : \"+datos.lastModifiedDate]=\" \";"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"identifier\": \"\",\r\n  \"password\": \"8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92\",\r\n  \"termCondition\": true,\r\n  \"privacyPolicy\": true,\r\n  \"enabled\": true,\r\n  \"status\": 1,\r\n  \"lastModifiedUser\": \"984280280\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "{{Id_Usuario}}",
+											"description": "UUID del usuario que necesita ser modificado"
+										}
+									]
+								},
+								"description": "Servicio para modificar un usuario"
+							},
+							"response": [
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Actualizar usuario con termCondition solo numeros - resultado 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9c5b53bc-8965-4f74-8d8c-c781d54f3cb0",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"User id Actualizado : \"+datos.userId]=\" \";",
+											"tests[\"lastModifiedUser : \"+datos.lastModifiedUser]=\" \";",
+											"tests[\"lastModifiedUser : \"+datos.lastModifiedDate]=\" \";"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"identifier\": \"984280280\",\r\n  \"password\": \"8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92\",\r\n  \"termCondition\": false,\r\n  \"privacyPolicy\": true,\r\n  \"enabled\": true,\r\n  \"status\": 7,\r\n  \"lastModifiedUser\": \"984280282\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "{{Id_Usuario}}",
+											"description": "UUID del usuario que necesita ser modificado"
+										}
+									]
+								},
+								"description": "Servicio para modificar un usuario"
+							},
+							"response": [
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"identifier\": \"<string>\",\n \"password\": \"<string>\",\n \"privacyPolicy\": \"<boolean>\",\n \"enabled\": \"<boolean>\",\n \"status\": \"<long>\",\n \"createdUser\": \"<string>\",\n \"userId\": \"<string>\",\n \"termCondition\": \"<boolean>\",\n \"createdDate\": \"<dateTime>\",\n \"lastModifiedUser\": \"<string>\",\n \"lastModifiedDate\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\",\n    \"privacyPolicy\": \"<boolean>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<long>\",\n    \"createdUser\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"termCondition\": \"<boolean>\",\n    \"createdDate\": \"<dateTime>\",\n    \"lastModifiedUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"<string>"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2afd57be-5484-4190-beb5-c5f34fbdfb6b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "755ce7fe-96d3-4bcc-b512-9d03b0e1a80a",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Obtener Lista de Usuarios",
+					"item": [
+						{
+							"name": "Listar usuarios sin parametros - resultado 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "de5363a6-c981-44d0-8ea0-7f9841d2cec8",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Usuario id Creado :\"+datos.metadata.count]=\" \";",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users?",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "<string>",
+											"description": "Consulta por identificador",
+											"disabled": true
+										},
+										{
+											"key": "termCondition",
+											"value": "<string>",
+											"description": "Consulta por términos y condiciones",
+											"disabled": true
+										},
+										{
+											"key": "privacyPolicy",
+											"value": "<string>",
+											"description": "Consulta por políticas de privacidad",
+											"disabled": true
+										},
+										{
+											"key": "enabled",
+											"value": "<string>",
+											"description": "Consulta por habilitación de usuario",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "Consulta por estado de usuario",
+											"disabled": true
+										},
+										{
+											"key": "pageSize",
+											"value": "<string>",
+											"description": "Cantidad de elementos por página",
+											"disabled": true
+										},
+										{
+											"key": "pageNumber",
+											"value": "<string>",
+											"description": "Índice de páginas",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Servicio para obtener todos los usuarios: \n/users?identifier=984280280&limit=5&offset=10"
+							},
+							"response": [
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  {\n   \"identifier\": \"<string>\",\n   \"password\": \"<string>\",\n   \"privacyPolicy\": \"<boolean>\",\n   \"enabled\": \"<boolean>\",\n   \"status\": \"<long>\",\n   \"createdUser\": \"<string>\",\n   \"userId\": \"<string>\",\n   \"termCondition\": \"<boolean>\",\n   \"createdDate\": \"<dateTime>\",\n   \"lastModifiedUser\": \"<string>\",\n   \"lastModifiedDate\": \"<dateTime>\"\n  },\n  {\n   \"identifier\": \"<string>\",\n   \"password\": \"<string>\",\n   \"privacyPolicy\": \"<boolean>\",\n   \"enabled\": \"<boolean>\",\n   \"status\": \"<long>\",\n   \"createdUser\": \"<string>\",\n   \"userId\": \"<string>\",\n   \"termCondition\": \"<boolean>\",\n   \"createdDate\": \"<dateTime>\",\n   \"lastModifiedUser\": \"<string>\",\n   \"lastModifiedDate\": \"<dateTime>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  \"schema type not provided\",\n  \"schema type not provided\"\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar usuarios con todos los parametros - resultado 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "de5363a6-c981-44d0-8ea0-7f9841d2cec8",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Usuario id Creado :\"+datos.metadata.count]=\" \";"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users?identifier=984280280, jorgeperez@indigital.pe, jorgeperez&termCondition=true&privacyPolicy=true&enabled=true&status=1&pageSize=10&pageNumber=0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "984280280, jorgeperez@indigital.pe, jorgeperez",
+											"description": "Consulta por identificador"
+										},
+										{
+											"key": "termCondition",
+											"value": "true",
+											"description": "Consulta por términos y condiciones"
+										},
+										{
+											"key": "privacyPolicy",
+											"value": "true",
+											"description": "Consulta por políticas de privacidad"
+										},
+										{
+											"key": "enabled",
+											"value": "true",
+											"description": "Consulta por habilitación de usuario"
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"description": "Consulta por estado de usuario"
+										},
+										{
+											"key": "pageSize",
+											"value": "10",
+											"description": "Cantidad de elementos por página"
+										},
+										{
+											"key": "pageNumber",
+											"value": "0",
+											"description": "Índice de páginas"
+										}
+									]
+								},
+								"description": "Servicio para obtener todos los usuarios: \n/users?identifier=984280280&limit=5&offset=10"
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  \"schema type not provided\",\n  \"schema type not provided\"\n ]\n}"
+								},
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  {\n   \"identifier\": \"<string>\",\n   \"password\": \"<string>\",\n   \"privacyPolicy\": \"<boolean>\",\n   \"enabled\": \"<boolean>\",\n   \"status\": \"<long>\",\n   \"createdUser\": \"<string>\",\n   \"userId\": \"<string>\",\n   \"termCondition\": \"<boolean>\",\n   \"createdDate\": \"<dateTime>\",\n   \"lastModifiedUser\": \"<string>\",\n   \"lastModifiedDate\": \"<dateTime>\"\n  },\n  {\n   \"identifier\": \"<string>\",\n   \"password\": \"<string>\",\n   \"privacyPolicy\": \"<boolean>\",\n   \"enabled\": \"<boolean>\",\n   \"status\": \"<long>\",\n   \"createdUser\": \"<string>\",\n   \"userId\": \"<string>\",\n   \"termCondition\": \"<boolean>\",\n   \"createdDate\": \"<dateTime>\",\n   \"lastModifiedUser\": \"<string>\",\n   \"lastModifiedDate\": \"<dateTime>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar usuarios con todos los parametros en blanco - resultado 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "de5363a6-c981-44d0-8ea0-7f9841d2cec8",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Usuario id Creado :\"+datos.metadata.count]=\" \";"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users?identifier=&termCondition=&privacyPolicy=&enabled=&status=&pageSize=&pageNumber=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "",
+											"description": "Consulta por identificador"
+										},
+										{
+											"key": "termCondition",
+											"value": "",
+											"description": "Consulta por términos y condiciones"
+										},
+										{
+											"key": "privacyPolicy",
+											"value": "",
+											"description": "Consulta por políticas de privacidad"
+										},
+										{
+											"key": "enabled",
+											"value": "",
+											"description": "Consulta por habilitación de usuario"
+										},
+										{
+											"key": "status",
+											"value": "",
+											"description": "Consulta por estado de usuario"
+										},
+										{
+											"key": "pageSize",
+											"value": "",
+											"description": "Cantidad de elementos por página"
+										},
+										{
+											"key": "pageNumber",
+											"value": "",
+											"description": "Índice de páginas"
+										}
+									]
+								},
+								"description": "Servicio para obtener todos los usuarios: \n/users?identifier=984280280&limit=5&offset=10"
+							},
+							"response": [
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  {\n   \"identifier\": \"<string>\",\n   \"password\": \"<string>\",\n   \"privacyPolicy\": \"<boolean>\",\n   \"enabled\": \"<boolean>\",\n   \"status\": \"<long>\",\n   \"createdUser\": \"<string>\",\n   \"userId\": \"<string>\",\n   \"termCondition\": \"<boolean>\",\n   \"createdDate\": \"<dateTime>\",\n   \"lastModifiedUser\": \"<string>\",\n   \"lastModifiedDate\": \"<dateTime>\"\n  },\n  {\n   \"identifier\": \"<string>\",\n   \"password\": \"<string>\",\n   \"privacyPolicy\": \"<boolean>\",\n   \"enabled\": \"<boolean>\",\n   \"status\": \"<long>\",\n   \"createdUser\": \"<string>\",\n   \"userId\": \"<string>\",\n   \"termCondition\": \"<boolean>\",\n   \"createdDate\": \"<dateTime>\",\n   \"lastModifiedUser\": \"<string>\",\n   \"lastModifiedDate\": \"<dateTime>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  \"schema type not provided\",\n  \"schema type not provided\"\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar usuarios con identifier en blanco - resultado 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "de5363a6-c981-44d0-8ea0-7f9841d2cec8",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Usuario id Creado :\"+datos.metadata.count]=\" \";"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users?identifier=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "",
+											"description": "Consulta por identificador"
+										},
+										{
+											"key": "termCondition",
+											"value": "",
+											"description": "Consulta por términos y condiciones",
+											"disabled": true
+										},
+										{
+											"key": "privacyPolicy",
+											"value": "<string>",
+											"description": "Consulta por políticas de privacidad",
+											"disabled": true
+										},
+										{
+											"key": "enabled",
+											"value": "<string>",
+											"description": "Consulta por habilitación de usuario",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "4",
+											"description": "Consulta por estado de usuario",
+											"disabled": true
+										},
+										{
+											"key": "pageSize",
+											"value": "<string>",
+											"description": "Cantidad de elementos por página",
+											"disabled": true
+										},
+										{
+											"key": "pageNumber",
+											"value": "<string>",
+											"description": "Índice de páginas",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Servicio para obtener todos los usuarios: \n/users?identifier=984280280&limit=5&offset=10"
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  \"schema type not provided\",\n  \"schema type not provided\"\n ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  {\n   \"identifier\": \"<string>\",\n   \"password\": \"<string>\",\n   \"privacyPolicy\": \"<boolean>\",\n   \"enabled\": \"<boolean>\",\n   \"status\": \"<long>\",\n   \"createdUser\": \"<string>\",\n   \"userId\": \"<string>\",\n   \"termCondition\": \"<boolean>\",\n   \"createdDate\": \"<dateTime>\",\n   \"lastModifiedUser\": \"<string>\",\n   \"lastModifiedDate\": \"<dateTime>\"\n  },\n  {\n   \"identifier\": \"<string>\",\n   \"password\": \"<string>\",\n   \"privacyPolicy\": \"<boolean>\",\n   \"enabled\": \"<boolean>\",\n   \"status\": \"<long>\",\n   \"createdUser\": \"<string>\",\n   \"userId\": \"<string>\",\n   \"termCondition\": \"<boolean>\",\n   \"createdDate\": \"<dateTime>\",\n   \"lastModifiedUser\": \"<string>\",\n   \"lastModifiedDate\": \"<dateTime>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar usuarios con status inexistente - resultado 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "de5363a6-c981-44d0-8ea0-7f9841d2cec8",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var datos = JSON.parse(responseBody);",
+											"tests[\"Usuario id Creado :\"+datos.metadata.count]=\" \";"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users?status=55",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "<string>",
+											"description": "Consulta por identificador",
+											"disabled": true
+										},
+										{
+											"key": "termCondition",
+											"value": "<string>",
+											"description": "Consulta por términos y condiciones",
+											"disabled": true
+										},
+										{
+											"key": "privacyPolicy",
+											"value": "<string>",
+											"description": "Consulta por políticas de privacidad",
+											"disabled": true
+										},
+										{
+											"key": "enabled",
+											"value": "<string>",
+											"description": "Consulta por habilitación de usuario",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "55",
+											"description": "Consulta por estado de usuario"
+										},
+										{
+											"key": "pageSize",
+											"value": "5",
+											"description": "Cantidad de elementos por página",
+											"disabled": true
+										},
+										{
+											"key": "pageNumber",
+											"value": "<string>",
+											"description": "Índice de páginas",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Servicio para obtener todos los usuarios: \n/users?identifier=984280280&limit=5&offset=10"
+							},
+							"response": [
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  {\n   \"identifier\": \"<string>\",\n   \"password\": \"<string>\",\n   \"privacyPolicy\": \"<boolean>\",\n   \"enabled\": \"<boolean>\",\n   \"status\": \"<long>\",\n   \"createdUser\": \"<string>\",\n   \"userId\": \"<string>\",\n   \"termCondition\": \"<boolean>\",\n   \"createdDate\": \"<dateTime>\",\n   \"lastModifiedUser\": \"<string>\",\n   \"lastModifiedDate\": \"<dateTime>\"\n  },\n  {\n   \"identifier\": \"<string>\",\n   \"password\": \"<string>\",\n   \"privacyPolicy\": \"<boolean>\",\n   \"enabled\": \"<boolean>\",\n   \"status\": \"<long>\",\n   \"createdUser\": \"<string>\",\n   \"userId\": \"<string>\",\n   \"termCondition\": \"<boolean>\",\n   \"createdDate\": \"<dateTime>\",\n   \"lastModifiedUser\": \"<string>\",\n   \"lastModifiedDate\": \"<dateTime>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"error\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errorCode\": \"<string>\",\n \"errorMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users?identifier=<string>&termCondition=<string>&privacyPolicy=<string>&enabled=<string>&status=<string>&limit=<string>&offset=<string>&between=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "<string>"
+												},
+												{
+													"key": "termCondition",
+													"value": "<string>"
+												},
+												{
+													"key": "privacyPolicy",
+													"value": "<string>"
+												},
+												{
+													"key": "enabled",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "limit",
+													"value": "<string>"
+												},
+												{
+													"key": "offset",
+													"value": "<string>"
+												},
+												{
+													"key": "between",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"metadata\": {\n  \"limit\": \"<number>\",\n  \"offset\": \"<number>\",\n  \"between\": \"<string>\",\n  \"total\": \"<number>\"\n },\n \"result\": [\n  \"schema type not provided\",\n  \"schema type not provided\"\n ]\n}"
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6f51c60d-6902-4586-a0a7-26a55a077aca",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c3a35fe-c7d7-48fb-b05b-c81bd5524bed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b20406c2-f0a1-49fd-ae9f-4992775ea5c1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "691e3d79-be11-4acd-b35f-aaee2673cd52",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "3affc43f-07b8-4a0d-9822-fdbea1d5a508",
+			"key": "baseUrl",
+			"value": "http://localhost:8886",
+			"type": "string"
+		}
+	]
+}

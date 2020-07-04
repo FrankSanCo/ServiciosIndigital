@@ -1,0 +1,34 @@
+{
+	"id": "cc7cc88d-caf7-445d-93ec-9fa2dca82bb8",
+	"name": "customer-register",
+	"values": [
+		{
+			"key": "autorizacion",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJEQVRBIjoie1wiZGV2aWNlSWRcIjpcIjEyMzQ1Njc4OVwiLFwicGxhdGZvcm1cIjpcIkFORFwiLFwiYXBwbGljYXRpb25cIjpcIkNVU1wiLFwicGhvbmVcIjpcIjkzMTA5NDY5MFwiLFwiZW1haWxcIjpcInR1bmtpQHR1bmtpLmNvbVwiLFwib3RwXCI6XCIyMzA2XCIsXCJzdGVwXCI6XCJTVEVQXzNcIixcIm5hbWVcIjpcIkdpbG1lclwiLFwibGFzdE5hbWVcIjpcIk5hcmNpc29cIixcImRvY3VtZW50VHlwZVwiOlwiRE5JXCIsXCJkb2N1bWVudFwiOlwiOTk5OTk5OTlcIn0iLCJleHAiOjE1Nzg1MjE4ODB9.CxLxahed_f2S_RRG9nFOc5ByC6G3Ryk_3mXsyDLGmX7tFO38u9pNxqcKTT-i7GojcLVfCTJK6KNQTHaZtgaPeQ",
+			"enabled": true
+		},
+		{
+			"key": "plataforma",
+			"value": "AND",
+			"enabled": true
+		},
+		{
+			"key": "aplicacion",
+			"value": "CUS",
+			"enabled": true
+		},
+		{
+			"key": "sms",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "device-id",
+			"value": "123456789",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-01-08T22:57:34.969Z",
+	"_postman_exported_using": "Postman/7.14.0"
+}

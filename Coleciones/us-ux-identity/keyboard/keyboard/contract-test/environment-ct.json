@@ -1,0 +1,14 @@
+{
+	"id": "f39bc22c-5b63-4a8c-ada7-126e390369d3",
+	"name": "keyboardData",
+	"values": [
+		{
+			"key": "X-Device-Id",
+			"value": "12345678901234567890",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-09-19T23:21:35.731Z",
+	"_postman_exported_using": "Postman/7.7.2"
+}

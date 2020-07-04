@@ -1,0 +1,1442 @@
+{
+	"info": {
+		"_postman_id": "ebacc294-fc73-4830-9858-35a124c67852",
+		"name": "us-ux-pagoefectivo-cashin-Indigital",
+		"description": "Tunki Ux Microservice for Cash Payment\n\nContact Support:\n Name: Tunki User Team\n Email: developers@indigital.pe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generar Codigo CIP-DEV",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2cca8c68-5ee8-4060-909b-1695d9a190fa",
+						"exec": [
+							"let deviceId=pm.environment.get(\"device-Id\");\r",
+							"let url=pm.variables.get(\"baseUrlDEV\");\r",
+							"\r",
+							"    pm.sendRequest( \r",
+							"    {\r",
+							"    url: url+'/agora-identity/identity/random-keyboard', method: 'GET',\r",
+							"    mode: 'application/json',\r",
+							"    header: \r",
+							"    {'X-Device-Id': deviceId+''\r",
+							"    },\r",
+							"    body: {\r",
+							"    mode: 'raw',\r",
+							"    }\r",
+							"    }, \r",
+							"    function (err, response)\r",
+							"     {\r",
+							"            pm.environment.set(\"keyboard\", response.json().keyboard);\r",
+							"    \r",
+							"    let resultTeclado=response.json().keyboard;\r",
+							"    let pass=pm.environment.get(\"pass\");\r",
+							"    let passFinal=\"[\";\r",
+							"    for(let p=0;p<pass.length;p++)\r",
+							"    {\r",
+							"       passPos=pass.substring(p,p+1);\r",
+							"       for (let i = 0; i < resultTeclado.length; i++)\r",
+							"       {\r",
+							"           if(resultTeclado[i]==passPos)\r",
+							"           {\r",
+							"            passFinal=passFinal+i;\r",
+							"                if(p==5)\r",
+							"                {\r",
+							"                  passFinal=passFinal+\"]\";\r",
+							"                }\r",
+							"                else\r",
+							"                {\r",
+							"                    passFinal=passFinal+\",\";\r",
+							"                }\r",
+							"           }\r",
+							"       }\r",
+							"    }\r",
+							"    pm.environment.set(\"Password\",passFinal);\r",
+							"    \r",
+							"    let usidentifir=pm.environment.get(\"identifier\");\r",
+							" pm.sendRequest( \r",
+							"    {\r",
+							"    url: url+'/agora-identity/identity/sign-in', method: 'POST',\r",
+							"    mode: 'application/json',\r",
+							"    header: \r",
+							"    {'X-Device-Id': deviceId+'',\r",
+							"\t'X-Platform': 'AND',\r",
+							"\t'X-Application': 'CUS',\r",
+							"\t'X-Version': '1.0',\r",
+							"\t'X-Model': 'abcd',\r",
+							"\t'Authorization': 'Basic Nzc4MDIxNmEtM2NjYi0zOGU2LWE0NTctYWNlOTA1MmYwZmQ4OmRlOTQxYWJiLWNiNjMtMzljMC1iNmVhLWZhNDFiZmRkZjJiYw==',\r",
+							"\t'Content-Type': 'application/json',\r",
+							"    },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({'identifier': usidentifir,\r",
+							"        'positions': JSON.parse(passFinal) })\r",
+							"    }\r",
+							"    }, function (err, response)\r",
+							"     {\r",
+							"        pm.environment.set(\"accessToken\", response.json().access_token);\r",
+							"        pm.environment.set(\"userId\", response.json().userId);\r",
+							"    });\r",
+							"    \r",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "25ae1355-1eae-4403-8c2f-d11c05068d35",
+						"exec": [
+							"let codRespuesta=responseCode.code;",
+							"let codEsperado=data.codigo;",
+							"let codBodyEsp=data.codbody;",
+							"let nrocase=data.nro;",
+							"// validar codRespuesta no sea null",
+							"if(codRespuesta!==null)",
+							"{",
+							"   if(codEsperado==codRespuesta)",
+							"    {  ",
+							"        if (codBodyEsp===\"\")",
+							"        {  ",
+							"            console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"            pm.test(\"status code es = \" +codRespuesta, function(){return codRespuesta;});   ",
+							"        }",
+							"       ",
+							"       // mostrar valor",
+							"       else if (codBodyEsp!==\"\")",
+							"       {",
+							"           console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"          // let datosResponseBody=JSON.parse(responseBody);",
+							"          // tests[\"Codigo de error es \"+codBodyEsp]=datosResponseBody.code === codBodyEsp;",
+							"       }",
+							"     }",
+							"    else",
+							"    {",
+							"    //        pm.test(\"status code es = \" +coderesponse, function(){return coderesponse;});",
+							"    //",
+							"    console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"    pm.test(\"Status code is \"+codEsperado, function () {",
+							"    pm.response.to.have.status(codEsperado);",
+							"    });}",
+							"  }",
+							"else",
+							"{",
+							"    console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"    console.log(\"No se encontro codigo esperado en el archivo de data\");",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Device-Id",
+						"value": "{{device-Id}}",
+						"description": "Identificador del dispositivo que consume el servicio"
+					},
+					{
+						"key": "X-Platform",
+						"value": "{{platform}}",
+						"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+					},
+					{
+						"key": "X-Application",
+						"value": "{{application}}",
+						"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+					},
+					{
+						"key": "access_token",
+						"value": "{{accessToken}}",
+						"description": "Token de acceso del dispositivo que consume el servicio"
+					},
+					{
+						"key": "client_id",
+						"value": "7780216a-3ccb-38e6-a457-ace9052f0fd8",
+						"description": "Client id de la aplicación"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\":\"285.56\",\"email\":\"f.sanchez.c.1@gmail.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrlDEV}}/agora-user/pagoefectivo-cashin/cash-payment/cip",
+					"host": [
+						"{{baseUrlDEV}}"
+					],
+					"path": [
+						"agora-user",
+						"pagoefectivo-cashin",
+						"cash-payment",
+						"cip"
+					]
+				},
+				"description": "Servicio para obtener listado de formas de recarga en efectivo"
+			},
+			"response": [
+				{
+					"name": "Bad Request / GEN_ALL_01:Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_01\",\n \"message\": \"Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.\",\n \"errors\": [\n  {\n   \"field\": \"field one\",\n   \"message\": \"message one\"\n  },\n  {\n   \"field\": \"field two\",\n   \"message\": \"message two\"\n  }\n ]\n}"
+				},
+				{
+					"name": "Forbidden / GEN_ALL_04:Token inválido.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_04\",\n \"message\": \"Token inválido.\"\n}"
+				},
+				{
+					"name": "Ok / La solicitud ha tenido éxito, se ha obtenido listado de formas de recargas  como resultado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"title\": \"En comercios asociados\",\n  \"details\": \"Recarga Presencial\",\n  \"icons\": [\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   },\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   }\n  ],\n  \"button\": {\n   \"text\": \"Conoce más\",\n   \"deeplink\": \"deeplink\"\n  }\n },\n {\n  \"title\": \"En comercios asociados\",\n  \"details\": \"Recarga Presencial\",\n  \"icons\": [\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   },\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   }\n  ],\n  \"button\": {\n   \"text\": \"Conoce más\",\n   \"deeplink\": \"deeplink\"\n  }\n }\n]"
+				},
+				{
+					"name": "Internal Server Error / GEN_ALL_02:Error interno del servidor.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_02\",\n \"message\": \"Error interno del servidor.\"\n}"
+				},
+				{
+					"name": "Unauthorized / GEN_ALL_03:Token expirado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_03\",\n \"message\": \"Token expirado.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Generar Codigo CIP-QA",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2cca8c68-5ee8-4060-909b-1695d9a190fa",
+						"exec": [
+							"let deviceId=pm.environment.get(\"device-Id\");\r",
+							"let url=pm.variables.get(\"baseUrlQA\");\r",
+							"\r",
+							"    pm.sendRequest( \r",
+							"    {\r",
+							"    url: url+'/agora-identity/identity/random-keyboard', method: 'GET',\r",
+							"    mode: 'application/json',\r",
+							"    header: \r",
+							"    {'X-Device-Id': deviceId+''\r",
+							"    },\r",
+							"    body: {\r",
+							"    mode: 'raw',\r",
+							"    }\r",
+							"    }, \r",
+							"    function (err, response)\r",
+							"     {\r",
+							"            pm.environment.set(\"keyboard\", response.json().keyboard);\r",
+							"    \r",
+							"    let resultTeclado=response.json().keyboard;\r",
+							"    let pass=pm.environment.get(\"pass\");\r",
+							"    let passFinal=\"[\";\r",
+							"    for(let p=0;p<pass.length;p++)\r",
+							"    {\r",
+							"       passPos=pass.substring(p,p+1);\r",
+							"       for (let i = 0; i < resultTeclado.length; i++)\r",
+							"       {\r",
+							"           if(resultTeclado[i]==passPos)\r",
+							"           {\r",
+							"            passFinal=passFinal+i;\r",
+							"                if(p==5)\r",
+							"                {\r",
+							"                  passFinal=passFinal+\"]\";\r",
+							"                }\r",
+							"                else\r",
+							"                {\r",
+							"                    passFinal=passFinal+\",\";\r",
+							"                }\r",
+							"           }\r",
+							"       }\r",
+							"    }\r",
+							"    pm.environment.set(\"Password\",passFinal);\r",
+							"    \r",
+							"    let usidentifir=pm.environment.get(\"identifier\");\r",
+							" pm.sendRequest( \r",
+							"    {\r",
+							"    url: url+'/agora-identity/identity/sign-in', method: 'POST',\r",
+							"    mode: 'application/json',\r",
+							"    header: \r",
+							"    {'X-Device-Id': deviceId+'',\r",
+							"\t'X-Platform': 'AND',\r",
+							"\t'X-Application': 'CUS',\r",
+							"\t'X-Version': '1.0',\r",
+							"\t'X-Model': 'abcd',\r",
+							"\t'Authorization': 'Basic Nzc4MDIxNmEtM2NjYi0zOGU2LWE0NTctYWNlOTA1MmYwZmQ4OmRlOTQxYWJiLWNiNjMtMzljMC1iNmVhLWZhNDFiZmRkZjJiYw==',\r",
+							"\t'Content-Type': 'application/json',\r",
+							"    },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({'identifier': usidentifir,\r",
+							"        'positions': JSON.parse(passFinal) })\r",
+							"    }\r",
+							"    }, function (err, response)\r",
+							"     {\r",
+							"        pm.environment.set(\"accessToken\", response.json().access_token);\r",
+							"        pm.environment.set(\"userId\", response.json().userId);\r",
+							"    });\r",
+							"    \r",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "25ae1355-1eae-4403-8c2f-d11c05068d35",
+						"exec": [
+							"let codRespuesta=responseCode.code;",
+							"let codEsperado=data.codigo;",
+							"let codBodyEsp=data.codbody;",
+							"let nrocase=data.nro;",
+							"// validar codRespuesta no sea null",
+							"if(codRespuesta!==null)",
+							"{",
+							"   if(codEsperado==codRespuesta)",
+							"    {  ",
+							"        if (codBodyEsp===\"\")",
+							"        {  ",
+							"            console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"            pm.test(\"status code es = \" +codRespuesta, function(){return codRespuesta;});   ",
+							"        }",
+							"       ",
+							"       // mostrar valor",
+							"       else if (codBodyEsp!==\"\")",
+							"       {",
+							"           console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"          // let datosResponseBody=JSON.parse(responseBody);",
+							"          // tests[\"Codigo de error es \"+codBodyEsp]=datosResponseBody.code === codBodyEsp;",
+							"       }",
+							"     }",
+							"    else",
+							"    {",
+							"    //        pm.test(\"status code es = \" +coderesponse, function(){return coderesponse;});",
+							"    //",
+							"    console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"    pm.test(\"Status code is \"+codEsperado, function () {",
+							"    pm.response.to.have.status(codEsperado);",
+							"    });}",
+							"  }",
+							"else",
+							"{",
+							"    console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"    console.log(\"No se encontro codigo esperado en el archivo de data\");",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Device-Id",
+						"value": "{{device-Id}}",
+						"description": "Identificador del dispositivo que consume el servicio"
+					},
+					{
+						"key": "X-Platform",
+						"value": "{{platform}}",
+						"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+					},
+					{
+						"key": "X-Application",
+						"value": "{{application}}",
+						"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+					},
+					{
+						"key": "access_token",
+						"value": "{{accessToken}}",
+						"description": "Token de acceso del dispositivo que consume el servicio"
+					},
+					{
+						"key": "client_id",
+						"value": "7780216a-3ccb-38e6-a457-ace9052f0fd8",
+						"description": "Client id de la aplicación"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\":\"200.00\",\"email\":\"fsanchez.c.1@gmail.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrlQA}}/agora-user/pagoefectivo-cashin/cash-payment/cip",
+					"host": [
+						"{{baseUrlQA}}"
+					],
+					"path": [
+						"agora-user",
+						"pagoefectivo-cashin",
+						"cash-payment",
+						"cip"
+					]
+				},
+				"description": "Servicio para obtener listado de formas de recarga en efectivo"
+			},
+			"response": [
+				{
+					"name": "Ok / La solicitud ha tenido éxito, se ha obtenido listado de formas de recargas  como resultado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"title\": \"En comercios asociados\",\n  \"details\": \"Recarga Presencial\",\n  \"icons\": [\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   },\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   }\n  ],\n  \"button\": {\n   \"text\": \"Conoce más\",\n   \"deeplink\": \"deeplink\"\n  }\n },\n {\n  \"title\": \"En comercios asociados\",\n  \"details\": \"Recarga Presencial\",\n  \"icons\": [\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   },\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   }\n  ],\n  \"button\": {\n   \"text\": \"Conoce más\",\n   \"deeplink\": \"deeplink\"\n  }\n }\n]"
+				},
+				{
+					"name": "Unauthorized / GEN_ALL_03:Token expirado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_03\",\n \"message\": \"Token expirado.\"\n}"
+				},
+				{
+					"name": "Bad Request / GEN_ALL_01:Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_01\",\n \"message\": \"Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.\",\n \"errors\": [\n  {\n   \"field\": \"field one\",\n   \"message\": \"message one\"\n  },\n  {\n   \"field\": \"field two\",\n   \"message\": \"message two\"\n  }\n ]\n}"
+				},
+				{
+					"name": "Forbidden / GEN_ALL_04:Token inválido.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_04\",\n \"message\": \"Token inválido.\"\n}"
+				},
+				{
+					"name": "Internal Server Error / GEN_ALL_02:Error interno del servidor.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_02\",\n \"message\": \"Error interno del servidor.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener Listado de Formas de recarga en efectivo Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2cca8c68-5ee8-4060-909b-1695d9a190fa",
+						"exec": [
+							"let deviceId=pm.environment.get(\"device-Id\");\r",
+							"let url=pm.variables.get(\"baseUrlQA\");\r",
+							"\r",
+							"    pm.sendRequest( \r",
+							"    {\r",
+							"    url: url+'/agora-identity/identity/random-keyboard', method: 'GET',\r",
+							"    mode: 'application/json',\r",
+							"    header: \r",
+							"    {'X-Device-Id': deviceId+''\r",
+							"    },\r",
+							"    body: {\r",
+							"    mode: 'raw',\r",
+							"    }\r",
+							"    }, \r",
+							"    function (err, response)\r",
+							"     {\r",
+							"            pm.environment.set(\"keyboard\", response.json().keyboard);\r",
+							"    \r",
+							"    let resultTeclado=response.json().keyboard;\r",
+							"    let pass=pm.environment.get(\"pass\");\r",
+							"    let passFinal=\"[\";\r",
+							"    for(let p=0;p<pass.length;p++)\r",
+							"    {\r",
+							"       passPos=pass.substring(p,p+1);\r",
+							"       for (let i = 0; i < resultTeclado.length; i++)\r",
+							"       {\r",
+							"           if(resultTeclado[i]==passPos)\r",
+							"           {\r",
+							"            passFinal=passFinal+i;\r",
+							"                if(p==5)\r",
+							"                {\r",
+							"                  passFinal=passFinal+\"]\";\r",
+							"                }\r",
+							"                else\r",
+							"                {\r",
+							"                    passFinal=passFinal+\",\";\r",
+							"                }\r",
+							"           }\r",
+							"       }\r",
+							"    }\r",
+							"    pm.environment.set(\"Password\",passFinal);\r",
+							"    \r",
+							"    let usidentifir=pm.environment.get(\"identifier\");\r",
+							" pm.sendRequest( \r",
+							"    {\r",
+							"    url: url+'/agora-identity/identity/sign-in', method: 'POST',\r",
+							"    mode: 'application/json',\r",
+							"    header: \r",
+							"    {'X-Device-Id': deviceId+'',\r",
+							"\t'X-Platform': 'AND',\r",
+							"\t'X-Application': 'CUS',\r",
+							"\t'X-Version': '1.0',\r",
+							"\t'X-Model': 'abcd',\r",
+							"\t'Authorization': 'Basic Nzc4MDIxNmEtM2NjYi0zOGU2LWE0NTctYWNlOTA1MmYwZmQ4OmRlOTQxYWJiLWNiNjMtMzljMC1iNmVhLWZhNDFiZmRkZjJiYw==',\r",
+							"\t'Content-Type': 'application/json',\r",
+							"    },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({'identifier': usidentifir,\r",
+							"        'positions': JSON.parse(passFinal) })\r",
+							"    }\r",
+							"    }, function (err, response)\r",
+							"     {\r",
+							"        pm.environment.set(\"accessToken\", response.json().access_token);\r",
+							"        pm.environment.set(\"userId\", response.json().userId);\r",
+							"    });\r",
+							"    \r",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "25ae1355-1eae-4403-8c2f-d11c05068d35",
+						"exec": [
+							"let codRespuesta=responseCode.code;",
+							"let codEsperado=data.codigo;",
+							"let codBodyEsp=data.codbody;",
+							"let nrocase=data.nro;",
+							"// validar codRespuesta no sea null",
+							"if(codRespuesta!==null)",
+							"{",
+							"   if(codEsperado==codRespuesta)",
+							"    {  ",
+							"        if (codBodyEsp===\"\")",
+							"        {  ",
+							"            console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"            pm.test(\"status code es = \" +codRespuesta, function(){return codRespuesta;});   ",
+							"        }",
+							"       ",
+							"       // mostrar valor",
+							"       else if (codBodyEsp!==\"\")",
+							"       {",
+							"           console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"          // let datosResponseBody=JSON.parse(responseBody);",
+							"          // tests[\"Codigo de error es \"+codBodyEsp]=datosResponseBody.code === codBodyEsp;",
+							"       }",
+							"     }",
+							"    else",
+							"    {",
+							"    //        pm.test(\"status code es = \" +coderesponse, function(){return coderesponse;});",
+							"    //",
+							"    console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"    pm.test(\"Status code is \"+codEsperado, function () {",
+							"    pm.response.to.have.status(codEsperado);",
+							"    });}",
+							"  }",
+							"else",
+							"{",
+							"    console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"    console.log(\"No se encontro codigo esperado en el archivo de data\");",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Device-Id",
+						"value": "{{device-Id}}",
+						"description": "Identificador del dispositivo que consume el servicio"
+					},
+					{
+						"key": "X-Platform",
+						"value": "{{platform}}",
+						"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+					},
+					{
+						"key": "X-Application",
+						"value": "{{application}}",
+						"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+					},
+					{
+						"key": "access_token",
+						"value": "{{accessToken}}",
+						"description": "Token de acceso del dispositivo que consume el servicio"
+					},
+					{
+						"key": "client_id",
+						"value": "7780216a-3ccb-38e6-a457-ace9052f0fd8",
+						"description": "Client id de la aplicación"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrlQA}}/agora-user/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+					"host": [
+						"{{baseUrlQA}}"
+					],
+					"path": [
+						"agora-user",
+						"pagoefectivo-cashin",
+						"cash-payment",
+						"forms-of-recharge"
+					]
+				},
+				"description": "Servicio para obtener listado de formas de recarga en efectivo"
+			},
+			"response": [
+				{
+					"name": "Forbidden / GEN_ALL_04:Token inválido.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_04\",\n \"message\": \"Token inválido.\"\n}"
+				},
+				{
+					"name": "Bad Request / GEN_ALL_01:Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_01\",\n \"message\": \"Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.\",\n \"errors\": [\n  {\n   \"field\": \"field one\",\n   \"message\": \"message one\"\n  },\n  {\n   \"field\": \"field two\",\n   \"message\": \"message two\"\n  }\n ]\n}"
+				},
+				{
+					"name": "Ok / La solicitud ha tenido éxito, se ha obtenido listado de formas de recargas  como resultado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"title\": \"En comercios asociados\",\n  \"details\": \"Recarga Presencial\",\n  \"icons\": [\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   },\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   }\n  ],\n  \"button\": {\n   \"text\": \"Conoce más\",\n   \"deeplink\": \"deeplink\"\n  }\n },\n {\n  \"title\": \"En comercios asociados\",\n  \"details\": \"Recarga Presencial\",\n  \"icons\": [\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   },\n   {\n    \"url\": \"https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/forms-of-recharge%2Flogo_pago_efectivo.jpg?alt=media&token=e53eb391-a1d0-4618-8dd9-f1e390694bea\"\n   }\n  ],\n  \"button\": {\n   \"text\": \"Conoce más\",\n   \"deeplink\": \"deeplink\"\n  }\n }\n]"
+				},
+				{
+					"name": "Internal Server Error / GEN_ALL_02:Error interno del servidor.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "Client id de la aplicación"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_02\",\n \"message\": \"Error interno del servidor.\"\n}"
+				},
+				{
+					"name": "Unauthorized / GEN_ALL_03:Token expirado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pagoefectivo-cashin/cash-payment/forms-of-recharge",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"forms-of-recharge"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"GEN_ALL_03\",\n \"message\": \"Token expirado.\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "01da5d8c-e9fe-4a9d-a866-b8883679f3eb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "10616e44-0593-4f0b-a258-f10f7108be5d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "50969864-ec4b-4151-8fa5-0943dfdf014c",
+			"key": "baseUrlBackup",
+			"value": "https://api-tunki.sensedia.com/qa",
+			"type": "string"
+		},
+		{
+			"id": "b06db5a0-58eb-4d26-9142-7117caaf6b57",
+			"key": "baseUrlDEV",
+			"value": "https://api.indigital.com.pe/dev",
+			"type": "string"
+		},
+		{
+			"id": "b63b5943-ff43-4d3a-bcb8-c8a91b064e2a",
+			"key": "baseUrlQA",
+			"value": "https://api.indigital.com.pe/qa",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,24 @@
+{
+	"id": "1673544e-cd38-465a-96d6-8433bb73cdcf",
+	"name": "data",
+	"values": [
+		{
+			"key": "CodigoEsperado",
+			"value": 202,
+			"enabled": true
+		},
+		{
+			"key": "mensaje",
+			"value": "Pruebas de QA 234567",
+			"enabled": true
+		},
+		{
+			"key": "nrocelular",
+			"value": "51931094690",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-10-15T10:23:32.002Z",
+	"_postman_exported_using": "Postman/7.9.0"
+}

@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "7062ee0b-8bcb-4b1f-93ea-6bbec6594195",
+		"name": "Cache_Obtener",
+		"description": "Tunki Component Microservice for Cache\n\nContact Support: \n{\n\nName : Tunki User Team\n\nEmail : developers@indigital.pe\n\n}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cache",
+			"item": [
+				{
+					"name": "Obtener Datos",
+					"item": [
+						{
+							"name": "Obtener datos en memoria",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffd93dbd-9ed6-497c-afe5-d01d76f21b0e",
+										"exec": [
+											"let coderesponse=responseCode.code;",
+											"let codeesperado=data.codigo;",
+											"if(codeesperado!==null)",
+											"{",
+											"if(codeesperado==coderesponse)",
+											"{",
+											"    pm.test(\"status code es = \" +coderesponse, function(){return coderesponse;});",
+											"   // mostrar valor",
+											"   //let datosresponse=JSON.parse(responseBody);",
+											"  //test[\"Valor: \"+datosresponse.value]=\"\";",
+											" }",
+											"else",
+											"{",
+											"//        pm.test(\"status code es = \" +coderesponse, function(){return coderesponse;});",
+											"//",
+											"pm.test(\"Status code is \"+codeesperado, function () {",
+											"    pm.response.to.have.status(codeesperado);",
+											"});}",
+											"",
+											"}",
+											"else{",
+											"    console.log(\"no se encontro el código esperado en csv\");",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/cache/:entity/:scope/:key",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cache",
+										":entity",
+										":scope",
+										":key"
+									],
+									"variable": [
+										{
+											"key": "entity",
+											"value": "{{entity}}",
+											"description": "Entidad de los datos en memoria que necesita ser modificado"
+										},
+										{
+											"key": "scope",
+											"value": "{{scope}}",
+											"description": "Alcance de los datos en memoria que necesita ser modificado"
+										},
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"description": "Llave de los datos en memoria que necesita ser modificado"
+										}
+									]
+								},
+								"description": "Servicio para obtener datos en memoria"
+							},
+							"response": [
+								{
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/cache/<string>/<string>/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cache",
+												"<string>",
+												"<string>",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"value\": \"<string>\"\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/cache/<string>/<string>/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cache",
+												"<string>",
+												"<string>",
+												"<string>"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"entity\": \"<string>\",\n \"scope\": \"<string>\",\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/cache/<string>/<string>/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cache",
+												"<string>",
+												"<string>",
+												"<string>"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "10d79752-411f-4300-85a9-88913ffabfdd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "459c8124-f945-42b7-a823-5e3fe521dc37",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "6ed6e553-afd8-4202-9de2-a4b29384bc94",
+			"key": "baseUrl",
+			"value": "http://localhost:8850",
+			"type": "string"
+		}
+	]
+}

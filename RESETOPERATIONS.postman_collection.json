@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "4d22406f-6f84-40a7-aa14-283acc6e0ae3",
+		"name": "RESETOPERATIONS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RESET",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey-v1 209bde75dbe359e40db2015af747cfaec58d6dbdf21cec6c20351c93ccaaf886",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n    \"attributes\": {\n        \"firstP2P\": null,\n        \"firstP2C\": null,\n        \"firstIndraPurchase\": null,\n        \"emailValidation\": null,\n        \"firstRechargePE\": null,\n        \"firstRechargeIR\": null\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://indigital.us-west2.talon.one/v1/customer_profiles/f4c6c034-1377-4a9c-b610-d0556c10015c",
+					"protocol": "https",
+					"host": [
+						"indigital",
+						"us-west2",
+						"talon",
+						"one"
+					],
+					"path": [
+						"v1",
+						"customer_profiles",
+						"f4c6c034-1377-4a9c-b610-d0556c10015c"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

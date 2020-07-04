@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "8e54032d-6b13-477d-917d-27c36ac8d543",
+		"name": "us_ux_identity",
+		"description": "Tunki Ux Microservice for Identity\n\nContact Support: \n{\n\nName : Tunki User Team\n\nEmail : developers@indigital.pe\n\n}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sign-in",
+			"item": [
+				{
+					"name": "LOGIN AUTOMATIZADO",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6a890c76-7197-4d12-99fb-b8937659ed00",
+								"exec": [
+									"pm.environment.set(\"CodigoEsperado\",201); ",
+									"",
+									"pm.sendRequest( ",
+									"{",
+									"url: 'https://api-tunki.sensedia.com/dev/tunki-identity/identity/random-keyboard', method: 'GET',",
+									"mode: 'application/json',",
+									"header: ",
+									"{'X-Device-Id': 'abc123',",
+									"},",
+									"body: {",
+									"mode: 'raw',",
+									"}",
+									"}, function (err, response)",
+									" {",
+									"        pm.environment.set(\"keyboard\", response.json().keyboard);",
+									"",
+									"let resultTeclado=response.json().keyboard;",
+									"let pass=pm.environment.get(\"pass\");",
+									"let passFinal=\"[\";",
+									"for(let p=0;p<pass.length;p++)",
+									"{",
+									"   passPos=pass.substring(p,p+1);",
+									"   for (let i = 0; i < resultTeclado.length; i++)",
+									"   {",
+									"       if(resultTeclado[i]==passPos)",
+									"       {",
+									"        passFinal=passFinal+i;",
+									"            if(p==5)",
+									"            {",
+									"              passFinal=passFinal+\"]\";",
+									"            }",
+									"            else",
+									"            {",
+									"                passFinal=passFinal+\",\";",
+									"            }",
+									"       }",
+									"   }",
+									"}",
+									"pm.environment.set(\"Password\",passFinal);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f87e2180-6cb6-48d1-b376-307bf14e41d5",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "7780216a-3ccb-38e6-a457-ace9052f0fd8",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "de941abb-cb63-39c0-b6ea-fa41bfddf2bc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"description": "Identificador de un dispositivo",
+								"key": "X-Device-Id",
+								"value": "{{Device-Id}}"
+							},
+							{
+								"key": "X-Platform",
+								"value": "AND",
+								"type": "text"
+							},
+							{
+								"key": "X-Application",
+								"value": "CUS",
+								"type": "text"
+							},
+							{
+								"key": "X-Version",
+								"value": "<string>",
+								"type": "text"
+							},
+							{
+								"key": "X-Model",
+								"value": "<string>",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identifier\": \"{{identifier}}\",\n    \"positions\": {{Password}}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tunki-identity/identity/sign-in",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tunki-identity",
+								"identity",
+								"sign-in"
+							]
+						},
+						"description": "Servicio para loguear un usuario"
+					},
+					"response": [
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador de un dispositivo",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sign-in",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sign-in"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Conflict (CO_03:Credenciales inválidas)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador de un dispositivo",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sign-in",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sign-in"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador de un dispositivo",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sign-in",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sign-in"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador de un dispositivo",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identifier\": \"<string>\",\n    \"password\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sign-in",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sign-in"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-User-Id",
+									"value": "<string>",
+									"description": "Identificador del usuario"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"accessToken\": \"<string>\",\n \"refreshToken\": \"<string>\",\n \"firebaseToken\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "876d81e9-2bba-4008-a7d9-9a5c0e5e07ab",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8c474608-2b69-4b71-89d9-411221e070bc",
+						"type": "text/javascript",
+						"exec": [
+							"// código obtenido",
+							"let code=responseCode.code;",
+							"//codigo obtenido",
+							"let codeEsperado=pm.environment.get(\"CodigoEsperado\");",
+							"if(codeEsperado!==undefined){",
+							"    if(codeEsperado==201){",
+							"        if(codeEsperado==code){",
+							"            pm.test(\"status code es = \" +code, function(){return code;});",
+							"            ",
+							"            pm.test(\"El reponse header contiene el user Id\",function(){",
+							"                let workerData=JSON.parse(responseBody);",
+							"             pm.response.to.have.header(\"X-User-Id\");",
+							"             pm.response.to.have.header(\"Content-Type\");",
+							"            });",
+							"           ",
+							"             pm.test(\"El response body contiene accessToken,refreshToken y firebaseToken\", function () {",
+							"             // assert that the response has a valid JSON body",
+							"             pm.response.to.be.withBody;",
+							"             pm.response.to.be.json;",
+							"            pm.response.to.have.jsonBody(\"accessToken\");",
+							"            pm.response.to.have.jsonBody(\"refreshToken\");",
+							"             pm.response.to.have.jsonBody(\"firebaseToken\");",
+							"          ",
+							"        }); ",
+							"        // guardar datos en postman.",
+							"        let data=JSON.parse(responseBody);",
+							"       let userId=postman.getResponseHeader(\"X-User-Id\");",
+							"        pm.environment.set(\"accessToken\",data.accessToken);",
+							"        pm.environment.set(\"refreshToken\",data.refreshToken);",
+							"        pm.environment.set(\"firebaseToken\",data.firebaseToken);",
+							"        pm.environment.set(\"userId\",userId);",
+							"        }",
+							"        else{",
+							"                 pm.test(\"El código esperado es: \"+codeEsperado,function(){",
+							"      return pm.expect(responseCode.code).to.equal(codeEsperado);  ",
+							"    ",
+							"    }); ",
+							"        }",
+							"     }",
+							"    else if(codeEsperado==400){",
+							"        if(codeEsperado==code){",
+							"     pm.test(\"status code es = \" +code, function(){return code;});",
+							"    ",
+							"    let errors=JSON.parse(responseBody);",
+							"    let codigo=errors.code;",
+							"        if(codigo==='GEN_ALL_01'){",
+							"    pm.test(\"El response body contiene code y message del error\", function () {",
+							"     // assert that the response has a valid JSON body",
+							"     pm.response.to.have.header(\"Content-Type\");",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"     pm.response.to.have.jsonBody(\"code\");",
+							"     pm.response.to.have.jsonBody(\"message\");",
+							"});",
+							"",
+							" tests[errors.code+\":\"+errors.message]=\" \";",
+							" ",
+							"     }",
+							"     else{",
+							"       ",
+							"       pm.test(\"El response body contiene entity, code, message y el array del error\", function () {",
+							"     // assert that the response has a valid JSON body",
+							"     pm.response.to.have.header(\"Content-Type\");",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"     pm.response.to.have.jsonBody(\"entity\");",
+							"    pm.response.to.have.jsonBody(\"code\");",
+							"    pm.response.to.have.jsonBody(\"message\");",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"    pm.response.to.have.jsonBody(\"errors[0].field\");",
+							"    pm.response.to.have.jsonBody(\"errors[0].message\");",
+							"",
+							"          ",
+							"        });",
+							"        ",
+							"         tests[errors.message+\"\\n\"+errors.errors[0].field+\":\"+errors.errors[0].message]=\" \";",
+							"          ",
+							"     }",
+							"",
+							"     ",
+							"    }",
+							"         else{",
+							"                 pm.test(\"El código esperado es: \"+codeEsperado,function(){",
+							"      return pm.expect(responseCode.code).to.equal(codeEsperado); }); ",
+							"    }",
+							"    ",
+							"}",
+							"else if(codeEsperado==422){",
+							"    if(codeEsperado==code){",
+							"        pm.test(\"status code es = \" +code, function(){return code;});",
+							"    ",
+							"     pm.test(\"El response body contiene code y message del error\", function () {",
+							"     // assert that the response has a valid JSON body",
+							"     pm.response.to.have.header(\"Content-Type\");",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"     pm.response.to.have.jsonBody(\"code\");",
+							"     pm.response.to.have.jsonBody(\"message\");",
+							"});",
+							"   ",
+							"    let errors=JSON.parse(responseBody);",
+							" tests[errors.code+\":\"+errors.message]=\" \";",
+							"} ",
+							"else{",
+							"     pm.test(\"El código esperado es: \"+codeEsperado,function(){",
+							"      return pm.expect(responseCode.code).to.equal(codeEsperado); }); ",
+							"}",
+							"    ",
+							"}",
+							"else if(codeEsperado==500){",
+							"    if(codeEsperado==code){",
+							"          pm.test(\"status code es = \" +code, function(){return code;});",
+							"    }",
+							"    ",
+							"else{",
+							"    pm.test(\"El código esperado es: \"+codeEsperado,function(){",
+							"      return pm.expect(responseCode.code).to.equal(codeEsperado); });",
+							"}",
+							"    ",
+							"}",
+							"}",
+							"// cuando el codigo esperado no se pudo obtener del excel",
+							"else{",
+							"      pm.test(\"no se pudo obtener el código esperado, tiene que ejecutar el runner\",function(){",
+							"      return pm.expect(\"undefined\").to.equal(\" \");  ",
+							"    ",
+							"    });",
+							"",
+							"}",
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f78a541f-48a0-4467-bd95-8c9a338c4d75",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2a72c32c-11a4-41bb-81cd-e7ff49edb31a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "7bebd421-9967-43c8-8368-83ecce5b6b9a",
+			"key": "baseUrl",
+			"value": "https://api-tunki.sensedia.com/dev",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,554 @@
+{
+	"info": {
+		"_postman_id": "16c6d2dc-9335-4d22-94c9-26ad956b68bf",
+		"name": "Segunda Validacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Segunda verificación de Pin del usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4ad1326-bb92-4b53-92d5-cfa30a9c7433",
+						"exec": [
+							"let codRespuesta=responseCode.code;\r",
+							"\r",
+							"let codEsperado=data.codigo;\r",
+							"let codBodyEsp=data.codbody;\r",
+							"// validar codRespuesta no sea null\r",
+							"if(codRespuesta!==null)\r",
+							"{\r",
+							"   if(codEsperado==codRespuesta)\r",
+							"    {\r",
+							"        pm.test(\"status code es = \" +codRespuesta, function(){return codRespuesta;});\r",
+							"       // mostrar valor\r",
+							"       if (codBodyEsp!==\"\")\r",
+							"       {\r",
+							"           let datosResponseBody=JSON.parse(responseBody);\r",
+							"           tests[\"Codigo de error es \"+codBodyEsp]=datosResponseBody.code === codBodyEsp;\r",
+							"       }\r",
+							"     }\r",
+							"    else\r",
+							"    {\r",
+							"    //        pm.test(\"status code es = \" +coderesponse, function(){return coderesponse;});\r",
+							"    //\r",
+							"    pm.test(\"Status code is \"+codEsperado, function () {\r",
+							"    pm.response.to.have.status(codEsperado);\r",
+							"    });}\r",
+							"  }\r",
+							"else\r",
+							"{\r",
+							"    console.log(\"No se encontro codigo esperado en el archivo de data\");\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ada9f7e7-cdd8-47f5-bfec-70175ffde453",
+						"exec": [
+							"let codBodyEsp=data.codbody;\r",
+							"//let deviceId=data.deviceId;\r",
+							"let deviceId=pm.environment.get(\"DeviceId\");\r",
+							"let rtoken=data.rtoken;\r",
+							"let rpw=data.rpw;\r",
+							"let url=pm.variables.get(\"baseUrl\");\r",
+							"if(rtoken===\"\")\r",
+							"{\r",
+							"    pm.sendRequest( \r",
+							"    {\r",
+							"    url: url+'/identity/random-keyboard', method: 'GET',\r",
+							"    mode: 'application/json',\r",
+							"    header: \r",
+							"    {'X-Device-Id': deviceId+''\r",
+							"    },\r",
+							"    body: {\r",
+							"    mode: 'raw',\r",
+							"    }\r",
+							"    }, function (err, response)\r",
+							"     {\r",
+							"            pm.environment.set(\"keyboard\", response.json().keyboard);\r",
+							"    \r",
+							"    let resultTeclado=response.json().keyboard;\r",
+							"    let pass=pm.environment.get(\"pass\");\r",
+							"    let passFinal=\"[\";\r",
+							"    for(let p=0;p<pass.length;p++)\r",
+							"    {\r",
+							"       passPos=pass.substring(p,p+1);\r",
+							"       for (let i = 0; i < resultTeclado.length; i++)\r",
+							"       {\r",
+							"           if(resultTeclado[i]==passPos)\r",
+							"           {\r",
+							"            passFinal=passFinal+i;\r",
+							"                if(p==5)\r",
+							"                {\r",
+							"                  passFinal=passFinal+\"]\";\r",
+							"                }\r",
+							"                else\r",
+							"                {\r",
+							"                    passFinal=passFinal+\",\";\r",
+							"                }\r",
+							"           }\r",
+							"       }\r",
+							"    }\r",
+							"    if(rpw===\"\")\r",
+							"    {\r",
+							"        pm.environment.set(\"Password\",passFinal);\r",
+							"    }\r",
+							"    else\r",
+							"    {\r",
+							"        pm.environment.set(\"Password\",data.positions);\r",
+							"    }\r",
+							"    let usidentifir=pm.environment.get(\"identifier\");\r",
+							" pm.sendRequest( \r",
+							"    {\r",
+							"    url: url+'/identity/sign-in', method: 'POST',\r",
+							"    mode: 'application/json',\r",
+							"    header: \r",
+							"    {'X-Device-Id': deviceId+'',\r",
+							"\t'X-Platform': 'AND',\r",
+							"\t'X-Application': 'CUS',\r",
+							"\t'X-Version': '1.0',\r",
+							"\t'X-Model': 'abcd',\r",
+							"\t'Content-Type': 'application/json',\r",
+							"    },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({'identifier': usidentifir,\r",
+							"        'positions': JSON.parse(passFinal) })\r",
+							"    }\r",
+							"    }, function (err, response)\r",
+							"     {\r",
+							"        pm.environment.set(\"accessToken\", response.json().accessToken);\r",
+							" //   let resultLogin=response.json().accessToken;\r",
+							"   // pm.environment.set(\"accessToken\",accessToken);\r",
+							"   \r",
+							"  \r",
+							"    });\r",
+							" });\r",
+							"\r",
+							"}\r",
+							"else\r",
+							"{\r",
+							"    if(rpw!==\"\")\r",
+							"    {\r",
+							"         pm.sendRequest( \r",
+							"        {\r",
+							"        url: url+'/identity/random-keyboard', method: 'GET',\r",
+							"        mode: 'application/json',\r",
+							"        header: \r",
+							"        {'X-Device-Id': deviceId+''\r",
+							"        },\r",
+							"        body: {\r",
+							"        mode: 'raw',\r",
+							"        }\r",
+							"        }, function (err, response)\r",
+							"         {\r",
+							"                pm.environment.set(\"keyboard\", response.json().keyboard);\r",
+							"        \r",
+							"        let resultTeclado=response.json().keyboard;\r",
+							"        let pass=pm.environment.get(\"pass\");\r",
+							"        let passFinal=\"[\";\r",
+							"        for(let p=0;p<pass.length;p++)\r",
+							"        {\r",
+							"           passPos=pass.substring(p,p+1);\r",
+							"           for (let i = 0; i < resultTeclado.length; i++)\r",
+							"           {\r",
+							"               if(resultTeclado[i]==passPos)\r",
+							"               {\r",
+							"                passFinal=passFinal+i;\r",
+							"                    if(p==5)\r",
+							"                    {\r",
+							"                      passFinal=passFinal+\"]\";\r",
+							"                    }\r",
+							"                    else\r",
+							"                    {\r",
+							"                        passFinal=passFinal+\",\";\r",
+							"                    }\r",
+							"               }\r",
+							"           }\r",
+							"        }\r",
+							"        //pm.environment.set(\"Password\",passFinal);\r",
+							"        pm.environment.set(\"Password\",data.positions);\r",
+							"        \r",
+							"        });\r",
+							"    }    \r",
+							"    else\r",
+							"    {\r",
+							"     pm.environment.set(\"accessToken\", data.authorization);\r",
+							"    }\r",
+							"    \r",
+							"     \r",
+							"}\r",
+							"    \r",
+							"    \r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Device-Id",
+						"value": "{{deviceId}}",
+						"description": "Identificador del dispositivo que consume el servicio"
+					},
+					{
+						"key": "X-Platform",
+						"value": "{{platform}}",
+						"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+					},
+					{
+						"key": "X-Application",
+						"value": "{{application}}",
+						"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"description": "Token de acceso del dispositivo que consume el servicio"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"positions\": {{Password}}\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/identity/second-verification",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"identity",
+						"second-verification"
+					]
+				},
+				"description": "Servicio para verificar pin de  un usuario"
+			},
+			"response": [
+				{
+					"name": "No Content",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": {
+									"content": "Identificador del dispositivo que consume el servicio",
+									"type": "text/plain"
+								},
+								"key": "X-Device-Id",
+								"value": "<string>"
+							},
+							{
+								"description": {
+									"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )",
+									"type": "text/plain"
+								},
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>"
+							},
+							{
+								"description": {
+									"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+									"type": "text/plain"
+								},
+								"key": "X-Application",
+								"value": "<CUS|COM>"
+							},
+							{
+								"description": {
+									"content": "Token de acceso del dispositivo que consume el servicio",
+									"type": "text/plain"
+								},
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"positions\": [\n        \"<integer>\",\n        \"<integer>\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identity/second-verification",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity",
+								"second-verification"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unprocessable Entity / USE_LOG_01:¡Oops! Tenemos un problema - Verifica tus credenciales. Alguna de ellos o ambas son incorrectas. / USE_LOG_02:¡Oh no! Superaste el límite de intentos válidos. - Para ingresar a Tunki, debes recuperar tu clave. / USE_LOG_03:¡Lo sentimos! - Por seguridad, podrás entrar a Tunki en las próximas 24 horas.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": {
+									"content": "Identificador del dispositivo que consume el servicio",
+									"type": "text/plain"
+								},
+								"key": "X-Device-Id",
+								"value": "<string>"
+							},
+							{
+								"description": {
+									"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )",
+									"type": "text/plain"
+								},
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>"
+							},
+							{
+								"description": {
+									"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+									"type": "text/plain"
+								},
+								"key": "X-Application",
+								"value": "<CUS|COM>"
+							},
+							{
+								"description": {
+									"content": "Token de acceso del dispositivo que consume el servicio",
+									"type": "text/plain"
+								},
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"positions\": [\n        \"<integer>\",\n        \"<integer>\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identity/second-verification",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity",
+								"second-verification"
+							]
+						}
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"title\": \"<string>\",\n \"message\": \"<string>\"\n}"
+				},
+				{
+					"name": "Bad Request / GEN_ALL_01:Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": {
+									"content": "Identificador del dispositivo que consume el servicio",
+									"type": "text/plain"
+								},
+								"key": "X-Device-Id",
+								"value": "<string>"
+							},
+							{
+								"description": {
+									"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )",
+									"type": "text/plain"
+								},
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>"
+							},
+							{
+								"description": {
+									"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+									"type": "text/plain"
+								},
+								"key": "X-Application",
+								"value": "<CUS|COM>"
+							},
+							{
+								"description": {
+									"content": "Token de acceso del dispositivo que consume el servicio",
+									"type": "text/plain"
+								},
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"positions\": [\n        \"<integer>\",\n        \"<integer>\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identity/second-verification",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity",
+								"second-verification"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+				},
+				{
+					"name": "Internal Server Error / GEN_ALL_02:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": {
+									"content": "Identificador del dispositivo que consume el servicio",
+									"type": "text/plain"
+								},
+								"key": "X-Device-Id",
+								"value": "<string>"
+							},
+							{
+								"description": {
+									"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )",
+									"type": "text/plain"
+								},
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>"
+							},
+							{
+								"description": {
+									"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+									"type": "text/plain"
+								},
+								"key": "X-Application",
+								"value": "<CUS|COM>"
+							},
+							{
+								"description": {
+									"content": "Token de acceso del dispositivo que consume el servicio",
+									"type": "text/plain"
+								},
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"positions\": [\n        \"<integer>\",\n        \"<integer>\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identity/second-verification",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity",
+								"second-verification"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fd8b9cad-53a0-4c7a-89cb-5faf9ec23ba8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a98cee12-d750-4f24-a094-da0d95565bd2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c5a1b280-0155-48ad-9ba7-462106d128a6",
+			"key": "baseUrl",
+			"value": "http://qa.tunkiapi.com.pe",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

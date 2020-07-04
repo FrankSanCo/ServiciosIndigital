@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "52b93bcd-5387-4956-9ce4-ac8e203dfe30",
+		"name": "ListaCobroGrupal",
+		"description": "Tunki Ux Microservice for P2P\n\nContact Support:\n Name: Tunki User Team\n Email: developers@indigital.pe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "p2p",
+			"item": [
+				{
+					"name": "split-a-bill",
+					"item": [
+						{
+							"name": "Listado de boletas divididas Copy",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d0faca09-749e-4690-bc5f-3c7ff07da85d",
+										"exec": [
+											"let codBodyEsp = data.codbody;\r",
+											"let deviceId = pm.environment.get(\"DeviceId\");\r",
+											"let rtoken = data.rtoken;\r",
+											"let rpw = data.rpw;\r",
+											"let url = pm.variables.get(\"baseUrl\");\r",
+											"let userActual = pm.environment.get(\"Usuario\");\r",
+											"let passActual = pm.environment.get(\"passActual\");\r",
+											"//let userActual=data.userExcel+'';\r",
+											"//let passActual=data.passExcel+'';\r",
+											"\r",
+											"\r",
+											"//if(rtoken===\"\")\r",
+											"//{\r",
+											"pm.sendRequest(\r",
+											"    {\r",
+											"        url: url + '/agora-identity/identity/random-keyboard', method: 'GET',\r",
+											"        mode: 'application/json',\r",
+											"        header:\r",
+											"        {\r",
+											"            'X-Device-Id': deviceId + ''\r",
+											"        },\r",
+											"        body: {\r",
+											"            mode: 'raw',\r",
+											"        }\r",
+											"    }, function (err, response) {\r",
+											"    pm.environment.set(\"keyboard\", response.json().keyboard);\r",
+											"\r",
+											"    let resultTeclado = response.json().keyboard;\r",
+											"    let pass = passActual;\r",
+											"    let passFinal = \"[\";\r",
+											"    for (let p = 0; p < pass.length; p++) {\r",
+											"        passPos = pass.substring(p, p + 1);\r",
+											"        for (let i = 0; i < resultTeclado.length; i++) {\r",
+											"            if (resultTeclado[i] == passPos) {\r",
+											"                passFinal = passFinal + i;\r",
+											"                if (p == 5) {\r",
+											"                    passFinal = passFinal + \"]\";\r",
+											"                }\r",
+											"                else {\r",
+											"                    passFinal = passFinal + \",\";\r",
+											"                }\r",
+											"            }\r",
+											"        }\r",
+											"    }\r",
+											"    if (rpw === \"\") {\r",
+											"        pm.environment.set(\"Password\", passFinal);\r",
+											"    }\r",
+											"    else {\r",
+											"        pm.environment.set(\"Password\", data.rpw);\r",
+											"    }\r",
+											"    let usidentifir = userActual;\r",
+											"    pm.sendRequest(\r",
+											"        {\r",
+											"            url: url + '/agora-identity/identity/sign-in', method: 'POST',\r",
+											"            mode: 'application/json',\r",
+											"            header:\r",
+											"            {\r",
+											"                'X-Device-Id': deviceId + '',\r",
+											"                'X-Platform': 'AND',\r",
+											"                'X-Application': 'CUS',\r",
+											"                'X-Version': '1.0',\r",
+											"                'X-Model': 'abcd',\r",
+											"                'Authorization': 'Basic Nzc4MDIxNmEtM2NjYi0zOGU2LWE0NTctYWNlOTA1MmYwZmQ4OmRlOTQxYWJiLWNiNjMtMzljMC1iNmVhLWZhNDFiZmRkZjJiYw==',\r",
+											"                'Content-Type': 'application/json',\r",
+											"            },\r",
+											"            body: {\r",
+											"                mode: 'raw',\r",
+											"                raw: JSON.stringify({\r",
+											"                    'identifier': usidentifir,\r",
+											"                    'positions': JSON.parse(passFinal)\r",
+											"                })\r",
+											"            }\r",
+											"        }, function (err, response) {\r",
+											"        pm.environment.set(\"accessToken\", response.json().access_token);\r",
+											"\r",
+											"    });\r",
+											"});\r",
+											"\r",
+											"//}\r",
+											"/*else\r",
+											"{\r",
+											"    pm.environment.set(\"accessToken\", data.authorization);\r",
+											"}*/"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "{{DeviceId}}",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "AND",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "CUS",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "7780216a-3ccb-38e6-a457-ace9052f0fd8",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/agora-user/p2p/split-a-bill",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"agora-user",
+										"p2p",
+										"split-a-bill"
+									]
+								},
+								"description": "Servicio para listar el cobro de una boleta grupal"
+							},
+							"response": [
+								{
+									"name": "Unauthorized / GEN_ALL_03:Token expirado.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/p2p/split-a-bill",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"p2p",
+												"split-a-bill"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_03\",\n \"message\": \"Token expirado.\"\n}"
+								},
+								{
+									"name": "Listado de las boletas divididas creadas",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/p2p/split-a-bill",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"p2p",
+												"split-a-bill"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n {\n  \"id\": \"79e80698-8811-4128-9f7a-5c7ab9bb5a6a\",\n  \"detail\": \"Almuerzo 7 Sopas\",\n  \"amount\": {\n   \"perContact\": \"S/ 50.00\",\n   \"total\": \"S/ 150.00\",\n   \"debt\": \"S/ 100.00\"\n  },\n  \"contactsDebt\": [\n   {\n    \"namme\": \"Anakyn Skywalker\",\n    \"amount\": \"S/ 50.00\"\n   },\n   {\n    \"namme\": \"Anakyn Skywalker\",\n    \"amount\": \"S/ 50.00\"\n   }\n  ]\n },\n {\n  \"id\": \"79e80698-8811-4128-9f7a-5c7ab9bb5a6a\",\n  \"detail\": \"Almuerzo 7 Sopas\",\n  \"amount\": {\n   \"perContact\": \"S/ 50.00\",\n   \"total\": \"S/ 150.00\",\n   \"debt\": \"S/ 100.00\"\n  },\n  \"contactsDebt\": [\n   {\n    \"namme\": \"Anakyn Skywalker\",\n    \"amount\": \"S/ 50.00\"\n   },\n   {\n    \"namme\": \"Anakyn Skywalker\",\n    \"amount\": \"S/ 50.00\"\n   }\n  ]\n }\n]"
+								},
+								{
+									"name": "Forbidden / GEN_ALL_04:Token inválido.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/p2p/split-a-bill",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"p2p",
+												"split-a-bill"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_04\",\n \"message\": \"Token inválido.\"\n}"
+								},
+								{
+									"name": "Internal Server Error / GEN_ALL_02:Error interno del servidor.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/p2p/split-a-bill",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"p2p",
+												"split-a-bill"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_02\",\n \"message\": \"Error de servidor interno.\"\n}"
+								},
+								{
+									"name": "Bad Request / GEN_ALL_01:Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/p2p/split-a-bill",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"p2p",
+												"split-a-bill"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_01\",\n \"message\": \"Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.\",\n \"errors\": [\n  {\n   \"field\": \"field one\",\n   \"message\": \"message one\"\n  },\n  {\n   \"field\": \"field two\",\n   \"message\": \"message two\"\n  }\n ]\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d65ac614-5dbe-44c2-80f3-8aaf9bef19c3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b08132db-e236-43fd-b283-3ba9c262f372",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "466e2a58-067f-4c4d-86e8-1cf9c056edf1",
+			"key": "baseUrl",
+			"value": "https://api.indigital.com.pe/qa"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

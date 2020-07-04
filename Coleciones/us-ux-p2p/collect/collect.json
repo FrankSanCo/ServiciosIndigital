@@ -1,0 +1,653 @@
+{
+	"info": {
+		"_postman_id": "db6270d0-7683-40de-9de6-1f14a940b4c0",
+		"name": "us-ux-p2p-collect",
+		"description": "Tunki Ux Microservice for P2P\n\nContact Support:\n Name: Tunki User Team\n Email: developers@indigital.pe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "p2p",
+			"item": [
+				{
+					"name": "collect",
+					"item": [
+						{
+							"name": "Cobro P2P de usuario",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3c6a2df1-8a1e-4ca2-917f-d64dbdde09f5",
+										"exec": [
+											"let codBodyEsp=data.codbody;\r",
+											"//let deviceId=data.deviceId;\r",
+											"let deviceId=pm.environment.get(\"DeviceId\");\r",
+											"let rtoken=data.rtoken;\r",
+											"let rpw=data.rpw;\r",
+											"let url=pm.variables.get(\"baseUrl\");\r",
+											"if(rtoken===\"\")\r",
+											"{\r",
+											"    pm.sendRequest( \r",
+											"    {\r",
+											"    url: url+'/identity/random-keyboard', method: 'GET',\r",
+											"    mode: 'application/json',\r",
+											"    header: \r",
+											"    {'X-Device-Id': deviceId+''\r",
+											"    },\r",
+											"    body: {\r",
+											"    mode: 'raw',\r",
+											"    }\r",
+											"    }, function (err, response)\r",
+											"     {\r",
+											"            pm.environment.set(\"keyboard\", response.json().keyboard);\r",
+											"    \r",
+											"    let resultTeclado=response.json().keyboard;\r",
+											"    let pass=pm.environment.get(\"pass\");\r",
+											"    let passFinal=\"[\";\r",
+											"    for(let p=0;p<pass.length;p++)\r",
+											"    {\r",
+											"       passPos=pass.substring(p,p+1);\r",
+											"       for (let i = 0; i < resultTeclado.length; i++)\r",
+											"       {\r",
+											"           if(resultTeclado[i]==passPos)\r",
+											"           {\r",
+											"            passFinal=passFinal+i;\r",
+											"                if(p==5)\r",
+											"                {\r",
+											"                  passFinal=passFinal+\"]\";\r",
+											"                }\r",
+											"                else\r",
+											"                {\r",
+											"                    passFinal=passFinal+\",\";\r",
+											"                }\r",
+											"           }\r",
+											"       }\r",
+											"    }\r",
+											"    if(rpw===\"\")\r",
+											"    {\r",
+											"        pm.environment.set(\"Password\",passFinal);\r",
+											"    }\r",
+											"    else\r",
+											"    {\r",
+											"        pm.environment.set(\"Password\",data.rpw);\r",
+											"    }\r",
+											"    let usidentifir=pm.environment.get(\"identifier\");\r",
+											" pm.sendRequest( \r",
+											"    {\r",
+											"    url: url+'/identity/sign-in', method: 'POST',\r",
+											"    mode: 'application/json',\r",
+											"    header: \r",
+											"    {'X-Device-Id': deviceId+'',\r",
+											"\t'X-Platform': 'AND',\r",
+											"\t'X-Application': 'CUS',\r",
+											"\t'X-Version': '1.0',\r",
+											"\t'X-Model': 'abcd',\r",
+											"\t'Content-Type': 'application/json',\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({'identifier': usidentifir,\r",
+											"        'positions': JSON.parse(passFinal) })\r",
+											"    }\r",
+											"    }, function (err, response)\r",
+											"     {\r",
+											"        pm.environment.set(\"accessToken\", response.json().accessToken);\r",
+											" //   let resultLogin=response.json().accessToken;\r",
+											"   // pm.environment.set(\"accessToken\",accessToken);\r",
+											"  \r",
+											"    });\r",
+											" });\r",
+											"\r",
+											"}\r",
+											"else\r",
+											"{\r",
+											"    pm.environment.set(\"accessToken\", data.authorization);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "9a7e504b-d145-41c9-a785-d7f00f778505",
+										"exec": [
+											"let codRespuesta=responseCode.code;\r",
+											"\r",
+											"let codEsperado=data.codigo;\r",
+											"let codBodyEsp=data.codbody;\r",
+											"// validar codRespuesta no sea null\r",
+											"if(codRespuesta!==null)\r",
+											"{\r",
+											"   if(codEsperado==codRespuesta)\r",
+											"    {\r",
+											"        pm.test(\"status code es = \" +codRespuesta, function(){return codRespuesta;});\r",
+											"       // mostrar valor\r",
+											"       if (codBodyEsp!==\"\")\r",
+											"       {\r",
+											"           let datosResponseBody=JSON.parse(responseBody);\r",
+											"           tests[\"Codigo de error es \"+codBodyEsp]=datosResponseBody.code === codBodyEsp;\r",
+											"       }\r",
+											"     }\r",
+											"    else\r",
+											"    {\r",
+											"    //        pm.test(\"status code es = \" +coderesponse, function(){return coderesponse;});\r",
+											"    //\r",
+											"    pm.test(\"Status code is \"+codEsperado, function () {\r",
+											"    pm.response.to.have.status(codEsperado);\r",
+											"    });}\r",
+											"  }\r",
+											"else\r",
+											"{\r",
+											"    console.log(\"No se encontro codigo esperado en el archivo de data\");\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "{{deviceId}}",
+										"description": "Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "{{platform}}",
+										"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "{{application}}",
+										"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{accessToken}}",
+										"description": "Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identifierDestination\": \"{{identifierDestination}}\",\n    \"amount\": {{amount}},\n    \"detail\": \"{{detail}}\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/p2p/collect",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"p2p",
+										"collect"
+									]
+								},
+								"description": "Servicio para cobro P2P"
+							},
+							"response": [
+								{
+									"name": "Bad Request / GEN_ALL_01:Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Identificador del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "X-Device-Id",
+												"value": "<string>"
+											},
+											{
+												"description": {
+													"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )",
+													"type": "text/plain"
+												},
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>"
+											},
+											{
+												"description": {
+													"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+													"type": "text/plain"
+												},
+												"key": "X-Application",
+												"value": "<CUS|COM>"
+											},
+											{
+												"description": {
+													"content": "Token de acceso del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifierDestination\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"detail\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/p2p/collect",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"p2p",
+												"collect"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Forbidden / GEN_ALL_04:Token inválido.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Identificador del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "X-Device-Id",
+												"value": "<string>"
+											},
+											{
+												"description": {
+													"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )",
+													"type": "text/plain"
+												},
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>"
+											},
+											{
+												"description": {
+													"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+													"type": "text/plain"
+												},
+												"key": "X-Application",
+												"value": "<CUS|COM>"
+											},
+											{
+												"description": {
+													"content": "Token de acceso del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifierDestination\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"detail\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/p2p/collect",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"p2p",
+												"collect"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Unauthorized / GEN_ALL_03:Token expirado.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Identificador del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "X-Device-Id",
+												"value": "<string>"
+											},
+											{
+												"description": {
+													"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )",
+													"type": "text/plain"
+												},
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>"
+											},
+											{
+												"description": {
+													"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+													"type": "text/plain"
+												},
+												"key": "X-Application",
+												"value": "<CUS|COM>"
+											},
+											{
+												"description": {
+													"content": "Token de acceso del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifierDestination\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"detail\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/p2p/collect",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"p2p",
+												"collect"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Created / La solicitud ha tenido éxito, se ha creado un operación P2P como resultado.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Identificador del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "X-Device-Id",
+												"value": "<string>"
+											},
+											{
+												"description": {
+													"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )",
+													"type": "text/plain"
+												},
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>"
+											},
+											{
+												"description": {
+													"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+													"type": "text/plain"
+												},
+												"key": "X-Application",
+												"value": "<CUS|COM>"
+											},
+											{
+												"description": {
+													"content": "Token de acceso del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifierDestination\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"detail\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/p2p/collect",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"p2p",
+												"collect"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"collect\": {\n  \"collectId\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"detail\": \"<string>\",\n  \"date\": \"<number>\",\n  \"status\": \"<string>\"\n }\n}"
+								},
+								{
+									"name": "Internal Server Error / GEN_ALL_02:Error interno del servidor.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Identificador del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "X-Device-Id",
+												"value": "<string>"
+											},
+											{
+												"description": {
+													"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )",
+													"type": "text/plain"
+												},
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>"
+											},
+											{
+												"description": {
+													"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+													"type": "text/plain"
+												},
+												"key": "X-Application",
+												"value": "<CUS|COM>"
+											},
+											{
+												"description": {
+													"content": "Token de acceso del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifierDestination\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"detail\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/p2p/collect",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"p2p",
+												"collect"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Unprocessable Entity / USE_P2P_02:¡Oh no! Cobro inválido - El monto no es válido para cobrar con Tunki. Vuelve a intentarlo.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Identificador del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "X-Device-Id",
+												"value": "<string>"
+											},
+											{
+												"description": {
+													"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )",
+													"type": "text/plain"
+												},
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>"
+											},
+											{
+												"description": {
+													"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+													"type": "text/plain"
+												},
+												"key": "X-Application",
+												"value": "<CUS|COM>"
+											},
+											{
+												"description": {
+													"content": "Token de acceso del dispositivo que consume el servicio",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"identifierDestination\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"detail\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/p2p/collect",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"p2p",
+												"collect"
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"<string>\",\n \"title\": \"<string>\",\n \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "73fb9ce6-da30-49af-99cc-1772285d5567",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0e4b6b14-c4d4-4191-b159-ee12c3eb57a3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "ecdbb2b3-2b14-4a02-8ad5-b402a546b708",
+			"key": "baseUrl",
+			"value": "http://qa.tunkiapi.com.pe",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

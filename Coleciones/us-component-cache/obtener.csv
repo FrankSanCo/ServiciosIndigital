@@ -1,0 +1,12 @@
+,Descripción,entity,scope,key,codigo
+1,Obtener cache para cliente existente datos exitoso - resultado 200,US_ComponetE,RegisterR,key2,200
+2,Obtener cache para cliente existente con Entity existente - resultado 200,US_CustomerF,obtener,key1,200
+3,Obtener cache para cliente existente con Entity letras- resultado 200,TRYHH,obtener,key1,200
+4,Obtener cache para cliente existente con Entity en blanco - resultado 404,,obtener,key1,404
+5,Obtener cache para cliente existente con Scope existente - resultado 200,US_CustomerG,obtener,key1,200
+6,Obtener cache para cliente existente con Scope numérico - resultado 200,US_CustomerG,426346,key1,200
+7,Obtener cache para cliente exisntete con Scope en blanco - resultado 404,US_CustomerG,,key1,404
+8,Obtener cache para cliente existente con Key existente - resultado 200,US_CustomerH,obtener,key1,200
+9,Obtener cache para cliente existente con Key caracteres extraños - resultado 400,US_CustomerH,obtener,"fer""$%",400
+10,Obtener cache para cliente existente con Key en blanco - resultado 404,US_CustomerH,obtener,,404
+11,Obtener cache para cliente creado en actualizar - resultado 200,US_actualiza,actualiza,key3,200

@@ -1,0 +1,511 @@
+{
+	"info": {
+		"_postman_id": "ed63f19a-8f32-4948-a4af-5fdc51461d90",
+		"name": "Validar Codigo OTP",
+		"description": "Tunki Ux Microservice for Customer Register\n\nContact Support:\n Name: Tunki User Team\n Email: developers@indigital.pe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "validate-code",
+			"item": [
+				{
+					"name": "Validar código generado por el celular del cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e12d296-21b7-42f5-8699-d7636f61d3e5",
+								"exec": [
+									"let codRespuesta=responseCode.code;\r",
+									"let datosResponseBody=JSON.parse(responseBody);\r",
+									"let codEsperado=data.codigo;\r",
+									"let codBodyEsp=data.codbody;\r",
+									"// validar codRespuesta no sea null\r",
+									"if(codRespuesta!==null)\r",
+									"{\r",
+									"   if(codEsperado==codRespuesta)\r",
+									"    {\r",
+									"        pm.test(\"status code es = \" +codRespuesta, function(){return codRespuesta;});\r",
+									"       // mostrar valor\r",
+									"       /*if (codBodyEsp!==\"\")\r",
+									"       {\r",
+									"           tests[\"Codigo de error es \"+codBodyEsp]=datosResponseBody.code === codBodyEsp;\r",
+									"       }\r",
+									"       */\r",
+									"     }\r",
+									"    else\r",
+									"    {\r",
+									"    //        pm.test(\"status code es = \" +coderesponse, function(){return coderesponse;});\r",
+									"    //\r",
+									"    pm.test(\"Status code is \"+codEsperado, function () {\r",
+									"    pm.response.to.have.status(codEsperado);\r",
+									"    });}\r",
+									"  }\r",
+									"else\r",
+									"{\r",
+									"    console.log(\"No se encontro codigo esperado en el archivo de data\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Device-Id",
+								"value": "{{x-device-id}}",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "{{x-platform}}",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )"
+							},
+							{
+								"key": "X-Application",
+								"value": "{{x-application}}",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": {{code}}\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer-register/validate-code",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer-register",
+								"validate-code"
+							]
+						},
+						"description": "Servicio para validar código generado por el celular del cliente"
+					},
+					"response": [
+						{
+							"name": "Created / La solicitud ha tenido éxito, se ha creado un token de operación con expiración como resultado.",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"description": {
+											"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )",
+											"type": "text/plain"
+										},
+										"key": "X-Platform",
+										"value": "<AND|IOS>"
+									},
+									{
+										"description": {
+											"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+											"type": "text/plain"
+										},
+										"key": "X-Application",
+										"value": "<CUS|COM>"
+									},
+									{
+										"description": {
+											"content": "Token de acceso del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "Authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"<integer>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-register/validate-code",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-register",
+										"validate-code"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"operationToken\": \"<HS256 algorithm>\"\n}"
+						},
+						{
+							"name": "Unauthorized / GEN_ALL_04:¡Oh no! Lo sentimos - Detectamos inconvenientes para que termines tu proceso. Vuelve a intentarlo en unos momentos.",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"description": {
+											"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )",
+											"type": "text/plain"
+										},
+										"key": "X-Platform",
+										"value": "<AND|IOS>"
+									},
+									{
+										"description": {
+											"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+											"type": "text/plain"
+										},
+										"key": "X-Application",
+										"value": "<CUS|COM>"
+									},
+									{
+										"description": {
+											"content": "Token de acceso del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "Authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"<integer>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-register/validate-code",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-register",
+										"validate-code"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unprocessable Entity / CUS_REG_02:¡Tenemos un problema con tu código! - Solicita tu código nuevamente para validar tu celular. / CUS_REG_03:¡Tenemos un problema con tu código! - El código que ingresaste no coincide con el enviado. Intenta nuevamente.",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"description": {
+											"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )",
+											"type": "text/plain"
+										},
+										"key": "X-Platform",
+										"value": "<AND|IOS>"
+									},
+									{
+										"description": {
+											"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+											"type": "text/plain"
+										},
+										"key": "X-Application",
+										"value": "<CUS|COM>"
+									},
+									{
+										"description": {
+											"content": "Token de acceso del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "Authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"<integer>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-register/validate-code",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-register",
+										"validate-code"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"title\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Bad Request / GEN_ALL_01:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"description": {
+											"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )",
+											"type": "text/plain"
+										},
+										"key": "X-Platform",
+										"value": "<AND|IOS>"
+									},
+									{
+										"description": {
+											"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+											"type": "text/plain"
+										},
+										"key": "X-Application",
+										"value": "<CUS|COM>"
+									},
+									{
+										"description": {
+											"content": "Token de acceso del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "Authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"<integer>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-register/validate-code",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-register",
+										"validate-code"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Internal Server Error / GEN_ALL_02:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"description": {
+											"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )",
+											"type": "text/plain"
+										},
+										"key": "X-Platform",
+										"value": "<AND|IOS>"
+									},
+									{
+										"description": {
+											"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+											"type": "text/plain"
+										},
+										"key": "X-Application",
+										"value": "<CUS|COM>"
+									},
+									{
+										"description": {
+											"content": "Token de acceso del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "Authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"<integer>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-register/validate-code",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-register",
+										"validate-code"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9ff2f8b1-a039-462d-891f-8072c0e76bbb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "808c2253-4c2c-42f4-ab04-1038b660564e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "30e76c26-c3e9-4b16-8743-357d0222bae8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f3c273e5-4359-4aea-ba92-141afe0ebcd3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c8deb32d-55bd-4614-930b-548fbfe95714",
+			"key": "baseUrl",
+			"value": "https://api-tunki.sensedia.com/dev/tunki-user-public",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,75 @@
+{
+	"id": "dc24fbe0-8b0d-4ee4-bbee-58effa277fbc",
+	"name": "LoginData",
+	"values": [
+		{
+			"key": "userId",
+			"value": "7e2a3135-3bb9-4c30-bbee-f35a0958eea7",
+			"enabled": true
+		},
+		{
+			"key": "DeviceId",
+			"value": "PF0NGDtS1sn1qq7cv3UEE4beK8xGYEPlRzViLAAaBn0SQta",
+			"enabled": true
+		},
+		{
+			"key": "refreshToken",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjdlMmEzMTM1LTNiYjktNGMzMC1iYmVlLWYzNWEwOTU4ZWVhNyIsInVuaXF1ZUlkIjoiN2UyYTMxMzUtM2JiOS00YzMwLWJiZWUtZjM1YTA5NThlZWE3IiwidHlwZSI6IlJFRlJFU0giLCJleHBpcmF0aW9uRGF0ZSI6IjIwMTktMTEtMjhUMTY6MzY6MjAuNjAzKzAwMDAiLCJyb2xlQ29kZSI6IkNVU19VU1IiLCJhY3RpdmVTZXNzaW9uIjp0cnVlLCJtdWx0aURldmljZSI6ZmFsc2UsImFwcGxpY2F0aW9uIjoiQ1VTIiwicGxhdGZvcm0iOiJBTkQiLCJkZXZpY2VJZCI6IlBGME5HRHRTMXNuMXFxN2N2M1VFRTRiZUs4eEdZRVBsUnpWaUxBQWFCbjBTUXRhIiwiZXhwIjoxNTc0OTU4OTgwfQ.0EVDrORPWIxgta485eWlTh31lDZ1xI8F9bVloaTQ5lVwzANwLPdY1XtErOK120duiRaZQGHQKRMOoVLUHJae0g",
+			"enabled": true
+		},
+		{
+			"key": "firebaseToken",
+			"value": "eyJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsImNsYWltcyI6eyJpZCI6IjdlMmEzMTM1LTNiYjktNGMzMC1iYmVlLWYzNWEwOTU4ZWVhNyIsInVuaXF1ZUlkIjoiN2UyYTMxMzUtM2JiOS00YzMwLWJiZWUtZjM1YTA5NThlZWE3IiwidHlwZSI6IkZJUkVCQVNFIiwicm9sZUNvZGUiOiJDVVNfVVNSIiwiYWN0aXZlU2Vzc2lvbiI6dHJ1ZSwibXVsdGlEZXZpY2UiOmZhbHNlLCJhcHBsaWNhdGlvbiI6IkNVUyIsInBsYXRmb3JtIjoiQU5EIiwiZGV2aWNlSWQiOiJQRjBOR0R0UzFzbjFxcTdjdjNVRUU0YmVLOHhHWUVQbFJ6VmlMQUFhQm4wU1F0YSJ9LCJleHAiOjE1NzIzNzA1ODAsImlhdCI6MTU3MjM2Njk4MCwiaXNzIjoiZmlyZWJhc2UtYWRtaW5zZGstNTBvNmVAcGUtZ3J1cG8taW50ZXJjb3JwLWNsZC0wMi5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsInN1YiI6ImZpcmViYXNlLWFkbWluc2RrLTUwbzZlQHBlLWdydXBvLWludGVyY29ycC1jbGQtMDIuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJ1aWQiOiI3ZTJhMzEzNS0zYmI5LTRjMzAtYmJlZS1mMzVhMDk1OGVlYTcifQ.STEq5wbbzIxJ7ulMIpQSYHgngvwCfaUJR6-hmJVGSzXWr8xvom-7Ww9s3OBlAXcDJL7jq2uBPx1vpdHy9hJt2TW-YMze-8fbede0wY1AzGCKJx2bUZE36g750xeraI67FHvN7PQ9_Gx-rNVrxWHcp5_ON8gR1Pd-D6hgmVWUEvZAbgqV-tPeyQrU2H-Fu8OuEJ011cDMPesWGhGGKCUkrknZPpjdV8SW3Ac7Cy2EpnqesByh_TCvcq21s52M7lQRjMT-BwI8xsiN6rSw9l8DkW7-iDfkxJvy0CqVMj-1Td0Y-UusGTiGSrqZB_EPggm-fZKWTRWdnEwruM-yHpOEnQ",
+			"enabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjdlMmEzMTM1LTNiYjktNGMzMC1iYmVlLWYzNWEwOTU4ZWVhNyIsInVuaXF1ZUlkIjoiN2UyYTMxMzUtM2JiOS00YzMwLWJiZWUtZjM1YTA5NThlZWE3IiwidHlwZSI6IkFDQ0VTUyIsImV4cGlyYXRpb25EYXRlIjoiMjAxOS0xMC0yOVQxNjozODoyMC41OTkrMDAwMCIsInJvbGVDb2RlIjoiQ1VTX1VTUiIsImFjdGl2ZVNlc3Npb24iOnRydWUsIm11bHRpRGV2aWNlIjpmYWxzZSwiYXBwbGljYXRpb24iOiJDVVMiLCJwbGF0Zm9ybSI6IkFORCIsImRldmljZUlkIjoiUEYwTkdEdFMxc24xcXE3Y3YzVUVFNGJlSzh4R1lFUGxSelZpTEFBYUJuMFNRdGEiLCJleHAiOjE1NzIzNjcxMDB9.uPA87y27om3EcPBY1O0WgjU9k3Mn_W1tdAd7bted6tHx1bb7Y-XjQ4kJTvQLA4VFXP9qYdbNfC5kgP_epFpP3Q",
+			"enabled": true
+		},
+		{
+			"key": "CodigoEsperado",
+			"value": 201,
+			"enabled": true
+		},
+		{
+			"key": "sleep-interval",
+			"value": "0",
+			"enabled": true
+		},
+		{
+			"key": "identifier",
+			"value": "931094690",
+			"enabled": true
+		},
+		{
+			"key": "pass",
+			"value": "999999",
+			"enabled": true
+		},
+		{
+			"key": "Password",
+			"value": "[1,1,1,1,1,1]",
+			"enabled": true
+		},
+		{
+			"key": "keyboard",
+			"value": [
+				3,
+				9,
+				7,
+				5,
+				8,
+				0,
+				1,
+				2,
+				6,
+				4
+			],
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-10-29T17:01:45.767Z",
+	"_postman_exported_using": "Postman/7.10.0"
+}

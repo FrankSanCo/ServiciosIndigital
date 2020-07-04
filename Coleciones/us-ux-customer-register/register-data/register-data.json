@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "7ff99604-51e5-4293-a915-41cbfdb5eee3",
+		"name": "Registrar Datos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register-data",
+			"item": [
+				{
+					"name": "Registrar datos del cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "53773307-ed1b-4766-b050-66c61548a846",
+								"exec": [
+									"let codRespuesta=responseCode.code;\r",
+									"let datosResponseBody=JSON.parse(responseBody);\r",
+									"let codEsperado=data.codigo;\r",
+									"let codBodyEsp=data.codbody;\r",
+									"// validar codRespuesta no sea null\r",
+									"if(codRespuesta!==null)\r",
+									"{\r",
+									"   if(codEsperado==codRespuesta)\r",
+									"    {\r",
+									"        pm.test(\"status code es = \" +codRespuesta, function(){return codRespuesta;});\r",
+									"       // mostrar valor\r",
+									"      /* if (codBodyEsp!==\"\")\r",
+									"       {\r",
+									"           tests[\"Codigo de error es \"+codBodyEsp]=datosResponseBody.code === codBodyEsp;\r",
+									"       }\r",
+									"       */\r",
+									"     }\r",
+									"    else\r",
+									"    {\r",
+									"    //        pm.test(\"status code es = \" +coderesponse, function(){return coderesponse;});\r",
+									"    //\r",
+									"    pm.test(\"Status code is \"+codEsperado, function () {\r",
+									"    pm.response.to.have.status(codEsperado);\r",
+									"    });}\r",
+									"  }\r",
+									"else\r",
+									"{\r",
+									"    console.log(\"No se encontro codigo esperado en el archivo de data\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-Id",
+								"value": "{{device-id}}",
+								"description": "Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "{{platform}}",
+								"description": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )"
+							},
+							{
+								"key": "X-Application",
+								"value": "{{application}}",
+								"description": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"description": "Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"lastName\": \"{{lastName}}\",\r\n  \"documentType\": \"{{documentType}}\",\r\n  \"documentNumber\": \"{{documentNumber}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer-register/register-data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer-register",
+								"register-data"
+							]
+						},
+						"description": "Servicio para registrar datos del cliente"
+					},
+					"response": [
+						{
+							"name": "Internal Server Error / GEN_ALL_02:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"description": {
+											"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )",
+											"type": "text/plain"
+										},
+										"key": "X-Platform",
+										"value": "<AND|IOS>"
+									},
+									{
+										"description": {
+											"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+											"type": "text/plain"
+										},
+										"key": "X-Application",
+										"value": "<CUS|COM>"
+									},
+									{
+										"description": {
+											"content": "Token de acceso del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "Authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"<a-zA-Z>\",\n    \"lastName\": \"<a-zA-Z>\",\n    \"documentType\": \"<DNI|CE>\",\n    \"documentNumber\": \"<si(DNI,[0-9]8)|si(CE,[A-Z0-9]4-9)>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-register/register-data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-register",
+										"register-data"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized / GEN_ALL_04:¡Oh no! Lo sentimos - Detectamos inconvenientes para que termines tu proceso. Vuelve a intentarlo en unos momentos.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"description": {
+											"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )",
+											"type": "text/plain"
+										},
+										"key": "X-Platform",
+										"value": "<AND|IOS>"
+									},
+									{
+										"description": {
+											"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+											"type": "text/plain"
+										},
+										"key": "X-Application",
+										"value": "<CUS|COM>"
+									},
+									{
+										"description": {
+											"content": "Token de acceso del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "Authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"<a-zA-Z>\",\n    \"lastName\": \"<a-zA-Z>\",\n    \"documentType\": \"<DNI|CE>\",\n    \"documentNumber\": \"<si(DNI,[0-9]8)|si(CE,[A-Z0-9]4-9)>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-register/register-data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-register",
+										"register-data"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Created / La solicitud ha tenido éxito, se ha creado un token de operación con expiración como resultado.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"description": {
+											"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )",
+											"type": "text/plain"
+										},
+										"key": "X-Platform",
+										"value": "<AND|IOS>"
+									},
+									{
+										"description": {
+											"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+											"type": "text/plain"
+										},
+										"key": "X-Application",
+										"value": "<CUS|COM>"
+									},
+									{
+										"description": {
+											"content": "Token de acceso del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "Authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"<a-zA-Z>\",\n    \"lastName\": \"<a-zA-Z>\",\n    \"documentType\": \"<DNI|CE>\",\n    \"documentNumber\": \"<si(DNI,[0-9]8)|si(CE,[A-Z0-9]4-9)>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-register/register-data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-register",
+										"register-data"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"operationToken\": \"<HS256 algorithm>\"\n}"
+						},
+						{
+							"name": "Bad Request / GEN_ALL_01:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"description": {
+											"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )",
+											"type": "text/plain"
+										},
+										"key": "X-Platform",
+										"value": "<AND|IOS>"
+									},
+									{
+										"description": {
+											"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+											"type": "text/plain"
+										},
+										"key": "X-Application",
+										"value": "<CUS|COM>"
+									},
+									{
+										"description": {
+											"content": "Token de acceso del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "Authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"<a-zA-Z>\",\n    \"lastName\": \"<a-zA-Z>\",\n    \"documentType\": \"<DNI|CE>\",\n    \"documentNumber\": \"<si(DNI,[0-9]8)|si(CE,[A-Z0-9]4-9)>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-register/register-data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-register",
+										"register-data"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Unprocessable Entity / CUS_REG_04:¡Oops! Tenemos un problema - El número de documento ha sido registrado. Intenta con uno distinto.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									},
+									{
+										"description": {
+											"content": "Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )",
+											"type": "text/plain"
+										},
+										"key": "X-Platform",
+										"value": "<AND|IOS>"
+									},
+									{
+										"description": {
+											"content": "Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+											"type": "text/plain"
+										},
+										"key": "X-Application",
+										"value": "<CUS|COM>"
+									},
+									{
+										"description": {
+											"content": "Token de acceso del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "Authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"<a-zA-Z>\",\n    \"lastName\": \"<a-zA-Z>\",\n    \"documentType\": \"<DNI|CE>\",\n    \"documentNumber\": \"<si(DNI,[0-9]8)|si(CE,[A-Z0-9]4-9)>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-register/register-data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-register",
+										"register-data"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"title\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "163cf8b2-d615-4df3-8d0f-03e27aa841d4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "712f8e0d-0ab7-46ef-9f2c-e9fb470ec85b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "f9503c2d-2d30-4eab-9501-ce9a290ad703",
+			"key": "baseUrl",
+			"value": "https://api-tunki.sensedia.com/dev/tunki-user-public",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

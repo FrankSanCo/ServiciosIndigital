@@ -1,0 +1,1567 @@
+{
+	"info": {
+		"_postman_id": "bbfd1c01-7315-421d-899c-6d9cfa5b1626",
+		"name": "keyboard-full-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener teclado secuencial",
+			"item": [
+				{
+					"name": "Obtener Keyboard exitoso - resultado 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7fd0b24d-3a0a-4927-a08e-bc639ec1e081",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"let dataRespuesta=JSON.parse(responseBody);",
+									"",
+									"tests[\"Teclado: \"+dataRespuesta.keyboard]=\" \";"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "Identificador del dispositivo que consume el servicio",
+								"key": "X-Device-Id",
+								"value": "{{X-Device-Id}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identity/keyboard",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity",
+								"keyboard"
+							]
+						},
+						"description": "Servicio para obtener teclado secuencial"
+					},
+					"response": [
+						{
+							"name": "Unprocessable Entity / USE_LOG_04:¡Tenemos un problema con tu teclado! - Teclado expirado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"title\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Bad Request / GEN_ALL_01:La solicitud no ha sido interpretado dado que tiene una sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Ok /  La solicitud ha tenido éxito, se ha creado teclado secuencial como resultado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"keyboard\": [\n  \"<integer>\",\n  \"<integer>\"\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtener Keyboard con X-Device-Id en blanco - resultado 400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c4b72c3c-3e05-4c31-9805-b9c568bf2901",
+								"exec": [
+									"let dataRespuesta=JSON.parse(responseBody);",
+									"",
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"if(dataRespuesta.code==\"GEN_ALL_01\")",
+									"{",
+									"     tests[\"Codigo exitoso: \"+dataRespuesta.code]=\" \";",
+									"}",
+									"else",
+									"{",
+									"     tests[\"Codigo incorrecto: \"+dataRespuesta.code]=\" \";",
+									"}",
+									"",
+									"",
+									" "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "Identificador del dispositivo que consume el servicio",
+								"key": "X-Device-Id",
+								"value": ""
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identity/keyboard",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity",
+								"keyboard"
+							]
+						},
+						"description": "Servicio para obtener teclado secuencial"
+					},
+					"response": [
+						{
+							"name": "Ok /  La solicitud ha tenido éxito, se ha creado teclado secuencial como resultado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"keyboard\": [\n  \"<integer>\",\n  \"<integer>\"\n ]\n}"
+						},
+						{
+							"name": "Bad Request / GEN_ALL_01:La solicitud no ha sido interpretado dado que tiene una sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unprocessable Entity / USE_LOG_04:¡Tenemos un problema con tu teclado! - Teclado expirado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"title\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtener Keyboard con X-Device-Id en NULL - resultado 400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c4b72c3c-3e05-4c31-9805-b9c568bf2901",
+								"exec": [
+									"let dataRespuesta=JSON.parse(responseBody);",
+									"",
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"if(dataRespuesta.code==\"GEN_ALL_01\")",
+									"{",
+									"     tests[\"Codigo exitoso: \"+dataRespuesta.code]=\" \";",
+									"}",
+									"else",
+									"{",
+									"     tests[\"Codigo incorrecto: \"+dataRespuesta.code]=\" \";",
+									"}",
+									"",
+									"",
+									" "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "Identificador del dispositivo que consume el servicio",
+								"key": "X-Device-Id",
+								"value": "null"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identity/keyboard",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity",
+								"keyboard"
+							]
+						},
+						"description": "Servicio para obtener teclado secuencial"
+					},
+					"response": [
+						{
+							"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Ok /  La solicitud ha tenido éxito, se ha creado teclado secuencial como resultado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"keyboard\": [\n  \"<integer>\",\n  \"<integer>\"\n ]\n}"
+						},
+						{
+							"name": "Bad Request / GEN_ALL_01:La solicitud no ha sido interpretado dado que tiene una sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Unprocessable Entity / USE_LOG_04:¡Tenemos un problema con tu teclado! - Teclado expirado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"title\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtener Keyboard con X-Device-Id caracteres extraños - resultado 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c4b72c3c-3e05-4c31-9805-b9c568bf2901",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"let dataRespuesta=JSON.parse(responseBody);",
+									"",
+									"tests[\"Teclado: \"+dataRespuesta.keyboard]=\" \";"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "Identificador del dispositivo que consume el servicio",
+								"key": "X-Device-Id",
+								"value": "+-.[´+'.,$#%"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identity/keyboard",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity",
+								"keyboard"
+							]
+						},
+						"description": "Servicio para obtener teclado secuencial"
+					},
+					"response": [
+						{
+							"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Bad Request / GEN_ALL_01:La solicitud no ha sido interpretado dado que tiene una sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Unprocessable Entity / USE_LOG_04:¡Tenemos un problema con tu teclado! - Teclado expirado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"title\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Ok /  La solicitud ha tenido éxito, se ha creado teclado secuencial como resultado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"keyboard\": [\n  \"<integer>\",\n  \"<integer>\"\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtener Keyboard con X-Device-Id menor caracteres permitidos - resultado 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c4b72c3c-3e05-4c31-9805-b9c568bf2901",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"let dataRespuesta=JSON.parse(responseBody);",
+									"",
+									"tests[\"Teclado: \"+dataRespuesta.keyboard]=\" \";"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "Identificador del dispositivo que consume el servicio",
+								"key": "X-Device-Id",
+								"value": "."
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identity/keyboard",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity",
+								"keyboard"
+							]
+						},
+						"description": "Servicio para obtener teclado secuencial"
+					},
+					"response": [
+						{
+							"name": "Unprocessable Entity / USE_LOG_04:¡Tenemos un problema con tu teclado! - Teclado expirado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"title\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Ok /  La solicitud ha tenido éxito, se ha creado teclado secuencial como resultado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"keyboard\": [\n  \"<integer>\",\n  \"<integer>\"\n ]\n}"
+						},
+						{
+							"name": "Bad Request / GEN_ALL_01:La solicitud no ha sido interpretado dado que tiene una sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtener Keyboard con X-Device-Id mayor caracteres permitidos - resultado 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c4b72c3c-3e05-4c31-9805-b9c568bf2901",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"let dataRespuesta=JSON.parse(responseBody);",
+									"",
+									"tests[\"Teclado: \"+dataRespuesta.keyboard]=\" \";"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "Identificador del dispositivo que consume el servicio",
+								"key": "X-Device-Id",
+								"value": "12345678901234567890123456789012"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identity/keyboard",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity",
+								"keyboard"
+							]
+						},
+						"description": "Servicio para obtener teclado secuencial"
+					},
+					"response": [
+						{
+							"name": "Unprocessable Entity / USE_LOG_04:¡Tenemos un problema con tu teclado! - Teclado expirado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"title\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Bad Request / GEN_ALL_01:La solicitud no ha sido interpretado dado que tiene una sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Ok /  La solicitud ha tenido éxito, se ha creado teclado secuencial como resultado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"keyboard\": [\n  \"<integer>\",\n  \"<integer>\"\n ]\n}"
+						},
+						{
+							"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtener Keyboard con X-Device-Id internal server error - resultado 500",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c4b72c3c-3e05-4c31-9805-b9c568bf2901",
+								"exec": [
+									"let dataRespuesta=JSON.parse(responseBody);",
+									"",
+									"pm.test(\"Status code is 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});",
+									"",
+									"if(dataRespuesta.code==\"GEN_ALL_02\")",
+									"{",
+									"     tests[\"Codigo exitoso: \"+dataRespuesta.code]=\" \";",
+									"}",
+									"else",
+									"{",
+									"     tests[\"Codigo incorrecto: \"+dataRespuesta.code]=\" \";",
+									"}",
+									"",
+									"",
+									" "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "Identificador del dispositivo que consume el servicio",
+								"key": "X-Device-Id",
+								"value": "<>"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identity/keyboard",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity",
+								"keyboard"
+							]
+						},
+						"description": "Servicio para obtener teclado secuencial"
+					},
+					"response": [
+						{
+							"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unprocessable Entity / USE_LOG_04:¡Tenemos un problema con tu teclado! - Teclado expirado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"title\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Bad Request / GEN_ALL_01:La solicitud no ha sido interpretado dado que tiene una sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\",\n \"errors\": [\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  },\n  {\n   \"field\": \"<string>\",\n   \"message\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Ok /  La solicitud ha tenido éxito, se ha creado teclado secuencial como resultado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": {
+											"content": "Identificador del dispositivo que consume el servicio",
+											"type": "text/plain"
+										},
+										"key": "X-Device-Id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/identity/keyboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"identity",
+										"keyboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"keyboard\": [\n  \"<integer>\",\n  \"<integer>\"\n ]\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "bcc9a919-cefd-4e26-a345-9928e7785326",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8d50f1b2-bde2-4f13-b9ed-49fd1211940e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "3d254057-7b3a-4284-aec8-8a330e20d502",
+			"key": "baseUrl",
+			"value": "http://qa.tunkiapi.com.pe",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

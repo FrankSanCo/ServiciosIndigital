@@ -1,0 +1,34 @@
+{
+	"id": "cc7cc88d-caf7-445d-93ec-9fa2dca82bb8",
+	"name": "customer-register",
+	"values": [
+		{
+			"key": "autorizacion",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJEQVRBIjoie1wiZGV2aWNlSWRcIjpcIjEyMzQ1Njc4OVwiLFwicGxhdGZvcm1cIjpcIkFORFwiLFwiYXBwbGljYXRpb25cIjpcIkNVU1wiLFwicGhvbmVcIjpcIjkzMTA5NDY5N1wiLFwiZW1haWxcIjpcInR1bmtpQHR1bmtpLmNvbVwiLFwib3RwXCI6XCIwNjk5XCIsXCJzdGVwXCI6XCJTVEVQXzFcIn0iLCJleHAiOjE1Nzg1MzE1MjJ9.cJNyil27wShlz8xQriF2aMSaAnCY2-txpm5a0PiZTejy4iLdSIqgzFPiSCoRkz5H5nDG9fga1Hejaf9bAd1Sdw",
+			"enabled": true
+		},
+		{
+			"key": "plataforma",
+			"value": "AND",
+			"enabled": true
+		},
+		{
+			"key": "aplicacion",
+			"value": "CUS",
+			"enabled": true
+		},
+		{
+			"key": "sms",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "device-id",
+			"value": "123456789",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-01-09T15:33:15.314Z",
+	"_postman_exported_using": "Postman/7.14.0"
+}

@@ -1,0 +1,640 @@
+{
+	"info": {
+		"_postman_id": "c8bd20c9-7eaa-43c6-bbbd-59c34e35de75",
+		"name": "us-ux-benefit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener lista de beneficios exitoso - resultado 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb508dbd-8d10-4133-ad7d-225b1f6a16ae",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/benefit/data",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"benefit",
+						"data"
+					]
+				},
+				"description": "Servicio para obtener lista de benefecios"
+			},
+			"response": [
+				{
+					"name": "Ok /  La solicitud ha tenido éxito, se ha creado lista de beneficios como resultado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"benefits\": [\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  },\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  }\n ]\n}"
+				},
+				{
+					"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener lista de beneficios con respuesta en blanco - resultado 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a29e6d8a-6362-46f0-a685-d7f9400aad85",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/benefit/data",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"benefit",
+						"data"
+					]
+				},
+				"description": "Servicio para obtener lista de benefecios"
+			},
+			"response": [
+				{
+					"name": "Ok /  La solicitud ha tenido éxito, se ha creado lista de beneficios como resultado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"benefits\": [\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  },\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  }\n ]\n}"
+				},
+				{
+					"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener lista de beneficios con title en blanco - resultado 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c8b81277-fd98-4e1f-aa3c-0f08cb82da9c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/benefit/data",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"benefit",
+						"data"
+					]
+				},
+				"description": "Servicio para obtener lista de benefecios"
+			},
+			"response": [
+				{
+					"name": "Ok /  La solicitud ha tenido éxito, se ha creado lista de beneficios como resultado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"benefits\": [\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  },\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  }\n ]\n}"
+				},
+				{
+					"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener lista de beneficios con message en blanco - resultado 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "199434b1-c4ee-464d-bde1-d4681276275d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/benefit/data",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"benefit",
+						"data"
+					]
+				},
+				"description": "Servicio para obtener lista de benefecios"
+			},
+			"response": [
+				{
+					"name": "Ok /  La solicitud ha tenido éxito, se ha creado lista de beneficios como resultado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"benefits\": [\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  },\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  }\n ]\n}"
+				},
+				{
+					"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener lista de beneficios con message en url - resultado 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5c657243-e8ce-4494-b085-a0dadfed793a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/benefit/data",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"benefit",
+						"data"
+					]
+				},
+				"description": "Servicio para obtener lista de benefecios"
+			},
+			"response": [
+				{
+					"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+				},
+				{
+					"name": "Ok /  La solicitud ha tenido éxito, se ha creado lista de beneficios como resultado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"benefits\": [\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  },\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  }\n ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener lista de beneficios con error interno - resultado 500",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "58c3d02c-a41a-4ace-822c-c1545188e62b",
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/benefit/data",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"benefit",
+						"data"
+					]
+				},
+				"description": "Servicio para obtener lista de benefecios"
+			},
+			"response": [
+				{
+					"name": "Ok /  La solicitud ha tenido éxito, se ha creado lista de beneficios como resultado.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"benefits\": [\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  },\n  {\n   \"title\": \"<string>\",\n   \"message\": \"<string>\",\n   \"url\": \"<string>\"\n  }\n ]\n}"
+				},
+				{
+					"name": "Internal Server Error / GEN_ALL_02:Error de servidor interno.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/benefit/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"benefit",
+								"data"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "56487342-5fb6-4c93-8446-3cbb710b0c6a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cc276239-9d5d-4671-9daa-efcc0c52f43a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "70c999bc-7124-4ba8-a0d3-32ac37625fe1",
+			"key": "baseUrl",
+			"value": "http://qa.tunkiapi.com.pe",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

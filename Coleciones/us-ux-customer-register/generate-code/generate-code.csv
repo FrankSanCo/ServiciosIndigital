@@ -1,0 +1,33 @@
+Nro,Case de Prueba,x-device-id,x-platform,x-aplication,client_id,phone,email,codigo,codbody
+1,Generar código exitoso - resultado 201,1.23E+19,AND,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995687,mlpperez@indigital.com,201,
+2,Generar código con X-Device-Id en blanco - resultado 400,,AND,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez02@indigital.com,400,GEN_ALL_01
+3,Generar código con X-Device-Id en NULL - resultado 400,,AND,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez03@indigital.com,400,GEN_ALL_01
+4,Generar código con X-Device-Id con caracteres extraños - resultado 400,$%#ioi*+-+++*&uu-_#uiouioui,AND,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez04@indigital.com,400,
+5,Generar código con X-Device-Id con menor caracteres permitidos - resultado 400,3,AND,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez04@indigital.com,400,GEN_ALL_01
+6,Generar código con X-Device-Id con mayor caracteres permitidos - resultado 400,eyJhbGciOiJIUzUxMiJ9.eyJEQVRBIjoie1wiZGV2aWNlSWRcIjpcIjEyMzQ1Njc4OTAxMjM0NTY3ODkwXCIsXCJwbGF0Zm9ybVwiOlwiQU5EXCIsXCJhcHBsaWNhdGlvblwiOlwiQ1VTXCIsXCJwaG9uZVwiOlwiNTE5MzEwOTQ2OTBcIixcImVtYWlsXCI6XCJqb3NlcGVyZXpAZ21haWwuY29tXCIsXCJvdHBcIjpcIjMwOThcIixcInN0ZXBcIjpcIlNURVBfMVwifSIsImV4cCI6MTU2OTMzODQxNH0.AUX_OIZCmMqUzIUhrD-BE-S4JyRWbCGKpDsbEBvFyjayAclnr0hFVDJyBfHx6U8vwCg8jVzrfM7fkDP8p6qRggeyJhbGciOiJIUzUxMiJ9.eyJEQVRBIjoie1wiZGV2aWNlSWRcIjpcIjEyMzQ1Njc4OTAxMjM0NTY3ODkwXCIsXCJwbGF0Zm9ybVwiOlwiQU5EXCIsXCJhcHBsaWNhdGlvblwiOlwiQ1VTXCIsXCJwaG9uZVwiOlwiNTE5MzEwOTQ2OTBcIixcImVtYWlsXCI6XCJqb3NlcGVyZXpAZ21haWwuY29tXCIsXCJvdHBcIjpcIjMwOThcIixcInN0ZXBcIjpcIlNURVBfMVwifSIsImV4cCI6MTU2OTMzODQxNH0.AUX_OIZCmMqUzIUhrD-BE-S4JyRWbCGKpDsbEBvFyjayAclnr0hFVDJyBfHx6U8vwCg8jVzrfM7fkDP8p6qRggeyJhbGciOiJIUzUxMiJ9.eyJEQVRBIjoie1wiZGV2aWNlSWRcIjpcIjEyMzQ1Njc4OTAxMjM0NTY3ODkwXCIsXCJwbGF0Zm9ybVwiOlwiQU5EXCIsXCJhcHBsaWNhdGlvblwiOlwiQ1VTXCIsXCJwaG9uZVwiOlwiNTE5MzEwOTQ2OTBcIixcImVtYWlsXCI6XCJqb3NlcGVyZXpAZ21haWwuY29tXCIsXCJvdHBcIjpcIjMwOThcIixcInN0ZXBcIjpcIlNURVBfMVwifSIsImV4cCI6MTU2OTMzODQxNH0.AUX_OIZCmMqUzIUhrD-BE-S4JyRWbCGKpDsbEBvFyjayAclnr0hFVDJyBfHx6U8vwCg8jVzrfM7fkDP8p6qRgg,AND,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez04@indigital.com,400,GEN_ALL_01
+7,Generar código con X-Platform en blanco - resultado 400,1.23E+19,,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez04@indigital.com,400,GEN_ALL_01
+8,Generar código con X-Platform en NULL - resultado 400,1.23E+19,,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez08@indigital.com,400,GEN_ALL_01
+9,Generar código con X-Platform con caracteres extraños - resultado 400,1.23E+19,&%-,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez09@indigital.com,400,GEN_ALL_01
+10,Generar código con X-Platform con menor caracteres permitidos - resultado 400,1.23E+19,A,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez010@indigital.com,400,GEN_ALL_01
+11,Generar código con X-Platform con mayor caracteres permitidos - resultado 400,1.23E+19,ANDROID,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez011@indigital.com,400,GEN_ALL_01
+12,Generar código con X-Application en blanco - resultado 400,1.23E+19,IOS,,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez010@indigital.com,400,GEN_ALL_01
+13,Generar código con X-Application en NULL - resultado 400,1.23E+19,IOS,,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez010@indigital.com,400,GEN_ALL_01
+14,Generar código con X-Application con caracteres extraños - resultado 400,1.23E+19,IOS,%$-,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez010@indigital.com,400,GEN_ALL_01
+15,Generar código con X-Application con menor caracteres permitidos - resultado 400,1.23E+19,IOS,C,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez010@indigital.com,400,GEN_ALL_01
+16,Generar código con X-Application con mayor caracteres permitidos - resultado 400,1.23E+19,IOS,CUST,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez010@indigital.com,400,GEN_ALL_01
+17,Generar código con client_id en NULL - resultado 401,1.23E+19,IOS,,,914995811,joseperez010@indigital.com,401,GEN_ALL_0
+18,Generar código con client_id con caracteres extraños - resultado 401,1.23E+19,IOS,%$-,#&+*$&3&-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez010@indigital.com,401,GEN_ALL_0
+19,Generar código con client_id incorrecto - resultado 401,1.23E+19,IOS,C,0216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez010@indigital.com,401,GEN_ALL_0
+20,Generar código con Phone ya existente - resultado 422,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995686,joseperez010@indigital.com,422,CUS_REG_01
+21,Generar código con Phone en blanco - resultado 400,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,,joseperez010@indigital.com,400,GEN_ALL_01
+22,Generar código con Phone en NULL - resultado 400,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,,joseperez010@indigital.com,400,GEN_ALL_01
+23,Generar código con Phone con caracteres extraños - resultado 400,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,1&%$#909.,joseperez010@indigital.com,400,GEN_ALL_01
+24,Generar código con Phone con menor caracteres permitidos - resultado 400,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,98009809,joseperez010@indigital.com,400,GEN_ALL_01
+25,Generar código con Phone con mayor caracteres permitidos - resultado 400,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,9149958110,joseperez010@indigital.com,400,GEN_ALL_01
+26,Generar código con Email ya existente - resultado 201,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,931094698,tunki@tunki.com,201,
+27,Generar código con Email en blanco - resultado 400,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,,400,GEN_ALL_01
+28,Generar código con Email en NULL - resultado 400,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,,400,GEN_ALL_01
+29,Generar código con Email con caracteres extraños - resultado 400,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,jose#e%$@in&(9-ital.com,400,GEN_ALL_01
+30,Generar código con Email con menor caracteres permitidos - resultado 400,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,j@h,400,GEN_ALL_01
+31,Generar código con Email con mayor caracteres permitidos - resultado 400,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,joseperez010joseperez010joseperez010joseperez010joseperez010joseperez010joseperez010joseperez010joseperez010joseperez010joseperez010joseperez010@indigital.com,400,GEN_ALL_01
+32,Generar código con error interno en OTP - resultado 422,1.23E+19,IOS,CUS,7780216a-3ccb-38e6-a457-ace9052f0fd8,914995811,tunki@digital.com,422,CUS_REG_02

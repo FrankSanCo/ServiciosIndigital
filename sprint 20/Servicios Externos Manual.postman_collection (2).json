@@ -1,0 +1,566 @@
+{
+	"info": {
+		"_postman_id": "9dc7ff0b-0555-4c82-a81f-ae13bf9c4ed9",
+		"name": "Servicios Externos Manual",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retail recharge (Plaza Vea)",
+			"item": [
+				{
+					"name": "https://api-tunki.sensedia.com/qa/tunki-external-retail/retail/recharge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Access-Token",
+								"value": "b39561b7-f8de-3894-8905-59b62dfded3a",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"externalId\": \"1234567890\",\r\n    \"prepaidToken\": \"44490003\",\r\n    \"prepaidAmount\": 150,\r\n    \"currencyType\": \"PEN\",\r\n    \"tokenType\": 1,\r\n    \"creationDate\": \"2020-03-19T10:55:00.001Z\",\r\n    \"storeName\": \"PlazaVea\"\r\n  }\r\n]"
+						},
+						"url": {
+							"raw": "https://api.indigital.com.pe/qa/agora-external-retail/retail/recharge",
+							"protocol": "https",
+							"host": [
+								"api",
+								"indigital",
+								"com",
+								"pe"
+							],
+							"path": [
+								"qa",
+								"agora-external-retail",
+								"retail",
+								"recharge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api-tunki.sensedia.com/qa/tunki-external-retail/retail/recharge Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Access-Token",
+								"value": "a0b8e87c-1f4b-3ce7-893e-f6791c887580",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"externalId\": \"41000001\",\r\n    \"prepaidToken\": \"41000001\",\r\n    \"prepaidAmount\": 50,\r\n    \"currencyType\": \"PEN\",\r\n    \"tokenType\": 1,\r\n    \"creationDate\": \"2020-03-30T15:25:50.001Z\",\r\n    \"storeName\": \"PlazaVea\"\r\n  }\r\n]"
+						},
+						"url": {
+							"raw": "http://localhost:8090/retail/recharge",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"retail",
+								"recharge"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1394759f-0572-451a-addf-fb19f28712ea",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "40a34640-aaca-4a30-af88-46dabef74486",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Pago Efectivo",
+			"item": [
+				{
+					"name": "PagoEfectivoNotification-QA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "PE-Signature",
+								"value": "5b3d939977e18555d2e0c27c08a26e5f0dbd47d7d3dc72abe6c6ed0600b6e00b ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventType\": \"cip.paid\",\r\n    \"operationNumber\": \"2545381\",\r\n    \"data\": {\r\n        \"cip\": \"2544932\",\r\n        \"currency\": \"PEN\",\r\n        \"amount\": 50.00\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://api.indigital.com.pe/qa/agora-external-pagoefectivo/pagoefectivo/notification",
+							"protocol": "https",
+							"host": [
+								"api",
+								"indigital",
+								"com",
+								"pe"
+							],
+							"path": [
+								"qa",
+								"agora-external-pagoefectivo",
+								"pagoefectivo",
+								"notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PagoEfectivoNotification-DEV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "PE-Signature",
+								"value": "20e525c086cf0ee3e28dc2e1b7412073b0ad747395841ea7d6324f2d7ee40a05",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventType\": \"cip.paid\",\r\n    \"operationNumber\": \"00000037\",\r\n    \"data\": {\r\n        \"cip\": \"Test0037\",\r\n        \"currency\": \"PEN\",\r\n        \"amount\": 1.75\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/pagoefectivo/notification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pagoefectivo",
+								"notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notification",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fceeeccd-bed7-4d0f-8c5e-bdce080cb6f5",
+								"exec": [
+									"let deviceId=pm.environment.get(\"device-Id\");\r",
+									"let url=pm.variables.get(\"baseUrl\");\r",
+									"\r",
+									"    pm.sendRequest( \r",
+									"    {\r",
+									"    url: url+'/agora-identity/identity/random-keyboard', method: 'GET',\r",
+									"    mode: 'application/json',\r",
+									"    header: \r",
+									"    {'X-Device-Id': deviceId+''\r",
+									"    },\r",
+									"    body: {\r",
+									"    mode: 'raw',\r",
+									"    }\r",
+									"    }, \r",
+									"    function (err, response)\r",
+									"     {\r",
+									"            pm.environment.set(\"keyboard\", response.json().keyboard);\r",
+									"    \r",
+									"    let resultTeclado=response.json().keyboard;\r",
+									"    let pass=pm.environment.get(\"pass\");\r",
+									"    let passFinal=\"[\";\r",
+									"    for(let p=0;p<pass.length;p++)\r",
+									"    {\r",
+									"       passPos=pass.substring(p,p+1);\r",
+									"       for (let i = 0; i < resultTeclado.length; i++)\r",
+									"       {\r",
+									"           if(resultTeclado[i]==passPos)\r",
+									"           {\r",
+									"            passFinal=passFinal+i;\r",
+									"                if(p==5)\r",
+									"                {\r",
+									"                  passFinal=passFinal+\"]\";\r",
+									"                }\r",
+									"                else\r",
+									"                {\r",
+									"                    passFinal=passFinal+\",\";\r",
+									"                }\r",
+									"           }\r",
+									"       }\r",
+									"    }\r",
+									"    pm.environment.set(\"Password\",passFinal);\r",
+									"    \r",
+									"    let usidentifir=pm.environment.get(\"identifier\");\r",
+									" pm.sendRequest( \r",
+									"    {\r",
+									"    url: url+'/agora-identity/identity/sign-in', method: 'POST',\r",
+									"    mode: 'application/json',\r",
+									"    header: \r",
+									"    {'X-Device-Id': deviceId+'',\r",
+									"\t'X-Platform': 'AND',\r",
+									"\t'X-Application': 'CUS',\r",
+									"\t'X-Version': '1.0',\r",
+									"\t'X-Model': 'abcd',\r",
+									"\t'Authorization': 'Basic Nzc4MDIxNmEtM2NjYi0zOGU2LWE0NTctYWNlOTA1MmYwZmQ4OmRlOTQxYWJiLWNiNjMtMzljMC1iNmVhLWZhNDFiZmRkZjJiYw==',\r",
+									"\t'Content-Type': 'application/json',\r",
+									"    },\r",
+									"    body: {\r",
+									"        mode: 'raw',\r",
+									"        raw: JSON.stringify({'identifier': usidentifir,\r",
+									"        'positions': JSON.parse(passFinal) })\r",
+									"    }\r",
+									"    }, function (err, response)\r",
+									"     {\r",
+									"        pm.environment.set(\"accessToken\", response.json().access_token);\r",
+									"        var access = response.json().access_token;\r",
+									"        pm.environment.set(\"userId\", response.json().userId);\r",
+									"                                  pm.sendRequest(\r",
+									"            {\r",
+									"    url: url+'/agora-identity/identity/random-keyboard', method: 'GET',\r",
+									"    mode: 'application/json',\r",
+									"    header: \r",
+									"    {'X-Device-Id': deviceId+''\r",
+									"    },\r",
+									"    body: {\r",
+									"    mode: 'raw',\r",
+									"    }\r",
+									"     },\r",
+									"     function (err, response)\r",
+									"     {\r",
+									"    var resultTeclado2=response.json().keyboard;\r",
+									"    var pass2=pm.environment.get(\"pass\");\r",
+									"    var passFinal2=\"[\";\r",
+									"    for(let p=0;p<pass2.length;p++)\r",
+									"    {\r",
+									"       passPos2=pass.substring(p,p+1);\r",
+									"       for (let i = 0; i < resultTeclado2.length; i++)\r",
+									"       {\r",
+									"           if(resultTeclado2[i]==passPos2)\r",
+									"           {\r",
+									"            passFinal2=passFinal2+i;\r",
+									"                if(p==5)\r",
+									"                {\r",
+									"                  passFinal2=passFinal2+\"]\";\r",
+									"                }\r",
+									"                else\r",
+									"                {\r",
+									"                    passFinal2=passFinal2+\",\";\r",
+									"                }\r",
+									"           }\r",
+									"       }\r",
+									"    }\r",
+									"     pm.environment.set(\"Password2\",passFinal2);\r",
+									"    //cambia de aqui\r",
+									"    pm.sendRequest({\r",
+									"    url: url+'/agora-identity/identity/second-verification', method: 'POST',\r",
+									"    mode: 'application/json',\r",
+									"    header: {\r",
+									"        'X-Device-Id': deviceId+'',\r",
+									"\t'X-Platform': 'AND',\r",
+									"\t'X-Application': 'CUS',\r",
+									"\t'access_token': access+'',\r",
+									"\t'Content-Type': 'application/json',\r",
+									"\t'client_id': '7780216a-3ccb-38e6-a457-ace9052f0fd8',\r",
+									"    },\r",
+									"        body: {\r",
+									"        mode: 'raw',\r",
+									"        raw: JSON.stringify({'positions': JSON.parse(passFinal2)})\r",
+									"    }\r",
+									"       },function (err, response)\r",
+									"     {\r",
+									"         var secondeverification = response.json().secondVerificationId;\r",
+									"         console.log(\"holaaaa\"+secondeverification);\r",
+									"         pm.environment.set(\"secondVerificationId\",response.json().secondVerificationId);\r",
+									"     })  \r",
+									"         \r",
+									"     }\r",
+									"    )\r",
+									"    });\r",
+									"    \r",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Device-Id",
+								"value": "{{device-Id}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Platform",
+								"value": "{{platform}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Application",
+								"value": "{{application}}",
+								"type": "text"
+							},
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "client_id",
+								"value": "7780216a-3ccb-38e6-a457-ace9052f0fd8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"jhonathan.polino@gmail.com\",\r\n  \"amount\": 94.55\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/agora-user/pagoefectivo-cashin/cash-payment/cip",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"agora-user",
+								"pagoefectivo-cashin",
+								"cash-payment",
+								"cip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pagoefectivoForwad",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "PE-Signature",
+								"value": "057d3fb177c05d4f9863cfb2116a35bd90007a92454f493ccc5ef40d1b18cfee",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"eventType\": \"cip.paid\",\r\n  \"operationNumber\": \"test.123\",\r\n  \"data\": {\r\n    \"cip\": \"2541649\",\r\n    \"currency\": \"PEN\",\r\n    \"amount\": 94.55\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pagoefectivo/notification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pagoefectivo",
+								"notification"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Generar Access Token-Ext",
+			"item": [
+				{
+					"name": "Pre-RequisitoAccessToken",
+					"item": [
+						{
+							"name": "generar code 64",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "f877f591-d6e4-3437-822e-d6442b83cf85",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "2cb73d01-42df-392f-a0e8-a31896287c2e",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://api.indigital.com.pe/qa/oauth/access-token",
+									"protocol": "https",
+									"host": [
+										"api",
+										"indigital",
+										"com",
+										"pe"
+									],
+									"path": [
+										"qa",
+										"oauth",
+										"access-token"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "AccessToken",
+					"item": [
+						{
+							"name": "https://api-tunki.sensedia.com/indigital/oauth/access-token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic Zjg3N2Y1OTEtZDZlNC0zNDM3LTgyMmUtZDY0NDJiODNjZjg1OjJjYjczZDAxLTQyZGYtMzkyZi1hMGU4LWEzMTg5NjI4N2MyZQ==",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"grant_type\": \"client_credentials\"} "
+								},
+								"url": {
+									"raw": "https://api.indigital.com.pe/qa/oauth/access-token",
+									"protocol": "https",
+									"host": [
+										"api",
+										"indigital",
+										"com",
+										"pe"
+									],
+									"path": [
+										"qa",
+										"oauth",
+										"access-token"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "52b8a2c3-45a2-44ff-a020-2aa73fd23b28",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "72c7a9c4-b092-469c-b272-193e60972db5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "65b9140f-f3c3-4ce3-af31-dc532728d7ed",
+			"key": "baseUrl",
+			"value": "https://api.indigital.com.pe/qa",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

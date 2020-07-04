@@ -1,0 +1,34 @@
+{
+	"id": "cc7cc88d-caf7-445d-93ec-9fa2dca82bb8",
+	"name": "customer-register",
+	"values": [
+		{
+			"key": "autorizacion",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "plataforma",
+			"value": "AND",
+			"enabled": true
+		},
+		{
+			"key": "aplicacion",
+			"value": "CUS",
+			"enabled": true
+		},
+		{
+			"key": "sms",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "device-id",
+			"value": "123456789",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-01-09T16:29:14.969Z",
+	"_postman_exported_using": "Postman/7.14.0"
+}

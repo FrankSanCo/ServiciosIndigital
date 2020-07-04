@@ -1,0 +1,6 @@
+nro,Case de Prueba,categoryId,codigo,codbody,rtoken
+1,obtener categoria exitoso - resultado 200,13663bd0-0739-4a7c-9e4d-87876a72e421,200,,
+2,obtener categoria con categoryId en blanco - resultado 200,,200,,
+3,obtener categoria con categoryId caracteres especiales - resultado 404,&&/,404,,
+4,obtener categoria con categoryId menor a carateres permitidos - resultado 404,a1,404,,
+5,obtener categoria con categoryId mayor a carateres permitidos - resultado 404,PF0NGDtS1sn1qq7cv3UEE4beK8xGYEPlRzViLAAaBn0SQtaqwertyuiopPF0NGDtS1sn1qq7cv3UEE4beK8xGYEPlRzViLAAaBn0SQtaqwertyuiopPF0NGDtS1sn1qq7cv3UEE4beK8xGYEPlRzViLAAaBn0SQtaqwertyuiopPF0NGDtS1sn1qq7cv3UEE4beK8xGYEPlRzViLAAaBn0SQtaqwertyuiopPF0NGDtS1sn1qq7cv3UEE4beK8x6,404,,

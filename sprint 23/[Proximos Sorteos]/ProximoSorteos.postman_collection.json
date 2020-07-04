@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "ef0c30a3-ceea-434c-abdb-de260cd48603",
+		"name": "ProximoSorteos",
+		"description": "Micorservicio de usabilidad us-ux-benefit\n\nContact Support:\n Name: Tunki Benefit InDigital\n Email: developers@indigital.pe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "benefit",
+			"item": [
+				{
+					"name": "spsa",
+					"item": [
+						{
+							"name": "Obtener los sorteos proximos a realizarse",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "a1b79833-8c26-44b1-936d-69ec337c8032",
+										"exec": [
+											"let codBodyEsp = data.codbody;\r",
+											"let deviceId = pm.environment.get(\"DeviceId\");\r",
+											"let rtoken = data.rtoken;\r",
+											"let rpw = data.rpw;\r",
+											"let url = pm.variables.get(\"baseUrl\");\r",
+											"//let userActual = pm.environment.get(\"Usuario\");\r",
+											"//let passActual = pm.environment.get(\"passActual\");\r",
+											"let userActual=data.userExcel+'';\r",
+											"let passActual=data.passExcel+'';\r",
+											"\r",
+											"\r",
+											"if(rtoken===\"\")\r",
+											"{\r",
+											"pm.sendRequest(\r",
+											"    {\r",
+											"        url: url + '/agora-identity/identity/random-keyboard', method: 'GET',\r",
+											"        mode: 'application/json',\r",
+											"        header:\r",
+											"        {\r",
+											"            'X-Device-Id': deviceId + ''\r",
+											"        },\r",
+											"        body: {\r",
+											"            mode: 'raw',\r",
+											"        }\r",
+											"    }, function (err, response) {\r",
+											"    pm.environment.set(\"keyboard\", response.json().keyboard);\r",
+											"\r",
+											"    let resultTeclado = response.json().keyboard;\r",
+											"    let pass = passActual;\r",
+											"    let passFinal = \"[\";\r",
+											"    for (let p = 0; p < pass.length; p++) {\r",
+											"        passPos = pass.substring(p, p + 1);\r",
+											"        for (let i = 0; i < resultTeclado.length; i++) {\r",
+											"            if (resultTeclado[i] == passPos) {\r",
+											"                passFinal = passFinal + i;\r",
+											"                if (p == 5) {\r",
+											"                    passFinal = passFinal + \"]\";\r",
+											"                }\r",
+											"                else {\r",
+											"                    passFinal = passFinal + \",\";\r",
+											"                }\r",
+											"            }\r",
+											"        }\r",
+											"    }\r",
+											"    if (rpw === \"\") {\r",
+											"        pm.environment.set(\"Password\", passFinal);\r",
+											"    }\r",
+											"    else {\r",
+											"        pm.environment.set(\"Password\", data.rpw);\r",
+											"    }\r",
+											"    let usidentifir = userActual;\r",
+											"    pm.sendRequest(\r",
+											"        {\r",
+											"            url: url + '/agora-identity/identity/sign-in', method: 'POST',\r",
+											"            mode: 'application/json',\r",
+											"            header:\r",
+											"            {\r",
+											"                'X-Device-Id': deviceId + '',\r",
+											"                'X-Platform': 'AND',\r",
+											"                'X-Application': 'CUS',\r",
+											"                'X-Version': '1.0',\r",
+											"                'X-Model': 'abcd',\r",
+											"                'Authorization': 'Basic Nzc4MDIxNmEtM2NjYi0zOGU2LWE0NTctYWNlOTA1MmYwZmQ4OmRlOTQxYWJiLWNiNjMtMzljMC1iNmVhLWZhNDFiZmRkZjJiYw==',\r",
+											"                'Content-Type': 'application/json',\r",
+											"            },\r",
+											"            body: {\r",
+											"                mode: 'raw',\r",
+											"                raw: JSON.stringify({\r",
+											"                    'identifier': usidentifir,\r",
+											"                    'positions': JSON.parse(passFinal)\r",
+											"                })\r",
+											"            }\r",
+											"        }, function (err, response) {\r",
+											"        pm.environment.set(\"accessToken\", response.json().access_token);\r",
+											"\r",
+											"    });\r",
+											"});\r",
+											"\r",
+											"}\r",
+											"else\r",
+											"{\r",
+											"    pm.environment.set(\"accessToken\", data.authorization);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "efa179c2-78d1-4004-bbe7-b7a8710320b5",
+										"exec": [
+											"let expectedCode= data.codigo;\r",
+											"let actualCode=responseCode.code;\r",
+											"\r",
+											" \r",
+											"\r",
+											"if(expectedCode!==undefined && expectedCode!==null){\r",
+											"   if(expectedCode===actualCode){\r",
+											"       if(expectedCode===200){\r",
+											"           pm.test(\"el status code es: \"+actualCode,function(){pm.response.to.have.status(expectedCode); });\r",
+											"       }\r",
+											"       else if(expectedCode===400){\r",
+											"          // let response=JSON.parse(responseBody);\r",
+											"           pm.test(\"el status code es: \"+actualCode,function(){pm.response.to.have.status(expectedCode); });\r",
+											"          /* pm.test(\"el código de error es: GEN_ALL_01\", function(){\r",
+											"               pm.expect(response.code).to.eql(\"GEN_ALL_01\");\r",
+											"           })*/\r",
+											"       }\r",
+											"        else if(expectedCode===401){\r",
+											"          // let response=JSON.parse(responseBody);\r",
+											"           pm.test(\"el status code es: \"+actualCode,function(){pm.response.to.have.status(expectedCode); });\r",
+											"          /* pm.test(\"el código de error es: GEN_ALL_01\", function(){\r",
+											"               pm.expect(response.code).to.eql(\"GEN_ALL_01\");\r",
+											"           })*/\r",
+											"       }\r",
+											"     \r",
+											"\r",
+											"        else if(expectedCode===500){\r",
+											"           let response=JSON.parse(responseBody);\r",
+											"           pm.test(\"el status code es: \"+actualCode,function(){pm.response.to.have.status(expectedCode); });\r",
+											"           pm.test(\"el código de error es: GEN_ALL_04\", function(){\r",
+											"               pm.expect(response.code).to.eql(\"GEN_ALL_04\");\r",
+											"           })\r",
+											"       }\r",
+											"       \r",
+											"        else{\r",
+											"          pm.test(\"status code no mapeado\",function(){ pm.response.to.have.status(null);});\r",
+											"       console.log(\"el codigo no es igual\");  \r",
+											"       }\r",
+											"       \r",
+											"         \r",
+											"   }\r",
+											"   else{\r",
+											"       pm.test(\"se esperaba status code: \"+expectedCode,function(){ pm.response.to.have.status(expectedCode);});\r",
+											"       console.log(\"el codigo no es igual\");\r",
+											"   }\r",
+											"}\r",
+											"else{\r",
+											"    pm.test(\"no se pudo obtener el código esperado, tiene que ejecutar el runner con el csv\",function(){ pm.expect(\"undefined\").to.equal(\"\"); });\r",
+											"    console.log(\"no se pudo obtener el código esperado\");\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Identificador del dispositivo que consume el servicio",
+										"key": "X-Device-Id",
+										"value": "{{deviceId}}"
+									},
+									{
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )",
+										"key": "X-Platform",
+										"value": "{{platform}}"
+									},
+									{
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )",
+										"key": "X-Application",
+										"value": "{{application}}"
+									},
+									{
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio",
+										"key": "access_token",
+										"value": "{{accessToken}}"
+									},
+									{
+										"description": "(Required) Client id de la aplicación",
+										"key": "client_id",
+										"value": "{{clientId}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/agora-user/benefit/spsa/lot/awards/last",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"agora-user",
+										"benefit",
+										"spsa",
+										"lot",
+										"awards",
+										"last"
+									]
+								},
+								"description": "Servicio para obtener los sorteos proximos a realizarse"
+							},
+							"response": [
+								{
+									"name": "List Awards",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/benefit/spsa/lot/awards/last",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"benefit",
+												"spsa",
+												"lot",
+												"awards",
+												"last"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n {\n  \"title\": \"Tarjetas Cash Card de S/ 10 000\",\n  \"icon\": \"https://www.veaclub.com.pe/sorteos/wp-content/themes/veaclub/images/rojo-hyundai-portada.png\",\n  \"description\": \"Para que compres lo que desees. Tú puedes ser uno de los 7 ganadores\",\n  \"lotMonth\": \"En Mayo\",\n  \"lotName\": \"Primer Sorteo\",\n  \"lotPeriod\": \"Del 01 de abril al 20 de abril del 2020\",\n  \"lotDate\": \"10 de mayo del 2020\",\n  \"awardDetail\": \"7 Ganadores de una Tarjeta Cash S/ 10 000 c/u\"\n },\n {\n  \"title\": \"Tarjetas Cash Card de S/ 32 000\",\n  \"icon\": \"https://www.veaclub.com.pe/sorteos/wp-content/themes/veaclub/images/rojo-hyundai-portada.png\",\n  \"description\": \"Para que compres lo que desees. Tú puedes ser uno de los 7 ganadores\",\n  \"lotMonth\": \"En Junio\",\n  \"lotName\": \"Segundo Sorteo\",\n  \"lotPeriod\": \"Del 01 de mayo al 20 de mayo del 2020\",\n  \"lotDate\": \"10 de junio del 2020\",\n  \"awardDetail\": \"8 Ganadores de una Tarjeta Cash S/ 32 000 c/u\"\n },\n {\n  \"title\": \"Carro Nissan\",\n  \"icon\": \"https://www.veaclub.com.pe/sorteos/wp-content/themes/veaclub/images/rojo-hyundai-portada.png\",\n  \"description\": \"Para que compres lo que desees. Tú puedes ser uno de los 7 ganadores\",\n  \"lotMonth\": \"En Julio\",\n  \"lotName\": \"Tercer Sorteo\",\n  \"lotPeriod\": \"Del 01 de junio al 20 de junio del 2020\",\n  \"lotDate\": \"10 de julio del 2020\",\n  \"awardDetail\": \"2 Ganadores de un automovil 0km\"\n }\n]"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/benefit/spsa/lot/awards/last",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"benefit",
+												"spsa",
+												"lot",
+												"awards",
+												"last"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_02\",\n \"message\": \"Error de servidor interno.\"\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "15160200-ba36-4adf-8f4e-0c47e99c138b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2370ec4b-9db0-451c-b7e7-f7cb614c8c12",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e548e4a4-aed8-494d-be88-51bad4e454a9",
+			"key": "baseUrl",
+			"value": "https://api.indigital.com.pe/qa",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

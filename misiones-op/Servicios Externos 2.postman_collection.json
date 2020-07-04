@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "2fcb5ec1-5aea-485e-9ab8-d1ac24914c4a",
+		"name": "Servicios Externos 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retail recharge (Plaza Vea)",
+			"item": [
+				{
+					"name": "https://api-tunki.sensedia.com/qa/tunki-external-retail/retail/recharge",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Access-Token",
+								"value": "beb2fab6-aef3-3d12-b36c-27e7fd0b6783",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"externalId\": \"12345678912398\",\r\n    \"prepaidToken\": \"45432765\",\r\n    \"prepaidAmount\": 70,\r\n    \"currencyType\": \"PEN\",\r\n    \"tokenType\": 1,\r\n    \"creationDate\": \"2020-03-27T09:12:33.001Z\",\r\n    \"storeName\": \"PlazaVea\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.indigital.com.pe/qa/agora-external-retail/retail/recharge",
+							"protocol": "https",
+							"host": [
+								"api",
+								"indigital",
+								"com",
+								"pe"
+							],
+							"path": [
+								"qa",
+								"agora-external-retail",
+								"retail",
+								"recharge"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1394759f-0572-451a-addf-fb19f28712ea",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "40a34640-aaca-4a30-af88-46dabef74486",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Pago Efectivo",
+			"item": [
+				{
+					"name": "PagoEfectivoNotification-QA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "PE-Signature",
+								"type": "text",
+								"value": "c086842f14823438ae4b301690a6cccba0f57fec87c9d8f59cf8cc426d85914d"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventType\": \"cip.paid\",\r\n    \"operationNumber\": \"2546623\",\r\n    \"data\": {\r\n        \"cip\": \"2546623\",\r\n        \"currency\": \"PEN\",\r\n        \"amount\": 200.00\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pagoefectivo/notification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pagoefectivo",
+								"notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PagoEfectivoNotification-DEV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "PE-Signature",
+								"value": "20e525c086cf0ee3e28dc2e1b7412073b0ad747395841ea7d6324f2d7ee40a05",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventType\": \"cip.paid\",\r\n    \"operationNumber\": \"00000037\",\r\n    \"data\": {\r\n        \"cip\": \"Test0037\",\r\n        \"currency\": \"PEN\",\r\n        \"amount\": 1.75\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pagoefectivo/notification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pagoefectivo",
+								"notification"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Generar Access Token-Ext",
+			"item": [
+				{
+					"name": "Pre-RequisitoAccessToken",
+					"item": [
+						{
+							"name": "generar code 64",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://api.indigital.com.pe/qa/oauth/access-token",
+									"protocol": "https",
+									"host": [
+										"api",
+										"indigital",
+										"com",
+										"pe"
+									],
+									"path": [
+										"qa",
+										"oauth",
+										"access-token"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "AccessToken",
+					"item": [
+						{
+							"name": "https://api-tunki.sensedia.com/indigital/oauth/access-token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic Zjg3N2Y1OTEtZDZlNC0zNDM3LTgyMmUtZDY0NDJiODNjZjg1OjJjYjczZDAxLTQyZGYtMzkyZi1hMGU4LWEzMTg5NjI4N2MyZQ==",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"grant_type\": \"client_credentials\"} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.indigital.com.pe/qa/oauth/access-token",
+									"protocol": "https",
+									"host": [
+										"api",
+										"indigital",
+										"com",
+										"pe"
+									],
+									"path": [
+										"qa",
+										"oauth",
+										"access-token"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

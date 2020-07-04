@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "7c00386e-c7d5-45a8-84b8-4e009a18a878",
+		"name": "Push-notification-data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Push-notification-data",
+			"item": [
+				{
+					"name": "Servicio de prueba para envío de mensajes de notificación con datos adicionales",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "16ebc929-54cc-444f-9067-f02a37ddfa63",
+								"exec": [
+									"let codEsperado=data.codigo;",
+									"let codRespuesta=responseCode.code;",
+									"if(codRespuesta!==null)",
+									"{",
+									"    if(codRespuesta==codEsperado)",
+									"    {",
+									"        pm.test(\"Status code is: \"+codRespuesta, function () {return codRespuesta});",
+									"    }",
+									"    else",
+									"    {",
+									"        pm.test(\"Status code is: \"+codEsperado, function () {",
+									"        pm.response.to.have.status(codEsperado);",
+									"        });",
+									"    }",
+									"}",
+									"else",
+									"{",
+									"    console(\"Codigo no encontrado\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deviceId\": \"{{deviceId}}\",\r\n  \"title\": \"{{title}}\",\r\n  \"body\": \"{{body}}\",\r\n  \"data\": {\r\n    \"additionalProp1\": \"{{additionalProp1}}\",\r\n    \"additionalProp2\": \"{{additionalProp2}}\",\r\n    \"additionalProp3\": \"{{additionalProp3}}\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/push/push-notification-data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"push",
+								"push-notification-data"
+							]
+						},
+						"description": "Servicio que envía de ensajes de mensajes de notificación con datos adicionales"
+					},
+					"response": [
+						{
+							"name": "Acepted",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deviceId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"body\": \"<string>\",\n    \"data\": \"<object>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/push-notification-data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"push-notification-data"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deviceId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"body\": \"<string>\",\n    \"data\": \"<object>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/push-notification-data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"push-notification-data"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"entity\": \"<string>\",\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deviceId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"body\": \"<string>\",\n    \"data\": \"<object>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/push-notification-data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"push-notification-data"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<string>\",\n \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "c0ff4646-be60-4585-8819-e90d948737ce",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f5db433b-7cf6-4b8a-b114-22de31ee380c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e995ceb6-82f7-460d-94f6-911d39b46ed0",
+			"key": "baseUrl",
+			"value": "http://localhost:8851",
+			"type": "string"
+		}
+	]
+}

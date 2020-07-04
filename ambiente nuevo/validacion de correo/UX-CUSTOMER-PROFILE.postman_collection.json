@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "24f21840-29df-4797-9f17-c9de60c5622d",
+		"name": "UX-CUSTOMER-PROFILE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DATA Local",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Device-Id",
+						"type": "text",
+						"value": "abc123"
+					},
+					{
+						"key": "X-Platform",
+						"type": "text",
+						"value": "AND"
+					},
+					{
+						"key": "X-Application",
+						"type": "text",
+						"value": "CUS"
+					},
+					{
+						"key": "X-User-Id",
+						"type": "text",
+						"value": "539dfd09-f2ae-497c-9da8-f5e4137fe644"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/customer-profile/data?identifier=914995804",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer-profile",
+						"data"
+					],
+					"query": [
+						{
+							"key": "identifier",
+							"value": "914995804"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DATA",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Device-Id",
+						"type": "text",
+						"value": "abc123"
+					},
+					{
+						"key": "X-Platform",
+						"type": "text",
+						"value": "AND"
+					},
+					{
+						"key": "X-Application",
+						"type": "text",
+						"value": "CUS"
+					},
+					{
+						"key": "X-User-Id",
+						"type": "text",
+						"value": "539dfd09-f2ae-497c-9da8-f5e4137fe644",
+						"disabled": true
+					},
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhcGktYXV0aG9yaXphdGlvbi5tYW5hZ2VtZW50LnN2Yy5jbHVzdGVyLmxvY2FsIiwiaXNzIjoiMTAuMjQ3LjIuOCIsInN1YiI6Ijc3ODAyMTZhLTNjY2ItMzhlNi1hNDU3LWFjZTkwNTJmMGZkOCIsImV4cCI6MjYyOTgwMCwiaWF0IjoxNTgwNTMyNjA2LCJBcHA6ICI6IlR1bmtpIHVzZXIgcHJlLXByb2R1Y3Rpb24iLCJDb2RlOiAiOiI0NjU0MDFlYy00NWNmLTNiNzUtYjJhZS1hNWY0ZDgwMzAxNzMiLCJ1c2VySWQiOiI3ODY3NDg2ZC0zMzUyLTQ4YzYtODFmYy1lZjZkMmE2NzhjNWUiLCJkZWVwbGluayI6InR1bmtpLmNvbTovL3VzZXIvaG9tZSIsImZpcmViYXNlVG9rZW4iOiJleUpoYkdjaU9pSlNVekkxTmlKOS5leUpoZFdRaU9pSm9kSFJ3Y3pvdkwybGtaVzUwYVhSNWRHOXZiR3RwZEM1bmIyOW5iR1ZoY0dsekxtTnZiUzluYjI5bmJHVXVhV1JsYm5ScGRIa3VhV1JsYm5ScGRIbDBiMjlzYTJsMExuWXhMa2xrWlc1MGFYUjVWRzl2Ykd0cGRDSXNJbU5zWVdsdGN5STZleUpwWkNJNklqYzROamMwT0Raa0xUTXpOVEl0TkRoak5pMDRNV1pqTFdWbU5tUXlZVFkzT0dNMVpTSXNJblI1Y0dVaU9pSkdTVkpGUWtGVFJTSXNJbkp2YkdWRGIyUmxJam9pUTFWVFgxVlRVaUlzSW1Gd2NHeHBZMkYwYVc5dUlqb2lRMVZUSWl3aWNHeGhkR1p2Y20waU9pSkJUa1FpTENKa1pYWnBZMlZKWkNJNkltRmlZekV5TXlKOUxDSmxlSEFpT2pFMU9EQTFNell5TURZc0ltbGhkQ0k2TVRVNE1EVXpNall3Tml3aWFYTnpJam9pWm1seVpXSmhjMlV0WVdSdGFXNXpaR3N0WkRkb2FEWkFjR1V0WjNKMWNHOHRhVzUwWlhKamIzSndMV05zWkMwd01pNXBZVzB1WjNObGNuWnBZMlZoWTJOdmRXNTBMbU52YlNJc0luTjFZaUk2SW1acGNtVmlZWE5sTFdGa2JXbHVjMlJyTFdRM2FHZzJRSEJsTFdkeWRYQnZMV2x1ZEdWeVkyOXljQzFqYkdRdE1ESXVhV0Z0TG1kelpYSjJhV05sWVdOamIzVnVkQzVqYjIwaUxDSjFhV1FpT2lJM09EWTNORGcyWkMwek16VXlMVFE0WXpZdE9ERm1ZeTFsWmpaa01tRTJOemhqTldVaWZRLk9zRVZ3SkpHUEJxeXItT3QwYzdGaXNfS2VQcm1PakhZVkNRWUNQUkczYzQ5Wm1pSkhvSm9nNU0tZlZjamNPNnR5TVF3VUlVbE5JdlBGRXkyUTVrVkh0cUxRdDVwMEM2U2JfMVEzbW5NeHdqS0hRdnZzb192TnZzZUkybUFRRTRQN21hMHRVSVpTa1d2MEdnZjJZekxFdlhSbFlBYjJBNUpwaS1HVmNSazlUZ0xtbWFYRVRkeUlKY3NiQVFLenZKQnNIRHpPemsxVjlvUndKX01CNF80VzJjckFUbVBHbWpSMHlhdUZEek9HeE1JeHRxbjlhT01CS1lWLVJjMjdBa3dzY2FPWGE3QjhQanNuQkpfbEhXSmlFT2NQWjJBTFNnYnpndzNGelF5WHVkd3lKcVF2aXRNSkl4MjhUTWI5eEtXQWdPOUNrQkhIRS10dHRQWk5lQVJuZyIsInJvbGVDb2RlIjoiQ1VTX1VTUiIsIngtYXBwbGljYXRpb24iOiJDVVMiLCJ4LWRldmljZS1pZCI6ImFiYzEyMyIsIngtcGxhdGZvcm0iOiJBTkQiLCJyZWZlcmVuY2UiOiIyZmJiNTRmNC00ODY4LTNhMzUtYTdmZS1lYzI1ZTI4MzkxNGMiLCJyZWZlcmVuY2VUaW1lciI6MjYyOTgwMH0.oa1QBvPjoIzBU2b4cYGSE2YWVtbWLnuSmYxL1z2zZXE",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "7780216a-3ccb-38e6-a457-ace9052f0fd8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.indigital.com.pe/qa/agora-user/customer-profile/data?identifier=997570026",
+					"protocol": "https",
+					"host": [
+						"api",
+						"indigital",
+						"com",
+						"pe"
+					],
+					"path": [
+						"qa",
+						"agora-user",
+						"customer-profile",
+						"data"
+					],
+					"query": [
+						{
+							"key": "identifier",
+							"value": "997570026"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GENERATE CODE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Device-Id",
+						"type": "text",
+						"value": "abc123"
+					},
+					{
+						"key": "X-Platform",
+						"type": "text",
+						"value": "AND"
+					},
+					{
+						"key": "X-Application",
+						"type": "text",
+						"value": "CUS"
+					},
+					{
+						"key": "access_token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhcGktYXV0aG9yaXphdGlvbi5tYW5hZ2VtZW50LnN2Yy5jbHVzdGVyLmxvY2FsIiwiaXNzIjoiMTAuMjQ3LjUuNCIsImp0aSI6IjRmOTI5MThmLTIzZDQtNDE0NS1iOWI3LWNlOTg2NGNmYTQ1NCIsInN1YiI6Ijc3ODAyMTZhLTNjY2ItMzhlNi1hNDU3LWFjZTkwNTJmMGZkOCIsImV4cCI6MjYyOTgwMCwiaWF0IjoxNTg0NjUzMzQzLCJBcHA6ICI6IlR1bmtpIHVzZXIgcHJlLXByb2R1Y3Rpb24iLCJDb2RlOiAiOiIxNTExOTYwZC1jZjNkLTM5OWItYWU5Yy1lYzgyNjg3NzBhNDkiLCJ1c2VySWQiOiI1MzlkZmQwOS1mMmFlLTQ5N2MtOWRhOC1mNWU0MTM3ZmU2NDQiLCJkZWVwbGluayI6InR1bmtpLmNvbTovL3VzZXIvaG9tZSIsImZpcmViYXNlVG9rZW4iOiJleUpoYkdjaU9pSlNVekkxTmlKOS5leUpoZFdRaU9pSm9kSFJ3Y3pvdkwybGtaVzUwYVhSNWRHOXZiR3RwZEM1bmIyOW5iR1ZoY0dsekxtTnZiUzluYjI5bmJHVXVhV1JsYm5ScGRIa3VhV1JsYm5ScGRIbDBiMjlzYTJsMExuWXhMa2xrWlc1MGFYUjVWRzl2Ykd0cGRDSXNJbU5zWVdsdGN5STZleUpwWkNJNklqVXpPV1JtWkRBNUxXWXlZV1V0TkRrM1l5MDVaR0U0TFdZMVpUUXhNemRtWlRZME5DSXNJblI1Y0dVaU9pSkdTVkpGUWtGVFJTSXNJbkp2YkdWRGIyUmxJam9pUTFWVFgxVlRVaUlzSW1Gd2NHeHBZMkYwYVc5dUlqb2lRMVZUSWl3aWNHeGhkR1p2Y20waU9pSkJUa1FpTENKa1pYWnBZMlZKWkNJNkltRmlZekV5TXlKOUxDSmxlSEFpT2pFMU9EUTJOVFk1TkRNc0ltbGhkQ0k2TVRVNE5EWTFNek0wTXl3aWFYTnpJam9pWm1seVpXSmhjMlV0WVdSdGFXNXpaR3N0TTNKeE1XcEFjR1V0WjNKMWNHOHRhVzUwWlhKamIzSndMV05zWkMwd01TNXBZVzB1WjNObGNuWnBZMlZoWTJOdmRXNTBMbU52YlNJc0luTjFZaUk2SW1acGNtVmlZWE5sTFdGa2JXbHVjMlJyTFROeWNURnFRSEJsTFdkeWRYQnZMV2x1ZEdWeVkyOXljQzFqYkdRdE1ERXVhV0Z0TG1kelpYSjJhV05sWVdOamIzVnVkQzVqYjIwaUxDSjFhV1FpT2lJMU16bGtabVF3T1MxbU1tRmxMVFE1TjJNdE9XUmhPQzFtTldVME1UTTNabVUyTkRRaWZRLlJnX2FmWjl2bnRGSkstdFU0RjRTVjNWb2RpS2JORXcxNlUxTDF1bWZnTzJ4LXFtSk9zV3FjTHZuRHRIWmFucXJYNWdJUUtZOWhGV3lFOTVPSlduMDZLYktwakppTkV5em1NNTFxUmQ2LVhEc1NaR0E5cTdqRml1N1B1SzBhX2lBZkR4ZVd3LTRDUHF2aHBVdEVKZHE1X1plVy1CTGMzdUgzbER3S1pQY3pJQ2ZwSmk1VGhYYnlLZHBmY0hGQzVlMnQyLXRySmhWZkI0SnlweFRXOWM5c3RhOWRFQ2dudVotTThIQURWTXlGdW1heE50N2o5VGxWRDdGaXRiNkFmb3JFX2tJLUZVYVBYWHQycTZPS3VPeXRhQm1KVDBTdDFwVzAyN2JhdUVBajhlRVZmMUdyLXJZQnRWNFFOb3Uzd0hlTFNneGx5aXdnVE5ud0JReHpyaC01dyIsInJvbGVDb2RlIjoiQ1VTX1VTUiIsIngtYXBwbGljYXRpb24iOiJDVVMiLCJ4LWRldmljZS1pZCI6ImFiYzEyMyIsIngtcGxhdGZvcm0iOiJBTkQiLCJyZWZlcmVuY2UiOiJhYzU0NjM1NS1mYjg3LTMzZGEtODAxMC04N2Q5M2E0MmYwMGYiLCJyZWZlcmVuY2VUaW1lciI6MjYyOTgwMH0.mcSByngnOt3xMHAiooFYi9-jkM0MlMg2eF2RyUnlMms"
+					},
+					{
+						"key": "client_id",
+						"value": "7780216a-3ccb-38e6-a457-ace9052f0fd8",
+						"type": "text"
+					},
+					{
+						"key": "X-Second-Verification-Id",
+						"value": "cf085940-9e86-4dac-a79b-73b22e267981",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"lpazd2006unp20@indi.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.indigital.com.pe/dev/agora-user/customer-profile/email-edit/generate-code",
+					"protocol": "https",
+					"host": [
+						"api",
+						"indigital",
+						"com",
+						"pe"
+					],
+					"path": [
+						"dev",
+						"agora-user",
+						"customer-profile",
+						"email-edit",
+						"generate-code"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VALIDATE CODE",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Device-Id",
+						"value": "abc123",
+						"type": "text"
+					},
+					{
+						"key": "X-Platform",
+						"value": "AND",
+						"type": "text"
+					},
+					{
+						"key": "X-Application",
+						"value": "CUS",
+						"type": "text"
+					},
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhcGktYXV0aG9yaXphdGlvbi5tYW5hZ2VtZW50LnN2Yy5jbHVzdGVyLmxvY2FsIiwiaXNzIjoiMTAuMjQ3LjUuNCIsImp0aSI6IjRmOTI5MThmLTIzZDQtNDE0NS1iOWI3LWNlOTg2NGNmYTQ1NCIsInN1YiI6Ijc3ODAyMTZhLTNjY2ItMzhlNi1hNDU3LWFjZTkwNTJmMGZkOCIsImV4cCI6MjYyOTgwMCwiaWF0IjoxNTg0NjUzMzQzLCJBcHA6ICI6IlR1bmtpIHVzZXIgcHJlLXByb2R1Y3Rpb24iLCJDb2RlOiAiOiIxNTExOTYwZC1jZjNkLTM5OWItYWU5Yy1lYzgyNjg3NzBhNDkiLCJ1c2VySWQiOiI1MzlkZmQwOS1mMmFlLTQ5N2MtOWRhOC1mNWU0MTM3ZmU2NDQiLCJkZWVwbGluayI6InR1bmtpLmNvbTovL3VzZXIvaG9tZSIsImZpcmViYXNlVG9rZW4iOiJleUpoYkdjaU9pSlNVekkxTmlKOS5leUpoZFdRaU9pSm9kSFJ3Y3pvdkwybGtaVzUwYVhSNWRHOXZiR3RwZEM1bmIyOW5iR1ZoY0dsekxtTnZiUzluYjI5bmJHVXVhV1JsYm5ScGRIa3VhV1JsYm5ScGRIbDBiMjlzYTJsMExuWXhMa2xrWlc1MGFYUjVWRzl2Ykd0cGRDSXNJbU5zWVdsdGN5STZleUpwWkNJNklqVXpPV1JtWkRBNUxXWXlZV1V0TkRrM1l5MDVaR0U0TFdZMVpUUXhNemRtWlRZME5DSXNJblI1Y0dVaU9pSkdTVkpGUWtGVFJTSXNJbkp2YkdWRGIyUmxJam9pUTFWVFgxVlRVaUlzSW1Gd2NHeHBZMkYwYVc5dUlqb2lRMVZUSWl3aWNHeGhkR1p2Y20waU9pSkJUa1FpTENKa1pYWnBZMlZKWkNJNkltRmlZekV5TXlKOUxDSmxlSEFpT2pFMU9EUTJOVFk1TkRNc0ltbGhkQ0k2TVRVNE5EWTFNek0wTXl3aWFYTnpJam9pWm1seVpXSmhjMlV0WVdSdGFXNXpaR3N0TTNKeE1XcEFjR1V0WjNKMWNHOHRhVzUwWlhKamIzSndMV05zWkMwd01TNXBZVzB1WjNObGNuWnBZMlZoWTJOdmRXNTBMbU52YlNJc0luTjFZaUk2SW1acGNtVmlZWE5sTFdGa2JXbHVjMlJyTFROeWNURnFRSEJsTFdkeWRYQnZMV2x1ZEdWeVkyOXljQzFqYkdRdE1ERXVhV0Z0TG1kelpYSjJhV05sWVdOamIzVnVkQzVqYjIwaUxDSjFhV1FpT2lJMU16bGtabVF3T1MxbU1tRmxMVFE1TjJNdE9XUmhPQzFtTldVME1UTTNabVUyTkRRaWZRLlJnX2FmWjl2bnRGSkstdFU0RjRTVjNWb2RpS2JORXcxNlUxTDF1bWZnTzJ4LXFtSk9zV3FjTHZuRHRIWmFucXJYNWdJUUtZOWhGV3lFOTVPSlduMDZLYktwakppTkV5em1NNTFxUmQ2LVhEc1NaR0E5cTdqRml1N1B1SzBhX2lBZkR4ZVd3LTRDUHF2aHBVdEVKZHE1X1plVy1CTGMzdUgzbER3S1pQY3pJQ2ZwSmk1VGhYYnlLZHBmY0hGQzVlMnQyLXRySmhWZkI0SnlweFRXOWM5c3RhOWRFQ2dudVotTThIQURWTXlGdW1heE50N2o5VGxWRDdGaXRiNkFmb3JFX2tJLUZVYVBYWHQycTZPS3VPeXRhQm1KVDBTdDFwVzAyN2JhdUVBajhlRVZmMUdyLXJZQnRWNFFOb3Uzd0hlTFNneGx5aXdnVE5ud0JReHpyaC01dyIsInJvbGVDb2RlIjoiQ1VTX1VTUiIsIngtYXBwbGljYXRpb24iOiJDVVMiLCJ4LWRldmljZS1pZCI6ImFiYzEyMyIsIngtcGxhdGZvcm0iOiJBTkQiLCJyZWZlcmVuY2UiOiJhYzU0NjM1NS1mYjg3LTMzZGEtODAxMC04N2Q5M2E0MmYwMGYiLCJyZWZlcmVuY2VUaW1lciI6MjYyOTgwMH0.mcSByngnOt3xMHAiooFYi9-jkM0MlMg2eF2RyUnlMms",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "7780216a-3ccb-38e6-a457-ace9052f0fd8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": \"6886\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.indigital.com.pe/dev/agora-user/customer-profile/email-edit/validate-code",
+					"protocol": "https",
+					"host": [
+						"api",
+						"indigital",
+						"com",
+						"pe"
+					],
+					"path": [
+						"dev",
+						"agora-user",
+						"customer-profile",
+						"email-edit",
+						"validate-code"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

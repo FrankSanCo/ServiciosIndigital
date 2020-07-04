@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "844661d5-f27a-47c3-9439-142443f64df1",
+		"name": "Actualizar categorias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Actualizar categorias",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8057578d-8733-43fd-b1e7-cde684b95afa",
+						"exec": [
+							"let codRespuesta=responseCode.code;",
+							"let codEsperado=data.codigo;",
+							"let codBodyEsp=data.codbody;",
+							"let nrocase=data.nro;",
+							"// validar codRespuesta no sea null",
+							"if(codRespuesta!==null)",
+							"{",
+							"   if(codEsperado==codRespuesta)",
+							"    {  ",
+							"        if (codBodyEsp===\"\")",
+							"        {  ",
+							"            console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"            pm.test(\"status code es = \" +codRespuesta, function(){return codRespuesta;});   ",
+							"        }",
+							"       ",
+							"       // mostrar valor",
+							"       else if (codBodyEsp!==\"\")",
+							"       {",
+							"           console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"           let datosResponseBody=JSON.parse(responseBody);",
+							"           tests[\"Codigo de error es \"+codBodyEsp]=datosResponseBody.code === codBodyEsp;",
+							"       }",
+							"     }",
+							"    else",
+							"    {",
+							"    //        pm.test(\"status code es = \" +coderesponse, function(){return coderesponse;});",
+							"    //",
+							"    console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"    pm.test(\"Status code is \"+codEsperado, function () {",
+							"    pm.response.to.have.status(codEsperado);",
+							"    });}",
+							"  }",
+							"else",
+							"{",
+							"    console.log(\"Caso Nro \"+nrocase +\" Finalizado\");",
+							"    console.log(\"No se encontro codigo esperado en el archivo de data\");",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"enabled\": {{enabled}},\r\n  \"status\": {{status}},\r\n  \"lastModifiedUser\": \"{{lastModifiedUser}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/categories/:categoryId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"categories",
+						":categoryId"
+					],
+					"variable": [
+						{
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							},
+							"key": "categoryId",
+							"value": "{{categoryId}}"
+						}
+					]
+				},
+				"description": "Update a category given an id and a content"
+			},
+			"response": [
+				{
+					"name": "Category update ok",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": \"<string>\",\n    \"name\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<integer>\",\n    \"createdUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories/<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories",
+								"<string>"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": \"<string>\",\n    \"name\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"status\": \"<integer>\",\n    \"createdUser\": \"<string>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories/<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories",
+								"<string>"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "44969b89-c7f1-4699-b38b-e9057cf3c350",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "05754f90-424f-45dd-8668-476ff93f2345",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "375386b4-e3f5-47d0-80ef-d7c976649046",
+			"key": "baseUrl",
+			"value": "http://localhost:8081",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

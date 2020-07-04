@@ -1,0 +1,75 @@
+{
+	"id": "dc24fbe0-8b0d-4ee4-bbee-58effa277fbc",
+	"name": "LoginData",
+	"values": [
+		{
+			"key": "userId",
+			"value": "7e2a3135-3bb9-4c30-bbee-f35a0958eea7",
+			"enabled": true
+		},
+		{
+			"key": "DeviceId",
+			"value": "12345678901234567890",
+			"enabled": true
+		},
+		{
+			"key": "refreshToken",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjdlMmEzMTM1LTNiYjktNGMzMC1iYmVlLWYzNWEwOTU4ZWVhNyIsInVuaXF1ZUlkIjoiN2UyYTMxMzUtM2JiOS00YzMwLWJiZWUtZjM1YTA5NThlZWE3IiwidHlwZSI6IlJFRlJFU0giLCJleHBpcmF0aW9uRGF0ZSI6MTU3NDUyNzQ3Mjk3NSwicm9sZUNvZGUiOiJDVVNfVVNSIiwiYWN0aXZlU2Vzc2lvbiI6dHJ1ZSwibXVsdGlEZXZpY2UiOmZhbHNlLCJhcHBsaWNhdGlvbiI6IkNVUyIsInBsYXRmb3JtIjoiQU5EIiwiZGV2aWNlSWQiOiIxMjM0NTY3ODkwMTIzNDU2Nzg5MCIsImV4cCI6MTU3NDUyNzQ3Mn0.Rp_jbMwtQvepcs9CxdM3kYht2UX6jHLruPLwpzoDZmdv0SBc093OKZJZhcilcP02lpSBN3IEzNsY0y6CLJC14g",
+			"enabled": true
+		},
+		{
+			"key": "firebaseToken",
+			"value": "eyJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsImNsYWltcyI6eyJpZCI6IjdlMmEzMTM1LTNiYjktNGMzMC1iYmVlLWYzNWEwOTU4ZWVhNyIsInVuaXF1ZUlkIjoiN2UyYTMxMzUtM2JiOS00YzMwLWJiZWUtZjM1YTA5NThlZWE3IiwidHlwZSI6IkZJUkVCQVNFIiwicm9sZUNvZGUiOiJDVVNfVVNSIiwiYWN0aXZlU2Vzc2lvbiI6dHJ1ZSwibXVsdGlEZXZpY2UiOmZhbHNlLCJhcHBsaWNhdGlvbiI6IkNVUyIsInBsYXRmb3JtIjoiQU5EIiwiZGV2aWNlSWQiOiIxMjM0NTY3ODkwMTIzNDU2Nzg5MCJ9LCJleHAiOjE1NzE5MzkwNzIsImlhdCI6MTU3MTkzNTQ3MiwiaXNzIjoiZmlyZWJhc2UtYWRtaW5zZGstNTBvNmVAcGUtZ3J1cG8taW50ZXJjb3JwLWNsZC0wMi5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsInN1YiI6ImZpcmViYXNlLWFkbWluc2RrLTUwbzZlQHBlLWdydXBvLWludGVyY29ycC1jbGQtMDIuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJ1aWQiOiI3ZTJhMzEzNS0zYmI5LTRjMzAtYmJlZS1mMzVhMDk1OGVlYTcifQ.S8LATYqYQEMHLSU_7nTip8BySWSafktzPD2eTuL3EkSogyg_RTZxvjiUQAkU5U6e-s8kdK4Qk_ZlenPQFFDQ0WrA2ItuMFp6IH6kHspFov7y_cOpEQ2l79OkIr1SgGyeGxhRCrAf-F9tcttMAhYGoRQoPWqZA3K1kFL30WkQJFaQsuCewlverfDQHtU_nKCyuStl80rUKPe7Wf6G-JUlRu9Oq-aW7OxWpYJ2dMDEzKIMlRohpJuNvOHa3kjsxlLHtpSREjyQm-s_Yjj-mGkBZMado8btm6VVe-WRsUnWo0kL4THaSBJCZ19EiYnKK5ZHCBSg04V7isfg-U3hgjZ6Pg",
+			"enabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjdlMmEzMTM1LTNiYjktNGMzMC1iYmVlLWYzNWEwOTU4ZWVhNyIsInVuaXF1ZUlkIjoiN2UyYTMxMzUtM2JiOS00YzMwLWJiZWUtZjM1YTA5NThlZWE3IiwidHlwZSI6IkFDQ0VTUyIsImV4cGlyYXRpb25EYXRlIjoxNTcxOTM1NTkyOTcxLCJyb2xlQ29kZSI6IkNVU19VU1IiLCJhY3RpdmVTZXNzaW9uIjp0cnVlLCJtdWx0aURldmljZSI6ZmFsc2UsImFwcGxpY2F0aW9uIjoiQ1VTIiwicGxhdGZvcm0iOiJBTkQiLCJkZXZpY2VJZCI6IjEyMzQ1Njc4OTAxMjM0NTY3ODkwIiwiZXhwIjoxNTcxOTM1NTkyfQ.m5WupH9cEYW8GPfkCKuuOCoynKVKsbAfyybUfZs57j5Wcgr4Vn86RfHHvVnjdfvo0CjGbU66lIfz1Ndka7eDFQ",
+			"enabled": true
+		},
+		{
+			"key": "CodigoEsperado",
+			"value": 201,
+			"enabled": true
+		},
+		{
+			"key": "sleep-interval",
+			"value": "0",
+			"enabled": true
+		},
+		{
+			"key": "identifier",
+			"value": "931094690",
+			"enabled": true
+		},
+		{
+			"key": "pass",
+			"value": "999999",
+			"enabled": true
+		},
+		{
+			"key": "Password",
+			"value": "[2,2,2,2,2,2]",
+			"enabled": true
+		},
+		{
+			"key": "keyboard",
+			"value": [
+				3,
+				0,
+				9,
+				5,
+				7,
+				6,
+				1,
+				4,
+				2,
+				8
+			],
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-10-24T16:44:58.022Z",
+	"_postman_exported_using": "Postman/7.9.0"
+}

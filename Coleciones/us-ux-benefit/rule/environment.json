@@ -1,0 +1,50 @@
+{
+	"id": "b37b3f30-77a3-460f-a8aa-72a2c020bcbb",
+	"name": "dataLogin",
+	"values": [
+		{
+			"key": "identifier",
+			"value": "931094690",
+			"enabled": true
+		},
+		{
+			"key": "pass",
+			"value": "999999",
+			"enabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjdlMmEzMTM1LTNiYjktNGMzMC1iYmVlLWYzNWEwOTU4ZWVhNyIsInVuaXF1ZUlkIjoiN2UyYTMxMzUtM2JiOS00YzMwLWJiZWUtZjM1YTA5NThlZWE3IiwidHlwZSI6IkFDQ0VTUyIsImV4cGlyYXRpb25EYXRlIjoiMjAxOS0xMi0wM1QxNjoxNzoxOS40MDQrMDAwMCIsInJvbGVDb2RlIjoiQ1VTX1VTUiIsImFjdGl2ZVNlc3Npb24iOnRydWUsIm11bHRpRGV2aWNlIjpmYWxzZSwiYXBwbGljYXRpb24iOiJDVVMiLCJwbGF0Zm9ybSI6IkFORCIsImRldmljZUlkIjoiUEYwTkdEdFMxc24xcXE3Y3YzVUVFNGJlSzh4R1lFUGxSelZpTEFBYUJuMFNRdGEiLCJleHAiOjE1NzUzODk4Mzl9.iNqjYf8jJXAUAdSyubUylsING_Dc_KlkHrZlAqu9Vr8bqoj24Hb_FApjUl3wGwMd4FDpJJ5ug4vW1yWo94sr9Q",
+			"enabled": true
+		},
+		{
+			"key": "keyboard",
+			"value": [
+				3,
+				4,
+				5,
+				0,
+				6,
+				1,
+				9,
+				7,
+				8,
+				2
+			],
+			"enabled": true
+		},
+		{
+			"key": "Password",
+			"value": "[6,6,6,6,6,6]",
+			"enabled": true
+		},
+		{
+			"key": "DeviceId",
+			"value": "PF0NGDtS1sn1qq7cv3UEE4beK8xGYEPlRzViLAAaBn0SQta",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-12-03T19:40:52.679Z",
+	"_postman_exported_using": "Postman/7.12.0"
+}

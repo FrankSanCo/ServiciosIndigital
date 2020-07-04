@@ -1,0 +1,52 @@
+delete from coupon
+
+
+INSERT INTO coupon (coupon_id, coupon_configuration_id, user_id, coupon_code, redeem_date, use_date, expire_date, enabled, status, created_user, created_date, last_modified_user, last_modified_date)
+VALUES ('78e37611-79dd-4827-a953-2052bed9b100', '4734e256-6e38-11ea-a469-42010a8e0134', null, '9113963223865', null, null, '2020-04-20 20:40:39', true, 1, null, '2020-04-10 20:40:49', null, null)
+
+INSERT INTO coupon (coupon_id, coupon_configuration_id, user_id, coupon_code, redeem_date, use_date, expire_date, enabled, status, created_user, created_date, last_modified_user, last_modified_date)
+VALUES ('78e37611-79dd-4827-a953-2052bed9b101', '473537d8-6e38-11ea-a469-42010a8e0134', null, '9190845223861', null, null, '2020-04-20 20:40:39', true, 1, null, '2020-04-10 20:40:49', null, null)
+
+INSERT INTO coupon (coupon_id, coupon_configuration_id, user_id, coupon_code, redeem_date, use_date, expire_date, enabled, status, created_user, created_date, last_modified_user, last_modified_date)
+VALUES ('78e37611-79dd-4827-a953-2052bed9b102', '473590e0-6e38-11ea-a469-42010a8e0134', null, '9112342123819', null, null, '2020-04-20 20:40:39', true, 1, null, '2020-04-10 20:40:49', null, null)
+
+INSERT INTO coupon (coupon_id, coupon_configuration_id, user_id, coupon_code, redeem_date, use_date, expire_date, enabled, status, created_user, created_date, last_modified_user, last_modified_date)
+VALUES ('78e37611-79dd-4827-a953-2052bed9b103', '4735ed2c-6e38-11ea-a469-42010a8e0134', null, '9112025823814', null, null, '2020-04-20 20:40:39', true, 1, null, '2020-04-10 20:40:49', null, null)
+
+
+select * from coupon_group;
+select * from coupon_seller;
+select * from coupon_configuration;
+select * from coupon;
+
+delete from coupon_configuration WHERE coupon_configuration_id='78e09371-f34f-45fd-93aa-1e981bac6ec8'
+
+update coupon set status = 1 where status=3
+
+delete from coupon where coupon_code in(5000000000000,
+5000000000001,
+5000000000002,
+5000000000003,
+5000000000004,
+5000000000005,
+5000000000006,
+5000000000007,
+5000000000008,
+5000000000009,
+9189632123811,
+9784101379623,
+9784197479627)
+
+select coupon_code from coupon group by coupon_code having count(*)>1
+
+delete from coupon group by coupon_code having count(*)>1
+
+
+
+select * from coupon where coupon_code='9189632123811'
+
+select * from coupon where coupon_configuration_id='4734e256-6e38-11ea-a469-42010a8e0134';
+select * from coupon where coupon_configuration_id='473537d8-6e38-11ea-a469-42010a8e0134';
+select * from coupon where coupon_configuration_id='473590e0-6e38-11ea-a469-42010a8e0134';
+select * from coupon where coupon_configuration_id='4735ed2c-6e38-11ea-a469-42010a8e0134';
+

@@ -1,0 +1,19 @@
+{
+	"id": "c72e4c23-d822-4993-851f-76b1895ad0cd",
+	"name": "US-CORE-CUSTOMER-USER-FT",
+	"values": [
+		{
+			"key": "Id_Usuario",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "Id_Cliente",
+			"value": "0848bc1c-d4d0-4235-b4d7-a9522b634265",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-08-13T22:07:04.674Z",
+	"_postman_exported_using": "Postman/7.3.6"
+}

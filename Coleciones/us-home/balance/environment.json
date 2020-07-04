@@ -1,0 +1,55 @@
+{
+	"id": "c50fa962-3bfb-41e5-9394-76416a3d8e09",
+	"name": "loginData",
+	"values": [
+		{
+			"key": "pass",
+			"value": "999999",
+			"enabled": true
+		},
+		{
+			"key": "CodigoEsperado",
+			"value": 201,
+			"enabled": true
+		},
+		{
+			"key": "Password",
+			"value": "[7,7,7,7,7,7]",
+			"enabled": true
+		},
+		{
+			"key": "keyboard",
+			"value": [
+				0,
+				2,
+				6,
+				4,
+				1,
+				8,
+				3,
+				9,
+				5,
+				7
+			],
+			"enabled": true
+		},
+		{
+			"key": "DeviceId",
+			"value": "1234567890",
+			"enabled": true
+		},
+		{
+			"key": "identifier",
+			"value": "931094690",
+			"enabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjdlMmEzMTM1LTNiYjktNGMzMC1iYmVlLWYzNWEwOTU4ZWVhNyIsInVuaXF1ZUlkIjoiN2UyYTMxMzUtM2JiOS00YzMwLWJiZWUtZjM1YTA5NThlZWE3IiwidHlwZSI6IkFDQ0VTUyIsImV4cGlyYXRpb25EYXRlIjoiMjAxOS0xMS0yN1QxNTozNDozMy4xMzQrMDAwMCIsInJvbGVDb2RlIjoiQ1VTX1VTUiIsImFjdGl2ZVNlc3Npb24iOnRydWUsIm11bHRpRGV2aWNlIjpmYWxzZSwiYXBwbGljYXRpb24iOiJDVVMiLCJwbGF0Zm9ybSI6IkFORCIsImRldmljZUlkIjoiMTIzNDU2Nzg5MCIsImV4cCI6MTU3NDg2ODg3M30.PROlrFO5yyb0hNfmtdBKfMStB99_ddA2s_F9ZaEwb7698pYSnA2UGGk2vc7Uk-honBbirCBLY_YGuNLXlnhQXQ",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-11-27T15:33:10.780Z",
+	"_postman_exported_using": "Postman/7.12.0"
+}

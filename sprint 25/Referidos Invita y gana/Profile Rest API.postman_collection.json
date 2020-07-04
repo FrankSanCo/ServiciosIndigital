@@ -1,0 +1,2427 @@
+{
+	"info": {
+		"_postman_id": "e1ebb149-3a79-4ad1-8a32-82a4e66d3322",
+		"name": "Profile Rest API",
+		"description": "Tunki Ux Microservice for Profile\n\nContact Support:\n Name: Tunki User Team\n Email: developers@indigital.pe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customer-profile",
+			"item": [
+				{
+					"name": "email-edit",
+					"item": [
+						{
+							"name": "Generar código para validar edición de email del cliente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Second-Verification-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"<RFC 5322>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/email-edit/generate-code",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"email-edit",
+										"generate-code"
+									]
+								},
+								"description": "Servicio para validar edición de email del cliente"
+							},
+							"response": [
+								{
+									"name": "Unprocessable Entity / CUS_EDI_01:El correo ya se encuentra registrado - Verifica que el correo sea el correcto. Si estás seguro que es tu correo envíanos una solicitud para ayudarte. / CUS_EDI_02:Tuvimos un problema con tu código - Solicita nuevamente un código para validar tu correo.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-Second-Verification-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"joseperez@gmail.com\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/email-edit/generate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"email-edit",
+												"generate-code"
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"USE_LOG_01\",\n \"title\": \"Title Error\",\n \"message\": \"Data Error\"\n}"
+								},
+								{
+									"name": "Forbidden / GEN_ALL_04:Token inválido.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-Second-Verification-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"joseperez@gmail.com\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/email-edit/generate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"email-edit",
+												"generate-code"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_04\",\n \"message\": \"FORBIDDEN\"\n}"
+								},
+								{
+									"name": "Bad Request / GEN_ALL_01:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-Second-Verification-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"joseperez@gmail.com\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/email-edit/generate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"email-edit",
+												"generate-code"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_01\",\n \"message\": \"Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.\",\n \"errors\": [\n  {\n   \"field\": \"field one\",\n   \"message\": \"message one\"\n  },\n  {\n   \"field\": \"field two\",\n   \"message\": \"message two\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Unauthorized / GEN_ALL_03:Token expirado.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-Second-Verification-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"joseperez@gmail.com\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/email-edit/generate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"email-edit",
+												"generate-code"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_03\",\n \"message\": \"UNAUTHORIZED\"\n}"
+								},
+								{
+									"name": "Created / La solicitud ha tenido éxito, se ha creado un código otp con expiración como resultado.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-Second-Verification-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"joseperez@gmail.com\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/email-edit/generate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"email-edit",
+												"generate-code"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"timeExpiration\": 60\n}"
+								}
+							]
+						},
+						{
+							"name": "Validar código generado por la edición de correo del cliente",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"<integer>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/email-edit/validate-code",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"email-edit",
+										"validate-code"
+									]
+								},
+								"description": "Servicio para validar código generado por la edición del correo del cliente"
+							},
+							"response": [
+								{
+									"name": "Bad Request / GEN_ALL_01:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": 1234\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/email-edit/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"email-edit",
+												"validate-code"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_01\",\n \"message\": \"Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.\",\n \"errors\": [\n  {\n   \"field\": \"field one\",\n   \"message\": \"message one\"\n  },\n  {\n   \"field\": \"field two\",\n   \"message\": \"message two\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Forbidden / GEN_ALL_04:Token inválido.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": 1234\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/email-edit/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"email-edit",
+												"validate-code"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unprocessable Entity / CUS_EDI_02:Tuvimos un problema con tu código - Solicita nuevamente un código para validar tu correo. / CUS_EDI_03:Código incorrecto - El código que ingresaste no coincide con el enviado. Verifica y vuelve a intentar.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": 1234\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/email-edit/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"email-edit",
+												"validate-code"
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"USE_LOG_01\",\n \"title\": \"Title Error\",\n \"message\": \"Data Error\"\n}"
+								},
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": 1234\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/email-edit/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"email-edit",
+												"validate-code"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Internal Server Error / GEN_ALL_02:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": 1234\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/email-edit/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"email-edit",
+												"validate-code"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_02\",\n \"message\": \"Error de servidor interno.\"\n}"
+								},
+								{
+									"name": "Unauthorized / GEN_ALL_03:Token expirado.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": 1234\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/email-edit/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"email-edit",
+												"validate-code"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_03\",\n \"message\": \"UNAUTHORIZED\"\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "referred",
+					"item": [
+						{
+							"name": "Validar código referido",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/referred/validate-code",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"referred",
+										"validate-code"
+									]
+								},
+								"description": "Servicio para validar código referido"
+							},
+							"response": [
+								{
+									"name": "Internal Server Error / GEN_ALL_02:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"MZR123\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/referred/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"referred",
+												"validate-code"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_02\",\n \"message\": \"Error de servidor interno.\"\n}"
+								},
+								{
+									"name": "Unauthorized / GEN_ALL_03:Token expirado.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"MZR123\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/referred/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"referred",
+												"validate-code"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_03\",\n \"message\": \"UNAUTHORIZED\"\n}"
+								},
+								{
+									"name": "Unprocessable Entity / CUS_REF_01:Lo sentimos - El código ingresado ha expirado. Intenta con otro. / CUS_REF_02:Lo sentimos - El código ingresado es incorrecto. Verifica y vuelve a intentar. / CUS_REF_03:Lo sentimos - El código ingresado ya ha sido utilizado. Intenta con otro.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"MZR123\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/referred/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"referred",
+												"validate-code"
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"USE_LOG_01\",\n \"title\": \"Title Error\",\n \"message\": \"Data Error\"\n}"
+								},
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"MZR123\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/referred/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"referred",
+												"validate-code"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad Request / GEN_ALL_01:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"MZR123\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/referred/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"referred",
+												"validate-code"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_01\",\n \"message\": \"Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.\",\n \"errors\": [\n  {\n   \"field\": \"field one\",\n   \"message\": \"message one\"\n  },\n  {\n   \"field\": \"field two\",\n   \"message\": \"message two\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Forbidden / GEN_ALL_04:Token inválido.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"MZR123\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/referred/validate-code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"referred",
+												"validate-code"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Obtener código referido",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2c39d585-f7d8-4ab5-a10f-592d9b26657c",
+										"exec": [
+											"let codBodyEsp = data.codbody;\r",
+											"let deviceId = pm.environment.get(\"DeviceId\");\r",
+											"let rtoken = data.rtoken;\r",
+											"let rpw = data.rpw;\r",
+											"let url = pm.variables.get(\"baseUrl\");\r",
+											"let userActual = pm.environment.get(\"Usuario\");\r",
+											"let passActual = pm.environment.get(\"passActual\");\r",
+											"//let userActual=data.userExcel+'';\r",
+											"//let passActual=data.passExcel+'';\r",
+											"\r",
+											"\r",
+											"//let passActual=data.passExcel+'';\r",
+											"//if(rtoken===\"\")\r",
+											"//{\r",
+											"pm.sendRequest(\r",
+											"    {\r",
+											"        url: url + '/agora-identity/identity/random-keyboard', method: 'GET',\r",
+											"        mode: 'application/json',\r",
+											"        header:\r",
+											"        {\r",
+											"            'X-Device-Id': deviceId + ''\r",
+											"        },\r",
+											"        body: {\r",
+											"            mode: 'raw',\r",
+											"        }\r",
+											"    }, function (err, response) {\r",
+											"    pm.environment.set(\"keyboard\", response.json().keyboard);\r",
+											"\r",
+											"    let resultTeclado = response.json().keyboard;\r",
+											"    let pass = passActual;\r",
+											"    let passFinal = \"[\";\r",
+											"    for (let p = 0; p < pass.length; p++) {\r",
+											"        passPos = pass.substring(p, p + 1);\r",
+											"        for (let i = 0; i < resultTeclado.length; i++) {\r",
+											"            if (resultTeclado[i] == passPos) {\r",
+											"                passFinal = passFinal + i;\r",
+											"                if (p == 5) {\r",
+											"                    passFinal = passFinal + \"]\";\r",
+											"                }\r",
+											"                else {\r",
+											"                    passFinal = passFinal + \",\";\r",
+											"                }\r",
+											"            }\r",
+											"        }\r",
+											"    }\r",
+											"    if (rpw === \"\") {\r",
+											"        pm.environment.set(\"Password\", passFinal);\r",
+											"    }\r",
+											"    else {\r",
+											"        pm.environment.set(\"Password\", data.rpw);\r",
+											"    }\r",
+											"    let usidentifir = userActual;\r",
+											"    pm.sendRequest(\r",
+											"        {\r",
+											"            url: url + '/agora-identity/identity/sign-in', method: 'POST',\r",
+											"            mode: 'application/json',\r",
+											"            header:\r",
+											"            {\r",
+											"                'X-Device-Id': deviceId + '',\r",
+											"                'X-Platform': 'AND',\r",
+											"                'X-Application': 'CUS',\r",
+											"                'X-Version': '1.0',\r",
+											"                'X-Model': 'abcd',\r",
+											"                'Authorization': 'Basic Nzc4MDIxNmEtM2NjYi0zOGU2LWE0NTctYWNlOTA1MmYwZmQ4OmRlOTQxYWJiLWNiNjMtMzljMC1iNmVhLWZhNDFiZmRkZjJiYw==',\r",
+											"                'Content-Type': 'application/json',\r",
+											"            },\r",
+											"            body: {\r",
+											"                mode: 'raw',\r",
+											"                raw: JSON.stringify({\r",
+											"                    'identifier': usidentifir,\r",
+											"                    'positions': JSON.parse(passFinal)\r",
+											"                })\r",
+											"            }\r",
+											"        }, function (err, response) {\r",
+											"        pm.environment.set(\"accessToken\", response.json().access_token);\r",
+											"\r",
+											"    });\r",
+											"});\r",
+											"\r",
+											"//}\r",
+											"/*else\r",
+											"{\r",
+											"    pm.environment.set(\"accessToken\", data.authorization);\r",
+											"}*/"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "{{DeviceId}}",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "AND",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "CUS",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "7780216a-3ccb-38e6-a457-ace9052f0fd8",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/agora-user/customer-profile/referred/code",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"agora-user",
+										"customer-profile",
+										"referred",
+										"code"
+									]
+								},
+								"description": "Servicio para obtener código referido"
+							},
+							"response": [
+								{
+									"name": "Internal Server Error / GEN_ALL_02:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/referred/code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"referred",
+												"code"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_02\",\n \"message\": \"Error de servidor interno.\"\n}"
+								},
+								{
+									"name": "Bad Request / GEN_ALL_01:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/referred/code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"referred",
+												"code"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_01\",\n \"message\": \"Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.\",\n \"errors\": [\n  {\n   \"field\": \"field one\",\n   \"message\": \"message one\"\n  },\n  {\n   \"field\": \"field two\",\n   \"message\": \"message two\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Unauthorized / GEN_ALL_03:Token expirado.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/referred/code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"referred",
+												"code"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_03\",\n \"message\": \"UNAUTHORIZED\"\n}"
+								},
+								{
+									"name": "Ok / La solicitud ha tenido éxito, se ha obtenido un objeto con los datos del cliente como resultado.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/referred/code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"referred",
+												"code"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"referredCode\": {\n  \"image\": \"url\",\n  \"title\": \"¡Gana S/5 por cada amigo!\",\n  \"message\": \"Te regalamos S/5 por cada amigo que realice su primera compra utilizando Agora.\",\n  \"disclaimer\": \"(No válido para \\\"Paga a un contacto\\\")\",\n  \"code\": \"MZR123\",\n  \"referredMessage\": {\n   \"subject\": \"Descarga Agora y recibe S/ 5 después de tu primera compra.\",\n   \"title_detail\": \"Recibe S/5 por tu primera recarga en Agora. Descarga y activa tu billetera utilizando mi código:\",\n   \"message_detail\": \"Monto mínimo de recarga S/10, aplican T&C.\",\n   \"link\": \"https://ago.pe/\"\n  }\n }\n}"
+								},
+								{
+									"name": "Forbidden / GEN_ALL_04:Token inválido.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Device-Id",
+												"value": "<string>",
+												"description": "(Required) Identificador del dispositivo que consume el servicio"
+											},
+											{
+												"key": "X-Platform",
+												"value": "<AND|IOS|WEB>",
+												"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+											},
+											{
+												"key": "X-Application",
+												"value": "<CUS|COM>",
+												"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+											},
+											{
+												"key": "access_token",
+												"value": "<string>",
+												"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+											},
+											{
+												"key": "client_id",
+												"value": "<string>",
+												"description": "(Required) Client id de la aplicación"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customer-profile/referred/code",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customer-profile",
+												"referred",
+												"code"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"GEN_ALL_04\",\n \"message\": \"FORBIDDEN\"\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Obtener datos perfil del cliente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "(Required) Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "(Required) Client id de la aplicación"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/customer-profile/data?identifier=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer-profile",
+								"data"
+							],
+							"query": [
+								{
+									"key": "identifier",
+									"value": "<string>",
+									"description": "Identitficador del cliente (opcional)"
+								}
+							]
+						},
+						"description": "Servicio para obtener datos del cliente"
+					},
+					"response": [
+						{
+							"name": "Unauthorized / GEN_ALL_03:Token expirado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/data?identifier=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"data"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"GEN_ALL_03\",\n \"message\": \"UNAUTHORIZED\"\n}"
+						},
+						{
+							"name": "Forbidden / GEN_ALL_04:Token inválido.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/data?identifier=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"data"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"GEN_ALL_04\",\n \"message\": \"FORBIDDEN\"\n}"
+						},
+						{
+							"name": "Bad Request / GEN_ALL_01:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/data?identifier=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"data"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"GEN_ALL_01\",\n \"message\": \"Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.\",\n \"errors\": [\n  {\n   \"field\": \"field one\",\n   \"message\": \"message one\"\n  },\n  {\n   \"field\": \"field two\",\n   \"message\": \"message two\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Internal Server Error / GEN_ALL_02:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/data?identifier=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"data"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"GEN_ALL_02\",\n \"message\": \"Error de servidor interno.\"\n}"
+						},
+						{
+							"name": "Ok / La solicitud ha tenido éxito, se ha obtenido un objeto con los datos del cliente como resultado.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/data?identifier=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"data"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"customer\": {\n  \"phone\": \"984280280\",\n  \"deviceId\": \"adhaiohdiuashoadpkoiu\",\n  \"name\": \"Carlos Alejandro\",\n  \"lastName\": \"Zerga Morales\",\n  \"documentType\": \"DNI\",\n  \"documentNumber\": \"755238375\",\n  \"email\": \"joseperez@gmail.com\",\n  \"validatedEmail\": true,\n  \"accountId\": \"539dfd09-f2ae-497c-9da8-f5e4137fe644\"\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Ingresar código referido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-Id",
+								"value": "<string>",
+								"description": "(Required) Identificador del dispositivo que consume el servicio"
+							},
+							{
+								"key": "X-Platform",
+								"value": "<AND|IOS|WEB>",
+								"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+							},
+							{
+								"key": "X-Application",
+								"value": "<CUS|COM>",
+								"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+							},
+							{
+								"key": "access_token",
+								"value": "<string>",
+								"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+							},
+							{
+								"key": "client_id",
+								"value": "<string>",
+								"description": "(Required) Client id de la aplicación"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"referralCode\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer-profile/referral/redeem",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer-profile",
+								"referral",
+								"redeem"
+							]
+						},
+						"description": "Servicio para ingresar código referido"
+					},
+					"response": [
+						{
+							"name": "Bad Request / GEN_ALL_01:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"referralCode\": \"MZR123\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/referral/redeem",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"referral",
+										"redeem"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"GEN_ALL_01\",\n \"message\": \"Sintaxis inválida en formato, tamaño, tipo de dato, valor determinado o requerido.\",\n \"errors\": [\n  {\n   \"field\": \"field one\",\n   \"message\": \"message one\"\n  },\n  {\n   \"field\": \"field two\",\n   \"message\": \"message two\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Ok / La solicitud ha tenido éxito.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"referralCode\": \"MZR123\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/referral/redeem",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"referral",
+										"redeem"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden / GEN_ALL_04:Token inválido.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"referralCode\": \"MZR123\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/referral/redeem",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"referral",
+										"redeem"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"GEN_ALL_04\",\n \"message\": \"FORBIDDEN\"\n}"
+						},
+						{
+							"name": "Unauthorized / GEN_ALL_03:Token expirado.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"referralCode\": \"MZR123\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/referral/redeem",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"referral",
+										"redeem"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"GEN_ALL_03\",\n \"message\": \"UNAUTHORIZED\"\n}"
+						},
+						{
+							"name": "Internal Server Error / GEN_ALL_02:En este momento Tunki no se encuentra disponible - Espera unos minutos para continuar.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Device-Id",
+										"value": "<string>",
+										"description": "(Required) Identificador del dispositivo que consume el servicio"
+									},
+									{
+										"key": "X-Platform",
+										"value": "<AND|IOS|WEB>",
+										"description": "(Required) Plataforma del dispositivo que consume el servicio ( AND:Android , IOS:IOS , WEB: Web browser )"
+									},
+									{
+										"key": "X-Application",
+										"value": "<CUS|COM>",
+										"description": "(Required) Aplicación del dispositivo que consume el servicio ( CUS:Aplicación Cliente , COM:Aplicación Negocio )"
+									},
+									{
+										"key": "access_token",
+										"value": "<string>",
+										"description": "(Required) Token de acceso del dispositivo que consume el servicio"
+									},
+									{
+										"key": "client_id",
+										"value": "<string>",
+										"description": "(Required) Client id de la aplicación"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"referralCode\": \"MZR123\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/referral/redeem",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"referral",
+										"redeem"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"GEN_ALL_02\",\n \"message\": \"Error de servidor interno.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Ingresar código referido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/customer-profile/migration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer-profile",
+								"migration"
+							]
+						},
+						"description": "Servicio para ingresar código referido"
+					},
+					"response": [
+						{
+							"name": "Ok / La solicitud ha tenido éxito.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/customer-profile/migration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customer-profile",
+										"migration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"job_id\": 51\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "151320e1-c9a8-4a15-9cb7-99be530e0f71",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9ebcc57c-c026-403f-81c0-538f58db3b9d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "28903246-8999-474f-b7a1-25272e2eac5d",
+			"key": "baseUrl",
+			"value": "https://api.indigital.com.pe/qa"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

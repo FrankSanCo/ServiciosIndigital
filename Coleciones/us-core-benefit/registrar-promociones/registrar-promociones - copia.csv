@@ -1,0 +1,1705 @@
+nro.;Case de Prueba;price;currencyType;informationLabel;color;buttonLabel;section;description;title;instruction;imageUrl;logoUrl;code;disclaimer;typeCode;startTime;endTime;enabled;status;lstDealCategory;lstDealCondition;commerceReference;createdUser;codigo;codbody;rtoken
+1;Registrar promocion exitoso - resultado 201;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;201;;
+2;Registrar promocion ya registrada - resultado 201;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;201;;
+3;Registrar promocion con price en blanco - resultado 400;;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+4;Registrar promocion con price caracteres especiales - resultado 400;$#&+;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+5;Registrar promocion con price menor a carateres permitidos - resultado 400;0;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+6;Registrar promocion con price mayor a carateres permitidos - resultado 400;5.56E+13;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+7;Registrar promocion con currencyType en blanco - resultado 400;5;;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+8;Registrar promocion con currencyType caracteres especiales - resultado 400;5;$#&;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+9;Registrar promocion con currencyType menor a carateres permitidos - resultado 400;5;PE;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+10;Registrar promocion con currencyType mayor a carateres permitidos - resultado 400;5;PEN-PEN-PEN-PEN-PEN-p;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+11;Registrar promocion con informationLabel en blanco - resultado 400;5;PEN;;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+12;Registrar promocion con informationLabel caracteres especiales - resultado 400;5;PEN;#$%&+;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+13;Registrar promocion con informationLabel menor a carateres permitidos - resultado 400;5;PEN;sd;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+14;Registrar promocion con informationLabel mayor a carateres permitidos - resultado 400;5;PEN;1a2s3d4f5g6h7j8k9l0ñkl;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+15;Registrar promocion con color en blanco - resultado 400;5;PEN;Sabados;;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+16;Registrar promocion con color caracteres especiales - resultado 400;5;PEN;Sabados;#$&++$#;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+17;Registrar promocion con color menor a carateres permitidos - resultado 400;5;PEN;Sabados;yu;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+18;Registrar promocion con color mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65#002b65#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+19;Registrar promocion con buttonLabel en blanco - resultado 400;5;PEN;Sabados;#002b65;;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+20;Registrar promocion con buttonLabel caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;#$&*+-+;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+21;Registrar promocion con buttonLabel menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Vf;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+22;Registrar promocion con buttonLabel mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detallesVer detal;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+23;Registrar promocion con section en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+24;Registrar promocion con section caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;$#&*+.+;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+25;Registrar promocion con section menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;Ah;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+26;Registrar promocion con section mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALLALLALLALLALLALLALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+27;Registrar promocion con description en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+28;Registrar promocion con description caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;$&#+*-.&$;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+29;Registrar promocion con description menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;df;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+30;Registrar promocion con description mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuentoss;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+31;Registrar promocion con title en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+32;Registrar promocion con title caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;#$&+&$#.+*;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+33;Registrar promocion con title menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;fg;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+34;Registrar promocion con title mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuentoss;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+35;Registrar promocion con instruction en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+36;Registrar promocion con instruction caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;#$&+-+&$#;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+37;Registrar promocion con instruction menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;gh;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+38;Registrar promocion con instruction mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuentoss;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+39;Registrar promocion con imageUrl en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+40;Registrar promocion con imageUrl caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;#$&*+*.*;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+41;Registrar promocion con imageUrl menor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;fr;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+42;Registrar promocion con imageUrl mayor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuentosshttps://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercor1234e45;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+43;Registrar promocion con logoUrl en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+44;Registrar promocion con logoUrl caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;*#$&*#4&$#**++__-+++$&;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+45;Registrar promocion con logoUrl menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;dc;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+46;Registrar promocion con logoUrl mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuentosshttps://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercor1234e45;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+47;Registrar promocion con code en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+48;Registrar promocion con code caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;$#&$#+*;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+49;Registrar promocion con code menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;dc;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+50;Registrar promocion con code mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuentosshttps://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercor1234e45;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+51;Registrar promocion con disclaimer en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+52;Registrar promocion con disclaimer caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;*$#&+*-_+;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+53;Registrar promocion con disclaimer menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;cd;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+54;Registrar promocion con disclaimer mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuentosshttps://firebasestorage.g393d29ef72d5https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercor1234e45;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+55;Registrar promocion con typeCode en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+56;Registrar promocion con typeCode caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;#&;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+57;Registrar promocion con typeCode menor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;0;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+58;Registrar promocion con typeCode mayor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1.00E+17;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+59;Registrar promocion con startTime en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+60;Registrar promocion con startTime caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;#$/$#/+*-*;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+61;Registrar promocion con startTime menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;DF;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+62;Registrar promocion con startTime mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009/89gh/hjlllkj;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+63;Registrar promocion con endTime en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+64;Registrar promocion con endTime caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;#&/$&/#*+*;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+65;Registrar promocion con endTime menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;de;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+66;Registrar promocion con endTime mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009656778/yryr4;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+67;Registrar promocion con enabled en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+68;Registrar promocion con enabled caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;#&$#;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+69;Registrar promocion con enabled menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;t;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+70;Registrar promocion con enabled mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;trueE;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+71;Registrar promocion con status en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+72;Registrar promocion con status caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;#$;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+73;Registrar promocion con status menor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;0;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+74;Registrar promocion con status mayor a carateres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1.00E+13;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+75;Registrar promocion con lstDealCategory en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;;"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+76;Registrar promocion con lstDealCategory caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""#$&$#&*+-*&$#*&$&#$#$#$&$&$#$&$#$&$#""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+77;Registrar promocion con lstDealCategory menor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+78;Registrar promocion con lstDealCategory mayor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000r32rwet34tewt34tweett34t""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+79;Registrar promocion con lstDealCondition en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";;"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+80;Registrar promocion con lstDealCondition caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""S#$&*-*+*&$#$"";
+      ""iconUrl"": ""$#&++*://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+81;Registrar promocion con lstDealCondition menor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""So"";
+      ""iconUrl"": ""hd""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+82;Registrar promocion con lstDealCondition mayor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""h0% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuento pagando con Tunki50% de descuentosshttps://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5https://fi""
+    }
+  ]";;923456723-qafjf-414sffs;400;;
+83;Registrar promocion con commerceReference en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";;923456723-qafjf-414sffs;400;;
+84;Registrar promocion con commerceReference caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""#$&+*$#&$#+**$##$$-*%4#4*$#"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""#&$&#&-&6$#-&$#-&4#""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+85;Registrar promocion con commerceReference menor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+86;Registrar promocion con commerceReference mayor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-4466554400000e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-4466554400000e8400-e29b-41d4-a716-4466554400000e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+87;Registrar promocion con createdUser en blanco - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";;400;;
+88;Registrar promocion con createdUser caracteres especiales - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";#$&+*-#&$#$&$#;400;;
+89;Registrar promocion con createdUser menor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";34;400;;
+90;Registrar promocion con createdUser mayor a caracteres permitidos - resultado 400;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs;400;;
+91;Registrar promocion con error interno - resultado 500;5;PEN;Sabados;#002b65;Ver detalles;ALL;50% de descuento pagando con Tunki;Cineplanet;De lunes a viernes de 10:30 am a 11:00 PM;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_background.png?alt=media&token=0f3dd8dc-7a8a-441b-bcce-393d29ef72d5;https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fsarcletti_logo.png?alt=media&token=4e59e3f0-292c-49ea-b4e7-6e1d4bfb140b;123456789;Presenta esta promoción al momento de hacer el pago con Tunki.;1;4/12/4009;31/12/4009;true;1;"[
+    {
+      ""category"": {
+        ""categoryId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    }
+  ]";"[
+    {
+      ""description"": ""Solo en tiendas seleccionadas"";
+      ""iconUrl"": ""https://firebasestorage.googleapis.com/v0/b/pe-grupo-intercorp-cld-01.appspot.com/o/benefit%2Fpromotion%2Fcondition%2FIcono_tarjeta%403x.png?alt=media&token=18a497d7-d97b-4714-8e85-f93032e3bfed""
+    }
+  ]";"{
+    ""commerceId"": ""0e8400-e29b-41d4-a716-446655440000"";
+    ""lstStoreReference"": [
+      {
+        ""storeId"": ""0e8400-e29b-41d4-a716-446655440000""
+      }
+    ]
+  }";923456723-qafjf-414sffs923456723-qafjf-414sffs923456723-qafjf-414sffs923456723-qafjf-414sffs923456723-qafjf-414sffs923456723-qafjf-414sffs923456723-qafjf-414sffs923456723-qafjf-414sffs923456723-qafjf-414sffs923456723-qafjf-414sffs923456723-qafjf-414sffs923456723-qalk;500;;
